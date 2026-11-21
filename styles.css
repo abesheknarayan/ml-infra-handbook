@@ -67,19 +67,24 @@ html, body {
 
 .helix-dot-label {
   position: absolute;
-  transform: translate(10px, -50%);
+  transform: translate(0, -50%);
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  max-width: 215px;
+  padding: 2px 8px 2px 6px;
+  border-radius: 5px;
+  background: rgba(6, 9, 25, 0.72);
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 400;
-  color: rgba(226, 232, 240, 0.88);
-  text-shadow: 0 2px 10px rgba(3, 5, 16, 0.95);
+  color: rgba(226, 232, 240, 0.92);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   pointer-events: auto;
   cursor: pointer;
-  transition: color 0.15s, transform 0.15s;
+  transition: color 0.15s, background 0.15s;
 }
 
 .helix-dot-label::before {

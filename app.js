@@ -371,7 +371,9 @@ function initGraphData() {
 
     const labelEl = document.createElement('div');
     labelEl.className = 'helix-dot-label';
-    labelEl.textContent = n.name;
+    // Concise label (strip long parentheticals) so labels stay crisp and never clip
+    labelEl.textContent = n.name.replace(/\s*\([^)]*\)/g, '').trim();
+    labelEl.title = `${n.name} (${n.year})`;
     labelEl.addEventListener('click', (e) => {
       e.stopPropagation();
       selectNode(n.id);
@@ -1179,8 +1181,10 @@ function animate() {
   activeRingLine.scale.set(1, activeR, activeR);
   activeRingLine.rotation.x = elapsed * 0.08;
 
-  // 3. Position 3D Milestone Cards on the Front-Facing Helical Arc
+  // 3. Position 3D Milestone Cards on the Front-Facing Helical Arc + De-Collided Labels
   const focusId = state.hoveredNodeId || state.selectedNodeId;
+  const labelCandidates = [];
+
   cardObjects.forEach((obj) => {
     const n = obj.node;
     const matchDom = isNodeMatchingDomain(n);
@@ -1189,45 +1193,59 @@ function animate() {
     const isHovered = state.hoveredNodeId === n.id;
 
     obj.group.visible = matchDom;
-    if (!matchDom) {
-      obj.labelEl.style.display = 'none';
-      return;
-    }
+    obj.labelEl.style.display = 'none';
+    if (!matchDom) return;
 
     const x = yearToX(n.year);
     const rad = yearToRadius(n.year) + 3.2;
-    // Keep milestones gracefully positioned along the front-right visible arc of the cylinder
     const theta = obj.angle + (n.year - state.displayYear) * 0.22;
     obj.group.position.set(x, Math.sin(theta) * rad, Math.cos(theta) * rad);
 
-    // Always face camera cleanly (billboarded in world space)
     obj.group.quaternion.copy(helixRoot.quaternion).invert().multiply(camera.quaternion);
 
     const proximity = Math.max(0.28, 1 - dist / 11);
-    const scale = (isSelected || isHovered ? 1.48 : 0.42 + proximity * 0.92);
+    const scale = isSelected || isHovered ? 1.48 : 0.42 + proximity * 0.92;
     obj.group.scale.setScalar(scale);
     obj.cardMat.opacity = isSelected || isHovered ? 1 : Math.max(0.18, proximity * 0.95);
 
-    // Show clean dot-prefixed labels ONLY near the active year slice (clamped inside left stage)
-    const showLabel = isSelected || isHovered || dist <= 1.65;
-    if (showLabel) {
+    // Collect only the tight active-year candidates for non-overlapping labels
+    if (isSelected || isHovered || dist <= 1.1) {
       obj.group.getWorldPosition(projVec);
       projVec.project(camera);
       if (projVec.z < 1 && projVec.z > -1) {
         const sx = (projVec.x * 0.5 + 0.5) * stageW;
         const sy = (-projVec.y * 0.5 + 0.5) * stageH;
-        const labelX = Math.min(stageW - 175, Math.max(12, sx + 22));
-        obj.labelEl.style.display = 'inline-flex';
-        obj.labelEl.style.left = `${labelX}px`;
-        obj.labelEl.style.top = `${sy}px`;
-        obj.labelEl.style.opacity = isSelected || isHovered ? '1' : String(Math.max(0.4, 1 - dist * 0.32));
-        obj.labelEl.classList.toggle('active', isSelected || isHovered);
-      } else {
-        obj.labelEl.style.display = 'none';
+        labelCandidates.push({ obj, dist, isSelected, isHovered, sx, sy });
       }
-    } else {
-      obj.labelEl.style.display = 'none';
     }
+  });
+
+  // Pick at most 6 closest labels (always keeping hovered/selected), then resolve vertical collisions!
+  labelCandidates.sort((a, b) => {
+    const ap = a.isSelected || a.isHovered ? -10 : a.dist;
+    const bp = b.isSelected || b.isHovered ? -10 : b.dist;
+    return ap - bp;
+  });
+  const chosenLabels = labelCandidates.slice(0, 6).sort((a, b) => a.sy - b.sy);
+
+  const minGap = 25;
+  const minY = 58;
+  const maxY = Math.max(minY + 40, stageH - 118);
+  let lastY = minY - minGap;
+
+  chosenLabels.forEach((item) => {
+    let y = Math.max(minY, Math.min(maxY, item.sy));
+    if (y < lastY + minGap) y = lastY + minGap;
+    lastY = y;
+    if (y > maxY) return; // never overflow into bottom histogram
+
+    const labelX = Math.max(12, Math.min(stageW - 224, item.sx + 24));
+    item.obj.labelEl.style.display = 'inline-flex';
+    item.obj.labelEl.style.left = `${labelX}px`;
+    item.obj.labelEl.style.top = `${y}px`;
+    item.obj.labelEl.style.opacity =
+      item.isSelected || item.isHovered ? '1' : String(Math.max(0.55, 1 - item.dist * 0.35));
+    item.obj.labelEl.classList.toggle('active', item.isSelected || item.isHovered);
   });
 
   // 4. Update Curved Lineage Threads
