@@ -1,0 +1,14 @@
+{
+  "name": "ml-infra-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ML Infra Atlas — Interactive 3D Helical Histomap, 3D Obsidian Knowledge Brain & Live Indexer of Machine Learning Infrastructure (2006–2026)",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "/usr/bin/ruby server.rb",
+    "crawl": "/usr/bin/ruby indexer.rb"
+  }
+}
