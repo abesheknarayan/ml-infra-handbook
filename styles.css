@@ -1306,66 +1306,203 @@ html, body {
   color: #fca5a5;
 }
 
-@media (max-width: 1080px) {
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0 4px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.page-info {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.page-btn {
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--text-main);
+  font-size: 11.5px;
+  cursor: pointer;
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-btn:not(:disabled):hover {
+  border-color: var(--accent-blue);
+}
+
+/* ==================== RESPONSIVE: IPAD LANDSCAPE / COMPACT LAPTOP ==================== */
+@media (max-width: 1180px) {
   :root {
-    --sidebar-w: 320px;
+    --sidebar-w: 330px;
+  }
+  .search-wrap {
+    width: 180px;
+  }
+  .top-bar {
+    padding: 0 16px;
+  }
+  .stage-top-bar {
+    left: 16px;
+    right: calc(var(--sidebar-w) + 16px);
   }
   .domain-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: calc(100% - 92px);
+  }
+  .domain-pills::-webkit-scrollbar {
     display: none;
   }
 }
 
-@media (max-width: 780px) {
+/* ==================== RESPONSIVE: IPAD PORTRAIT & MOBILE ==================== */
+@media (max-width: 900px) {
   :root {
     --sidebar-w: 100vw;
   }
   .top-bar {
-    padding: 0 12px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 10px 14px;
     gap: 8px;
   }
-  .brand-title {
-    font-size: 19px;
+  .top-left {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
   }
-  .search-wrap,
-  #btn-add-modal,
-  .stage-pov-bar {
+  .brand-title {
+    font-size: 20px;
+  }
+  .main-tabs {
+    flex: 1;
+    justify-content: space-between;
+    max-width: 340px;
+  }
+  .main-tab {
+    flex: 1;
+    padding: 5px 6px;
+    font-size: 11px;
+    text-align: center;
+  }
+  .top-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .search-wrap {
+    flex: 1;
+    width: auto;
+    min-width: 120px;
+  }
+  .search-results {
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .nav-link {
+    padding: 0 9px;
+    font-size: 11px;
+    height: 30px;
+  }
+  #btn-add-modal {
     display: none;
   }
+
+  /* Vertical split for iPad portrait & phones */
   #webgl-container,
   #labels-layer,
   .brain-stage {
+    top: 96px;
+    left: 0;
     right: 0;
     bottom: 48vh;
+  }
+  .stage-top-bar {
+    top: 104px;
+    left: 12px;
+    right: 12px;
   }
   .editorial-panel {
     top: 52vh;
     left: 0;
     right: 0;
     width: 100vw;
-    bottom: 78px;
+    bottom: 76px;
     border-left: none;
     border-top: 1px solid var(--border);
-    padding: 14px 16px;
+    padding: 12px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .brain-note-panel {
+    bottom: 0 !important;
+  }
+  .brain-toolbar {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 6px 8px;
+    gap: 6px;
+    justify-content: space-between;
+  }
+  .spread-control {
+    border-left: none;
+    padding: 0 4px;
+  }
+  .spread-control input[type="range"] {
+    width: 64px;
   }
   .bottom-bar {
-    left: 12px;
-    right: 12px;
-    bottom: 10px;
-    gap: 12px;
+    height: 76px;
+    grid-template-columns: 1fr 112px;
+    background: rgba(6, 9, 25, 0.96);
+    border-top: 1px solid var(--border);
   }
   .histogram-section {
-    width: calc(100% - 108px);
+    padding: 0 10px 10px 12px;
+    gap: 8px;
+  }
+  .histogram-bars {
+    height: 30px;
+  }
+  .giant-year-block {
+    padding: 8px 14px 10px 8px;
+    border-left: none;
   }
   .giant-year {
-    font-size: 42px;
+    font-size: 40px;
   }
   .giant-year-sub {
     display: none;
   }
   .indexer-layout {
+    top: 96px;
     grid-template-columns: 1fr;
+  }
+  .indexer-main {
+    padding: 16px;
   }
   .indexer-sources-col {
     display: none;
+  }
+  .drawer {
+    top: 96px;
+    left: 10px;
+    right: 10px;
+    bottom: 16px;
+    width: auto;
   }
 }

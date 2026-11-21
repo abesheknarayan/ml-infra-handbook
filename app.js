@@ -891,6 +891,9 @@ const blogsList = document.getElementById('blogs-list');
 const blogsSearch = document.getElementById('blogs-search');
 document.getElementById('blogs-count-badge').textContent = String(BLOG_INDEX.length);
 
+let blogsPage = 1;
+const BLOGS_PER_PAGE = 8;
+
 function renderBlogsList() {
   const q = state.blogSearch.toLowerCase();
   const filtered = BLOG_INDEX.filter((b) => {
@@ -903,9 +906,14 @@ function renderBlogsList() {
     );
   });
 
-  blogsList.innerHTML = filtered
-    .map(
-      (b) => `
+  const totalPages = Math.max(1, Math.ceil(filtered.length / BLOGS_PER_PAGE));
+  blogsPage = Math.max(1, Math.min(blogsPage, totalPages));
+  const slice = filtered.slice((blogsPage - 1) * BLOGS_PER_PAGE, blogsPage * BLOGS_PER_PAGE);
+
+  blogsList.innerHTML =
+    slice
+      .map(
+        (b) => `
       <article class="blog-card">
         <div class="blog-card-top">
           <div>
@@ -922,8 +930,26 @@ function renderBlogsList() {
           <button class="mini-link" data-jump-blog="${b.relatedNodes[0] || ''}">Jump to Helix →</button>
         </div>
       </article>`
-    )
-    .join('');
+      )
+      .join('') +
+    (totalPages > 1
+      ? `<div class="pagination-bar">
+           <button class="page-btn" id="blogs-prev" ${blogsPage <= 1 ? 'disabled' : ''}>← Prev</button>
+           <span class="page-info">Page ${blogsPage} / ${totalPages} (${filtered.length})</span>
+           <button class="page-btn" id="blogs-next" ${blogsPage >= totalPages ? 'disabled' : ''}>Next →</button>
+         </div>`
+      : '');
+
+  blogsList.querySelector('#blogs-prev')?.addEventListener('click', () => {
+    blogsPage--;
+    renderBlogsList();
+    blogsList.scrollTop = 0;
+  });
+  blogsList.querySelector('#blogs-next')?.addEventListener('click', () => {
+    blogsPage++;
+    renderBlogsList();
+    blogsList.scrollTop = 0;
+  });
 
   blogsList.querySelectorAll('[data-jump-blog]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -945,6 +971,7 @@ document.getElementById('btn-blogs').addEventListener('click', () => {
 document.getElementById('btn-close-blogs').addEventListener('click', () => blogsDrawer.classList.add('hidden'));
 blogsSearch.addEventListener('input', (e) => {
   state.blogSearch = e.target.value.trim();
+  blogsPage = 1;
   renderBlogsList();
 });
 document.querySelectorAll('#blogs-drawer .tab-btn').forEach((btn) => {
@@ -952,6 +979,7 @@ document.querySelectorAll('#blogs-drawer .tab-btn').forEach((btn) => {
     document.querySelectorAll('#blogs-drawer .tab-btn').forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
     state.blogFilterCat = btn.dataset.cat;
+    blogsPage = 1;
     renderBlogsList();
   });
 });
@@ -1073,6 +1101,7 @@ window.addEventListener('keydown', (e) => {
 window.addEventListener('resize', () => {
   const { w, h } = getStageSize();
   camera.aspect = w / h;
+  camera.position.z = w < 640 ? 198 : w < 900 ? 178 : 162;
   camera.updateProjectionMatrix();
   renderer.setSize(w, h);
 });
@@ -1312,11 +1341,14 @@ document.getElementById('btn-brain-reset')?.addEventListener('click', () => {
 // ==================== LIVE INDEXER TAB ====================
 let indexerData = null;
 let indexerTopicFilter = 'all';
+let indexerPage = 1;
+const INDEXER_PER_PAGE = 10;
 
 async function loadIndexedFeed() {
   try {
     const res = await fetch('/api/feed');
     indexerData = await res.json();
+    indexerPage = 1;
     renderIndexerView();
   } catch (err) {
     document.getElementById('indexer-status').textContent = `Failed to load feed: ${err.message}`;
@@ -1343,18 +1375,22 @@ function renderIndexerView() {
   filterWrap.querySelectorAll('[data-itopic]').forEach((btn) => {
     btn.addEventListener('click', () => {
       indexerTopicFilter = btn.dataset.itopic;
+      indexerPage = 1;
       renderIndexerView();
     });
   });
 
-  // Render feed items
+  // Render paginated feed items
   const feedEl = document.getElementById('indexer-feed');
   const items = (indexerData.items || []).filter(
     (it) => indexerTopicFilter === 'all' || (it.topics || []).includes(indexerTopicFilter)
   );
+  const totalPages = Math.max(1, Math.ceil(items.length / INDEXER_PER_PAGE));
+  indexerPage = Math.max(1, Math.min(indexerPage, totalPages));
+  const slice = items.slice((indexerPage - 1) * INDEXER_PER_PAGE, indexerPage * INDEXER_PER_PAGE);
 
-  feedEl.innerHTML = items.length
-    ? items
+  feedEl.innerHTML = slice.length
+    ? slice
         .map((it) => {
           const dateStr = it.publishedAt ? it.publishedAt.slice(0, 10) : '';
           const topicChips = (it.topics || [])
@@ -1373,8 +1409,24 @@ function renderIndexerView() {
               <div class="indexed-tags">${topicChips}</div>
             </article>`;
         })
-        .join('')
+        .join('') +
+      (totalPages > 1
+        ? `<div class="pagination-bar">
+             <button class="page-btn" id="idx-prev" ${indexerPage <= 1 ? 'disabled' : ''}>← Prev</button>
+             <span class="page-info">Page ${indexerPage} / ${totalPages} (${items.length} items)</span>
+             <button class="page-btn" id="idx-next" ${indexerPage >= totalPages ? 'disabled' : ''}>Next →</button>
+           </div>`
+        : '')
     : `<p class="detail-summary">No indexed items match this topic yet.</p>`;
+
+  feedEl.querySelector('#idx-prev')?.addEventListener('click', () => {
+    indexerPage--;
+    renderIndexerView();
+  });
+  feedEl.querySelector('#idx-next')?.addEventListener('click', () => {
+    indexerPage++;
+    renderIndexerView();
+  });
 
   feedEl.querySelectorAll('[data-open-brain-topic]').forEach((btn) => {
     btn.addEventListener('click', () => {
