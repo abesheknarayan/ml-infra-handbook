@@ -534,7 +534,14 @@ function renderEditorialPanel() {
       .filter((e) => e.source === node.id)
       .map((e) => state.nodes.find((n) => n.id === e.target))
       .filter(Boolean);
-    const relatedBlogs = BLOG_INDEX.filter((b) => b.relatedNodes.includes(node.id));
+    const seenResUrls = new Set((node.resources || []).map((r) => r.url.replace(/\/+$/, '')));
+    const relatedBlogs = BLOG_INDEX.filter((b) => {
+      if (!b.relatedNodes.includes(node.id)) return false;
+      const u = (b.featuredPost?.url || b.url).replace(/\/+$/, '');
+      if (seenResUrls.has(u)) return false;
+      seenResUrls.add(u);
+      return true;
+    });
 
     editorialBodyEl.innerHTML = `
       <div class="detail-meta">${dom.name} · ${node.org || 'Community'} · ${era.name}</div>

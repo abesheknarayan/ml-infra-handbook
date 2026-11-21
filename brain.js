@@ -495,12 +495,27 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
 
     if (node.kind === 'topic') {
       const hub = node.data;
-      const connectedMilestones = NODES.filter((m) => hub.milestones.includes(m.id));
-      const connectedBlogs = BLOG_INDEX.filter((b) =>
-        b.relatedNodes.some((rn) => hub.milestones.includes(rn))
-      ).slice(0, 6);
-      const nextHubs = TOPIC_HUBS.filter((h) => (hub.nextTopics || []).includes(h.id));
-      const prevHubs = TOPIC_HUBS.filter((h) => (h.nextTopics || []).includes(hub.id));
+      const seenMilestoneIds = new Set();
+      const connectedMilestones = NODES.filter((m) => {
+        if (!hub.milestones.includes(m.id) || seenMilestoneIds.has(m.id)) return false;
+        seenMilestoneIds.add(m.id);
+        return true;
+      });
+
+      const seenBlogUrls = new Set();
+      const connectedBlogs = BLOG_INDEX.filter((b) => {
+        const match = b.relatedNodes.some((rn) => hub.milestones.includes(rn));
+        const key = (b.featuredPost?.url || b.url).replace(/\/+$/, '');
+        if (!match || seenBlogUrls.has(key)) return false;
+        seenBlogUrls.add(key);
+        return true;
+      }).slice(0, 6);
+
+      const nextSet = new Set(hub.nextTopics || []);
+      const nextHubs = TOPIC_HUBS.filter((h) => h.id !== hub.id && nextSet.has(h.id));
+      const prevHubs = TOPIC_HUBS.filter(
+        (h) => h.id !== hub.id && !nextSet.has(h.id) && (h.nextTopics || []).includes(hub.id)
+      );
 
       notePanelEl.innerHTML = `
         <div class="brain-note-kicker">STEP ${hub.step} OF 10 · ${hub.level.toUpperCase()} GUIDE</div>
@@ -558,7 +573,16 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
     } else if (node.kind === 'milestone') {
       const m = node.data;
       const parentHubs = TOPIC_HUBS.filter((h) => h.milestones.includes(m.id));
-      const relatedBlogs = BLOG_INDEX.filter((b) => b.relatedNodes.includes(m.id));
+      const seenUrls = new Set(
+        (m.resources || []).map((r) => r.url.replace(/\/+$/, ''))
+      );
+      const relatedBlogs = BLOG_INDEX.filter((b) => {
+        if (!b.relatedNodes.includes(m.id)) return false;
+        const u = (b.featuredPost?.url || b.url).replace(/\/+$/, '');
+        if (seenUrls.has(u)) return false;
+        seenUrls.add(u);
+        return true;
+      });
 
       notePanelEl.innerHTML = `
         <div class="brain-note-kicker">MILESTONE · ${m.year} · ${m.org || ''}</div>
