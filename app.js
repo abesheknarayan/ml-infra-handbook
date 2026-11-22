@@ -1468,7 +1468,7 @@ function renderChaptersView() {
         .join('')}
 
       <div class="practice-box">
-        <h4>How to practice this chapter</h4>
+        <h4>Hands-on experiments</h4>
         <ul class="practice-list">
           ${ch.practice.map((p) => `<li>${p}</li>`).join('')}
         </ul>

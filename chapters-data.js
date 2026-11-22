@@ -334,27 +334,27 @@ export const CHAPTERS = [
   {
     id: 'ch-10',
     number: 10,
-    part: 'Part IV · The Frontier & Career Path',
-    title: 'RL Post-Training Infra & How to Get Good at ML Infra',
-    readTime: '9 min read',
-    level: 'Roadmap',
+    part: 'Part IV · The Frontier',
+    title: 'RL Post-Training & Agent Infrastructure',
+    readTime: '8 min read',
+    level: 'Frontier',
     intro:
       'The newest shift in ML systems is that training and inference have merged. Reasoning models and coding agents run massive reinforcement learning loops: generate millions of long rollouts using vLLM/SGLang, grade them inside sandboxed environments, sync the updated weights back to FSDP/Megatron, and repeat.',
     sections: [
       {
-        heading: 'How RL Post-Training Systems Work (verl & Sandboxes)',
+        heading: 'How RL Post-Training Systems Work (verl & HybridEngine)',
         body:
-          'Unlike pretraining where every sequence has a fixed length, RL rollouts have wildly uneven lengths (some reasoning traces finish in 500 tokens, others take 30,000). Frameworks like verl (HybridFlow) and OpenRLHF coordinate async rollout engines, fast weight-resharding between inference and training layouts, and fleets of ephemeral microVM sandboxes to execute and verify generated code safely.'
+          'Unlike pretraining where every sequence has a fixed length, RL rollouts have wildly uneven lengths (some reasoning traces finish in 500 tokens, others take 30,000). Frameworks like verl (HybridFlow) and OpenRLHF coordinate async rollout engines, fast weight-resharding between inference and training layouts, and high-throughput reward verification.'
       },
       {
-        heading: 'How to Actually Get Great at ML Infra',
+        heading: 'Agent Sandboxes & Closed-Loop Kernel Synthesis',
         body:
-          'Don’t just read papers—measure things. The fastest way to build real intuition is a 4-step loop: (1) Master roofline math so you can predict whether a workload is compute-bound, memory-bound, or comms-bound before writing code. (2) Profile real PyTorch/vLLM runs with `nsys` and `torch.profiler` until reading GPU timelines feels natural. (3) Write 3–5 small Triton/CUDA kernels from scratch (softmax, layernorm, matmul, flash attention). (4) Read open-source production code—especially `vllm`, `sglang`, `torchtitan`, and `DeepEP`—and contribute small benchmarks or bug fixes.'
+          'Running verifiable rewards at scale requires fleets of sub-second ephemeral microVM sandboxes that can execute generated code, run unit tests, and return deterministic reward signals without bottlenecking the GPU cluster. At the very edge of the stack, these same RL verification loops are now being applied back to ML infrastructure itself—benchmarking and synthesizing custom CUDA, Triton, and CuTe kernels automatically.'
       }
     ],
     practice: [
-      'Clone `torchtitan` or `vllm`, run a benchmark, capture a profiler trace, and write down the top 3 bottlenecks you observe.',
-      'Follow the Live Feed tab and read 1–2 primary engineering posts per week from PyTorch, vLLM, LMSYS, Horace He, and SemiAnalysis.'
+      'Trace the memory and network cost of resharding a 70B policy model from FSDP training layout to vLLM Tensor-Parallel inference layout.',
+      'Explore how verl’s HybridEngine overlaps asynchronous rollout generation with gradient updates.'
     ],
     readings: [
       { title: 'HybridFlow / verl Paper (EuroSys 2025)', url: 'https://arxiv.org/abs/2409.19256' },
