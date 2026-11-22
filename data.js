@@ -1405,6 +1405,122 @@ export const BLOG_INDEX = [
       url: 'https://www.databricks.com/blog/category/engineering'
     },
     description: 'Production data streaming, fault-tolerant cluster training, and enterprise compound AI systems.'
+  },
+  {
+    id: 'lab-deepmind-blog',
+    name: 'Google DeepMind Blog',
+    org: 'Google DeepMind',
+    category: 'lab',
+    domains: ['compute', 'distributed', 'orchestration'],
+    relatedNodes: ['tpu-v1', 'jax', 'transformer', 'rl-posttraining-infra'],
+    url: 'https://deepmind.google/discover/blog/',
+    xUrl: 'https://x.com/GoogleDeepMind',
+    featuredPost: {
+      title: 'Google DeepMind Research & Systems Announcements',
+      url: 'https://deepmind.google/discover/blog/'
+    },
+    description: 'Frontier breakthroughs across Gemini scaling, TPU co-design, AlphaEvolve/kernel discovery, and reasoning systems.'
+  },
+  {
+    id: 'lab-meta-eng',
+    name: 'Engineering at Meta (AI Infra)',
+    org: 'Meta',
+    category: 'lab',
+    domains: ['distributed', 'orchestration', 'compute'],
+    relatedNodes: ['pytorch', 'pytorch2', 'fsdp', 'h100'],
+    url: 'https://engineering.fb.com/category/ml-applications/',
+    featuredPost: {
+      title: 'Building Meta’s 24K+ GPU Clusters, RoCE Networking & Grand Teton',
+      url: 'https://engineering.fb.com/category/ml-applications/'
+    },
+    description: 'Production cluster engineering: 24K+ GPU RoCE/InfiniBand fabrics, hardware reliability, and Llama training systems.'
+  },
+  {
+    id: 'lab-ai2',
+    name: 'Allen Institute for AI (Ai2)',
+    org: 'Allen Institute for AI',
+    category: 'lab',
+    domains: ['distributed', 'orchestration'],
+    relatedNodes: ['rl-posttraining-infra', 'fsdp', 'huggingface'],
+    url: 'https://allenai.org/blog',
+    xUrl: 'https://x.com/allen_ai',
+    featuredPost: {
+      title: 'OLMo & Tulu Open Pretraining and Post-Training Recipes',
+      url: 'https://allenai.org/blog'
+    },
+    description: 'Fully open pretraining code, data curation pipelines, RLVR post-training recipes, and transparent ablation logs.'
+  },
+  {
+    id: 'lab-coreweave',
+    name: 'CoreWeave Engineering Blog',
+    org: 'CoreWeave',
+    category: 'lab',
+    domains: ['compute', 'orchestration', 'distributed'],
+    relatedNodes: ['h100', 'blackwell', 'kubernetes', 'ai-factories-2026'],
+    url: 'https://www.coreweave.com/blog',
+    xUrl: 'https://x.com/CoreWeave',
+    featuredPost: {
+      title: 'Bare-Metal Kubernetes, InfiniBand & GB200 NVL72 Cluster Engineering',
+      url: 'https://www.coreweave.com/blog'
+    },
+    description: 'AI cloud infrastructure deep dives on bare-metal GPU fleets, Slurm-on-Kubernetes, liquid cooling, and MLPerf benchmarks.'
+  },
+  {
+    id: 'lab-fireworks',
+    name: 'Fireworks AI Engineering',
+    org: 'Fireworks AI',
+    category: 'lab',
+    domains: ['inference', 'kernels'],
+    relatedNodes: ['vllm', 'sglang', 'quantization-wave', 'speculative-mtp'],
+    url: 'https://fireworks.ai/blog',
+    featuredPost: {
+      title: 'FireAttention, FP8/FP4 Serving & High-Throughput Inference Systems',
+      url: 'https://fireworks.ai/blog'
+    },
+    description: 'Low-latency inference optimization, custom attention kernels, speculative decoding, and MoE serving.'
+  },
+  {
+    id: 'lab-prime-intellect',
+    name: 'Prime Intellect Research',
+    org: 'Prime Intellect',
+    category: 'lab',
+    domains: ['distributed', 'orchestration'],
+    relatedNodes: ['rl-posttraining-infra', 'deepseek-infra', 'ring-attention'],
+    url: 'https://www.primeintellect.ai/blog',
+    featuredPost: {
+      title: 'INTELLECT & Decentralized Low-Communication Training (DiLoCo)',
+      url: 'https://www.primeintellect.ai/blog'
+    },
+    description: 'Geo-distributed training over standard internet links (DiLoCo), async RL environments, and open decentralized compute.'
+  },
+  {
+    id: 'lab-epoch',
+    name: 'Epoch AI (Research Institute)',
+    org: 'Epoch AI',
+    category: 'lab',
+    domains: ['compute', 'distributed'],
+    relatedNodes: ['a100', 'h100', 'blackwell', 'ai-factories-2026'],
+    url: 'https://epoch.ai/blog',
+    xUrl: 'https://x.com/EpochAIResearch',
+    featuredPost: {
+      title: 'Compute Trends, Hardware Scaling & Frontier AI Cluster Economics',
+      url: 'https://epoch.ai/blog'
+    },
+    description: 'Quantitative research institute tracking training compute growth, datacenter power, chip supply, and algorithmic efficiency.'
+  },
+  {
+    id: 'lab-anyscale',
+    name: 'Anyscale / Ray Engineering Blog',
+    org: 'Anyscale',
+    category: 'lab',
+    domains: ['orchestration', 'inference', 'distributed'],
+    relatedNodes: ['ray', 'rl-posttraining-infra', 'vllm'],
+    url: 'https://www.anyscale.com/blog',
+    featuredPost: {
+      title: 'Scaling Ray Data, Ray Train & Distributed RL Workloads',
+      url: 'https://www.anyscale.com/blog'
+    },
+    description: 'Practical distributed Python patterns for multimodal data pipelines, fault-tolerant training, and Ray Serve.'
   }
 ];
 

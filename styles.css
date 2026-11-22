@@ -1699,6 +1699,40 @@ html, body {
   color: #5cd6a0;
 }
 
+.paradigm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.paradigm-card {
+  padding: 15px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(15, 22, 38, 0.55);
+}
+
+.paradigm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.paradigm-head h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.paradigm-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
 .practice-box {
   margin: 28px 0;
   padding: 18px 20px;
@@ -2244,6 +2278,13 @@ html, body {
   .sim-challenge {
     font-size: 11.5px;
     line-height: 1.45;
+  }
+  .paradigm-card {
+    padding: 12px;
+  }
+  .paradigm-head {
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .practice-box {
     padding: 14px;

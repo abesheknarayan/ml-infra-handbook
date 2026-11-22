@@ -1334,10 +1334,23 @@ const viewEls = {
   indexer: document.getElementById('view-indexer')
 };
 
+// Static public feed updated every 2 hours by GitHub Actions (feeds Chapters & Knowledge Graph)
+let publicFeedData = null;
+
+async function loadPublicFeed() {
+  try {
+    const res = await fetch('./indexed_feed.json');
+    if (!res.ok) return;
+    publicFeedData = await res.json();
+    if (currentView === 'chapters') renderChaptersView();
+  } catch {}
+}
+
 const brainInstance = createObsidianBrain({
   container: document.getElementById('brain-webgl'),
   labelsEl: document.getElementById('brain-labels'),
   notePanelEl: document.getElementById('brain-note-body'),
+  getLiveFeed: () => publicFeedData,
   onJumpToHistomap(nodeId) {
     switchView('histomap');
     selectNode(nodeId);
@@ -1501,9 +1514,64 @@ function renderChaptersView() {
     .map((id) => state.nodes.find((n) => n.id === id))
     .filter(Boolean);
 
+  // Pull live auto-crawled posts matching this chapter's topic (and emerging paradigms for Ch 11)
+  const liveItemsForChapter = (publicFeedData?.items || [])
+    .filter((it) => ch.id === 'ch-0' || ch.isLivingChapter || (it.topics || []).includes(ch.brainTopicId))
+    .slice(0, ch.isLivingChapter ? 8 : 4);
+
+  const paradigmsHtml =
+    ch.isLivingChapter && publicFeedData?.emergingParadigms?.length
+      ? `<div class="section-label">Tracked emerging paradigms (auto-updated every 2h)</div>
+         <div class="paradigm-grid">
+           ${publicFeedData.emergingParadigms
+             .map(
+               (p) => `
+             <div class="paradigm-card">
+               <div class="paradigm-head">
+                 <h4>${escapeHtml(p.name)}</h4>
+                 <span class="chip">${p.signalCount} recent</span>
+               </div>
+               <p class="paradigm-desc">${escapeHtml(p.description)}</p>
+               ${
+                 p.items?.length
+                   ? `<div class="resource-list" style="margin-top:10px;">
+                        ${p.items
+                          .map(
+                            (it) => `
+                          <a class="resource-link" href="${safeUrl(it.url)}" target="_blank" rel="noopener noreferrer">
+                            <span><strong>${escapeHtml(it.sourceName)}</strong> — ${escapeHtml(it.title)}</span>
+                            <span class="res-tag">Read ↗</span>
+                          </a>`
+                          )
+                          .join('')}
+                      </div>`
+                   : ''
+               }
+             </div>`
+             )
+             .join('')}
+         </div>`
+      : '';
+
+  const liveChapterFeedHtml =
+    !ch.isLivingChapter && liveItemsForChapter.length
+      ? `<div class="section-label">Latest from frontier labs &amp; arXiv (auto-updated)</div>
+         <div class="resource-list">
+           ${liveItemsForChapter
+             .map(
+               (it) => `
+             <a class="resource-link" href="${safeUrl(it.url)}" target="_blank" rel="noopener noreferrer">
+               <span><strong>${escapeHtml(it.sourceName)}</strong> — ${escapeHtml(it.title)}</span>
+               <span class="res-tag">${escapeHtml((it.publishedAt || '').slice(0, 10))} ↗</span>
+             </a>`
+             )
+             .join('')}
+         </div>`
+      : '';
+
   const factoryHtml = FACTORY_STATIONS.map((st, sIdx) => {
     const isFocus = st.chapters.includes(ch.id);
-    const nonZeroChapters = st.chapters.filter((cid) => cid !== 'ch-0');
+    const nonZeroChapters = st.chapters.filter((cid) => cid !== 'ch-0' && cid !== 'ch-11');
     const isMastered = nonZeroChapters.some((cid) => doneSet.has(cid));
     const targetCh = nonZeroChapters[0] || 'ch-0';
     const arrow = sIdx < FACTORY_STATIONS.length - 1 ? '<span class="factory-arrow">→</span>' : '';
@@ -1538,12 +1606,16 @@ function renderChaptersView() {
         )
         .join('')}
 
+      ${paradigmsHtml}
+
       <div class="practice-box">
         <h4>Hands-on experiments</h4>
         <ul class="practice-list">
           ${ch.practice.map((p) => `<li>${p}</li>`).join('')}
         </ul>
       </div>
+
+      ${liveChapterFeedHtml}
 
       <div class="section-label">Primary readings</div>
       <div class="resource-list">
@@ -1852,5 +1924,6 @@ function applyInitialUrlParams() {
 
 // ==================== BOOT ====================
 initGraphData();
+loadPublicFeed();
 applyInitialUrlParams();
 animate();

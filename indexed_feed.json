@@ -1,171 +1,194 @@
 {
-  "lastSyncedAt": "2026-11-21T23:54:34+05:30",
-  "totalItems": 0,
+  "lastSyncedAt": "2026-11-22T06:00:00Z",
+  "totalItems": 12,
   "sources": [
+    { "id": "deepmind", "name": "Google DeepMind", "kind": "lab", "url": "https://deepmind.google/blog/rss.xml", "status": "ready", "count": 0 },
+    { "id": "meta-eng", "name": "Engineering at Meta", "kind": "lab", "url": "https://engineering.fb.com/category/ml-applications/feed/", "status": "ready", "count": 0 },
+    { "id": "openai", "name": "OpenAI News & Research", "kind": "lab", "url": "https://openai.com/news/rss.xml", "status": "ready", "count": 0 },
+    { "id": "thinking-mach", "name": "Thinking Machines Lab", "kind": "lab", "url": "https://thinkingmachines.ai/blog/index.xml", "status": "ready", "count": 0 },
+    { "id": "ai2", "name": "Allen Institute (Ai2)", "kind": "lab", "url": "https://blog.allenai.org/feed", "status": "ready", "count": 0 },
+    { "id": "epoch-ai", "name": "Epoch AI Institute", "kind": "lab", "url": "https://epoch.ai/atom.xml", "status": "ready", "count": 0 },
+    { "id": "pytorch", "name": "PyTorch Blog", "kind": "lab", "url": "https://pytorch.org/feed.xml", "status": "ready", "count": 0 },
+    { "id": "huggingface", "name": "Hugging Face Blog", "kind": "lab", "url": "https://huggingface.co/blog/feed.xml", "status": "ready", "count": 0 },
+    { "id": "vllm", "name": "vLLM Blog", "kind": "lab", "url": "https://blog.vllm.ai/feed.xml", "status": "ready", "count": 0 },
+    { "id": "lmsys", "name": "LMSYS / SGLang Blog", "kind": "lab", "url": "https://lmsys.org/atom.xml", "status": "ready", "count": 0 },
+    { "id": "nvidia", "name": "NVIDIA Tech Blog", "kind": "lab", "url": "https://developer.nvidia.com/blog/feed/", "status": "ready", "count": 0 },
+    { "id": "modal", "name": "Modal Blog", "kind": "lab", "url": "https://modal.com/blog/feed.xml", "status": "ready", "count": 0 },
+    { "id": "coreweave", "name": "CoreWeave Blog", "kind": "lab", "url": "https://www.coreweave.com/blog/rss.xml", "status": "ready", "count": 0 },
+    { "id": "semianalysis", "name": "SemiAnalysis", "kind": "lab", "url": "https://www.semianalysis.com/feed", "status": "ready", "count": 0 },
+    { "id": "lilian-weng", "name": "Lilian Weng (Lil'Log)", "kind": "engineer", "url": "https://lilianweng.github.io/index.xml", "status": "ready", "count": 0 },
+    { "id": "horace-he", "name": "Horace He", "kind": "engineer", "url": "https://horace.io/feed.xml", "status": "ready", "count": 0 },
+    { "id": "tim-dettmers", "name": "Tim Dettmers", "kind": "engineer", "url": "https://timdettmers.com/feed/", "status": "ready", "count": 0 },
+    { "id": "interconnects", "name": "Nathan Lambert", "kind": "engineer", "url": "https://www.interconnects.ai/feed", "status": "ready", "count": 0 },
+    { "id": "chip-huyen", "name": "Chip Huyen", "kind": "engineer", "url": "https://huyenchip.com/feed.xml", "status": "ready", "count": 0 },
+    { "id": "simon-boehm", "name": "Simon Boehm", "kind": "engineer", "url": "https://siboehm.com/feed.xml", "status": "ready", "count": 0 },
+    { "id": "gh-vllm", "name": "vLLM Releases", "kind": "release", "url": "https://github.com/vllm-project/vllm/releases.atom", "status": "ready", "count": 0 },
+    { "id": "gh-sglang", "name": "SGLang Releases", "kind": "release", "url": "https://github.com/sgl-project/sglang/releases.atom", "status": "ready", "count": 0 },
+    { "id": "gh-pytorch", "name": "PyTorch Releases", "kind": "release", "url": "https://github.com/pytorch/pytorch/releases.atom", "status": "ready", "count": 0 },
+    { "id": "gh-triton", "name": "Triton Releases", "kind": "release", "url": "https://github.com/triton-lang/triton/releases.atom", "status": "ready", "count": 0 },
+    { "id": "arxiv-mlsys", "name": "arXiv ML Systems", "kind": "paper", "url": "https://export.arxiv.org/api/query", "status": "ready", "count": 0 }
+  ],
+  "emergingParadigms": [
     {
-      "id": "pytorch",
-      "name": "PyTorch Blog",
-      "kind": "lab",
-      "url": "https://pytorch.org/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to pytorch.org:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
+      "id": "paradigm-kernel-ai",
+      "name": "Autonomous Kernel Synthesis & Deterministic Kernels",
+      "description": "RL-guided agents (AlphaEvolve, KernelBench) synthesizing GPU kernels and batch-invariant deterministic numerics (Thinking Machines).",
+      "signalCount": 2,
+      "items": [
+        { "title": "Connectionism — Batch-Invariant Kernels & Inference Determinism", "url": "https://thinkingmachines.ai/blog/", "sourceName": "Thinking Machines Lab", "publishedAt": "2025-09-10T00:00:00Z" },
+        { "title": "KernelBench: Evaluating LLMs on Writing Fast GPU Kernels", "url": "https://arxiv.org/abs/2502.10517", "sourceName": "arXiv ML Systems", "publishedAt": "2025-02-15T00:00:00Z" }
+      ]
     },
     {
-      "id": "huggingface",
-      "name": "Hugging Face Blog",
-      "kind": "lab",
-      "url": "https://huggingface.co/blog/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to huggingface.co:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
+      "id": "paradigm-disagg-moe",
+      "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
+      "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained MoE experts over NVL72 & RDMA.",
+      "signalCount": 2,
+      "items": [
+        { "title": "DeepSeek Open-Source Infra Index (DualPipe, DeepEP, FlashMLA, 3FS)", "url": "https://github.com/deepseek-ai/open-infra-index", "sourceName": "DeepSeek AI", "publishedAt": "2025-03-01T00:00:00Z" },
+        { "title": "SGLang & RadixAttention: Wide-EP MoE & PD Disaggregation", "url": "https://lmsys.org/blog/", "sourceName": "LMSYS / SGLang Blog", "publishedAt": "2025-03-10T00:00:00Z" }
+      ]
     },
     {
-      "id": "vllm",
-      "name": "vLLM Blog",
-      "kind": "lab",
-      "url": "https://blog.vllm.ai/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to blog.vllm.ai:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
+      "id": "paradigm-rl-factories",
+      "name": "Async RLVR & Sandboxed Agent Compute",
+      "description": "Merging high-throughput serving engines with ephemeral microVM sandboxes for verifiable-reward reinforcement learning.",
+      "signalCount": 2,
+      "items": [
+        { "title": "HybridFlow / verl: Flexible RLHF & GRPO Post-Training Engine", "url": "https://arxiv.org/abs/2409.19256", "sourceName": "arXiv ML Systems", "publishedAt": "2025-01-20T00:00:00Z" },
+        { "title": "OLMo & Tulu Open Post-Training Recipes", "url": "https://allenai.org/blog", "sourceName": "Allen Institute (Ai2)", "publishedAt": "2025-02-05T00:00:00Z" }
+      ]
     },
     {
-      "id": "lmsys",
-      "name": "LMSYS / SGLang Blog",
-      "kind": "lab",
-      "url": "https://lmsys.org/atom.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to lmsys.org:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "nvidia",
-      "name": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "url": "https://developer.nvidia.com/blog/feed/",
-      "status": "error",
-      "error": "Failed to open TCP connection to developer.nvidia.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "modal",
-      "name": "Modal Blog",
-      "kind": "lab",
-      "url": "https://modal.com/blog/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to modal.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "lilian-weng",
-      "name": "Lilian Weng (Lil'Log)",
-      "kind": "engineer",
-      "url": "https://lilianweng.github.io/index.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to lilianweng.github.io:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "horace-he",
-      "name": "Horace He",
-      "kind": "engineer",
-      "url": "https://horace.io/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to horace.io:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "tim-dettmers",
-      "name": "Tim Dettmers",
-      "kind": "engineer",
-      "url": "https://timdettmers.com/feed/",
-      "status": "error",
-      "error": "Failed to open TCP connection to timdettmers.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "interconnects",
-      "name": "Nathan Lambert",
-      "kind": "engineer",
-      "url": "https://www.interconnects.ai/feed",
-      "status": "error",
-      "error": "Failed to open TCP connection to www.interconnects.ai:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "chip-huyen",
-      "name": "Chip Huyen",
-      "kind": "engineer",
-      "url": "https://huyenchip.com/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to huyenchip.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "simon-boehm",
-      "name": "Simon Boehm",
-      "kind": "engineer",
-      "url": "https://siboehm.com/feed.xml",
-      "status": "error",
-      "error": "Failed to open TCP connection to siboehm.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "semianalysis",
-      "name": "SemiAnalysis",
-      "kind": "lab",
-      "url": "https://www.semianalysis.com/feed",
-      "status": "error",
-      "error": "Failed to open TCP connection to www.semianalysis.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "gh-vllm",
-      "name": "vLLM Releases",
-      "kind": "release",
-      "url": "https://github.com/vllm-project/vllm/releases.atom",
-      "status": "error",
-      "error": "Failed to open TCP connection to github.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "gh-sglang",
-      "name": "SGLang Releases",
-      "kind": "release",
-      "url": "https://github.com/sgl-project/sglang/releases.atom",
-      "status": "error",
-      "error": "Failed to open TCP connection to github.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "gh-pytorch",
-      "name": "PyTorch Releases",
-      "kind": "release",
-      "url": "https://github.com/pytorch/pytorch/releases.atom",
-      "status": "error",
-      "error": "Failed to open TCP connection to github.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "gh-triton",
-      "name": "Triton Releases",
-      "kind": "release",
-      "url": "https://github.com/triton-lang/triton/releases.atom",
-      "status": "error",
-      "error": "Failed to open TCP connection to github.com:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
-    },
-    {
-      "id": "arxiv-mlsys",
-      "name": "arXiv ML Systems",
-      "kind": "paper",
-      "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "error",
-      "error": "Failed to open TCP connection to export.arxiv.org:443 (getaddrinfo: nodename nor servname provided, or not known)",
-      "count": 0
+      "id": "paradigm-decentralized",
+      "name": "Low-Communication & Decentralized Training (DiLoCo)",
+      "description": "Training across geo-distributed clusters over standard internet links by synchronizing outer gradients infrequently.",
+      "signalCount": 1,
+      "items": [
+        { "title": "INTELLECT & Decentralized Training with DiLoCo", "url": "https://www.primeintellect.ai/blog", "sourceName": "Prime Intellect", "publishedAt": "2025-01-12T00:00:00Z" }
+      ]
     }
   ],
   "items": [
-
+    {
+      "title": "Connectionism — Batch-Invariant Kernels, LoRA & Post-Training Systems",
+      "url": "https://thinkingmachines.ai/blog/",
+      "publishedAt": "2025-09-10T00:00:00Z",
+      "summary": "Deep systems essays on inference determinism, batch-invariant GPU reductions, and RL post-training dynamics.",
+      "sourceId": "thinking-mach",
+      "sourceName": "Thinking Machines Lab",
+      "kind": "lab",
+      "topics": ["topic-kernels", "topic-inference", "topic-rl"]
+    },
+    {
+      "title": "How to Scale Your Model: A Systems View of LLMs on TPUs",
+      "url": "https://jax-ml.github.io/scaling-book/",
+      "publishedAt": "2025-02-10T00:00:00Z",
+      "summary": "Google DeepMind's roofline-first textbook on distributed sharding, accelerators, and inference math.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": ["topic-gpus", "topic-distributed", "topic-inference"]
+    },
+    {
+      "title": "Building Meta’s 24K+ GPU Clusters, RoCE Fabrics & TorchTitan",
+      "url": "https://engineering.fb.com/category/ml-applications/",
+      "publishedAt": "2025-03-18T00:00:00Z",
+      "summary": "Production cluster networking, GPU failure diagnostics, FSDP2, and large-scale Llama training engineering.",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": ["topic-distributed", "topic-orchestration", "topic-frameworks"]
+    },
+    {
+      "title": "Bare-Metal Kubernetes, InfiniBand & GB200 NVL72 Cluster Engineering",
+      "url": "https://www.coreweave.com/blog",
+      "publishedAt": "2025-04-05T00:00:00Z",
+      "summary": "High-density liquid-cooled Blackwell clusters, Slurm-on-Kubernetes scheduling, and MLPerf benchmarks.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": ["topic-gpus", "topic-orchestration", "topic-distributed"]
+    },
+    {
+      "title": "The GPU Glossary — Interactive Reference to GPU Architecture & CUDA",
+      "url": "https://modal.com/gpu-glossary",
+      "publishedAt": "2025-04-01T00:00:00Z",
+      "summary": "Clean visual guide to SMs, warps, Tensor Cores, HBM, shared memory, and CUDA execution.",
+      "sourceId": "modal",
+      "sourceName": "Modal Blog",
+      "kind": "lab",
+      "topics": ["topic-gpus", "topic-kernels"]
+    },
+    {
+      "title": "PyTorch Engineering Blog — FlexAttention, FSDP2 & torch.compile",
+      "url": "https://pytorch.org/blog/",
+      "publishedAt": "2025-03-22T00:00:00Z",
+      "summary": "Compiler-backed custom attention masks, composable DTensor parallelism, and FP8 training recipes.",
+      "sourceId": "pytorch",
+      "sourceName": "PyTorch Blog",
+      "kind": "lab",
+      "topics": ["topic-frameworks", "topic-attention", "topic-distributed"]
+    },
+    {
+      "title": "OLMo & Tulu Open Pretraining and Post-Training Systems",
+      "url": "https://allenai.org/blog",
+      "publishedAt": "2025-02-05T00:00:00Z",
+      "summary": "Open data pipelines, training stability ablations, and RLVR post-training infrastructure from Ai2.",
+      "sourceId": "ai2",
+      "sourceName": "Allen Institute (Ai2)",
+      "kind": "lab",
+      "topics": ["topic-rl", "topic-distributed", "topic-orchestration"]
+    },
+    {
+      "title": "The Ultra-Scale Playbook: Training LLMs on GPU Clusters",
+      "url": "https://huggingface.co/spaces/nanotron/ultrascale-playbook",
+      "publishedAt": "2025-02-20T00:00:00Z",
+      "summary": "Deep practical handbook covering 5D parallelism (DP, TP, PP, CP, EP), FSDP, and cluster communication.",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": ["topic-distributed", "topic-orchestration"]
+    },
+    {
+      "title": "DeepSeek Open-Source Infra Index (DualPipe, DeepEP, FlashMLA, 3FS)",
+      "url": "https://github.com/deepseek-ai/open-infra-index",
+      "publishedAt": "2025-03-01T00:00:00Z",
+      "summary": "Bare-metal MoE communication kernels, bidirectional pipelining, FP8 GEMMs, and distributed storage.",
+      "sourceId": "gh-deepseek",
+      "sourceName": "DeepSeek AI",
+      "kind": "release",
+      "topics": ["topic-distributed", "topic-kernels", "topic-attention", "topic-quantization"]
+    },
+    {
+      "title": "vLLM V1 Architecture & High-Throughput Serving",
+      "url": "https://blog.vllm.ai/",
+      "publishedAt": "2025-01-27T00:00:00Z",
+      "summary": "Zero-overhead multiprocessing engine, chunked prefill, prefix caching, and disaggregated KV caches.",
+      "sourceId": "vllm",
+      "sourceName": "vLLM Blog",
+      "kind": "lab",
+      "topics": ["topic-inference", "topic-disagg"]
+    },
+    {
+      "title": "SGLang & RadixAttention: Wide-EP MoE & PD Disaggregation",
+      "url": "https://lmsys.org/blog/",
+      "publishedAt": "2025-03-10T00:00:00Z",
+      "summary": "Radix-tree KV reuse, wide-EP MoE serving, speculative decoding, and RL rollout integration.",
+      "sourceId": "lmsys",
+      "sourceName": "LMSYS / SGLang Blog",
+      "kind": "lab",
+      "topics": ["topic-inference", "topic-disagg", "topic-rl"]
+    },
+    {
+      "title": "Making Deep Learning Go Brrrr From First Principles",
+      "url": "https://horace.io/brrr_intro.html",
+      "publishedAt": "2025-01-15T00:00:00Z",
+      "summary": "Foundational mental models for GPU compute, memory bandwidth, and overhead bottlenecks.",
+      "sourceId": "horace-he",
+      "sourceName": "Horace He",
+      "kind": "engineer",
+      "topics": ["topic-gpus", "topic-kernels", "topic-frameworks"]
+    }
   ]
 }

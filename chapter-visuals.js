@@ -2,11 +2,11 @@
 // Mathematically centered layouts, clean vector arrows, live data packets, and interactive challenges.
 
 export const FACTORY_STATIONS = [
-  { id: 'cluster',  label: '1. Cluster & Data',   chapters: ['ch-0', 'ch-9', 'ch-10'] },
-  { id: 'serving',  label: '2. Serving Engine',   chapters: ['ch-0', 'ch-7', 'ch-8'] },
-  { id: 'fabric',   label: '3. NVLink / Network', chapters: ['ch-0', 'ch-6'] },
-  { id: 'hbm',      label: '4. HBM Memory',       chapters: ['ch-0', 'ch-1', 'ch-4', 'ch-5'] },
-  { id: 'compute',  label: '5. SRAM & Cores',     chapters: ['ch-0', 'ch-1', 'ch-2', 'ch-3'] }
+  { id: 'cluster',  label: '1. Cluster & Data',   chapters: ['ch-0', 'ch-9', 'ch-10', 'ch-11'] },
+  { id: 'serving',  label: '2. Serving Engine',   chapters: ['ch-0', 'ch-7', 'ch-8', 'ch-11'] },
+  { id: 'fabric',   label: '3. NVLink / Network', chapters: ['ch-0', 'ch-6', 'ch-11'] },
+  { id: 'hbm',      label: '4. HBM Memory',       chapters: ['ch-0', 'ch-1', 'ch-4', 'ch-5', 'ch-11'] },
+  { id: 'compute',  label: '5. SRAM & Cores',     chapters: ['ch-0', 'ch-1', 'ch-2', 'ch-3', 'ch-11'] }
 ];
 
 const C = {
@@ -1007,6 +1007,107 @@ export function mountChapterSimulation({ chapterId, containerEl, onChallengeSolv
             ? 'Async HybridEngine: Rollouts, verification & weight sync fully pipelined'
             : 'Synchronous: GPUs idle waiting for the longest reasoning trace',
           st.async ? C.mint : C.amber
+        );
+      }
+    },
+
+    'ch-11': {
+      title: 'Live Frontier Radar: 25 Labs & Feeds → Chapters & Knowledge Graph',
+      challenge: 'Toggle Paradigm Clustering to see how incoming lab posts auto-route into chapters & new fields.',
+      controlsHtml: `
+        <div class="sim-btn-group">
+          <button class="sim-btn active" data-radar="raw">Raw Firehose (25 feeds)</button>
+          <button class="sim-btn" data-radar="clustered">Auto-Tagged Into Chapters &amp; Paradigms</button>
+        </div>`,
+      state: { clustered: false, solved: false },
+      bind(el, st) {
+        el.querySelectorAll('[data-radar]').forEach((b) => {
+          b.addEventListener('click', () => {
+            el.querySelectorAll('[data-radar]').forEach((x) => x.classList.remove('active'));
+            b.classList.add('active');
+            st.clustered = b.dataset.radar === 'clustered';
+          });
+        });
+      },
+      draw(ctx, w, h, t, st, markSolved) {
+        if (st.clustered && !st.solved) {
+          st.solved = true;
+          markSolved();
+        }
+        const labs = ['DeepMind', 'Thinking Mach.', 'Meta / PyTorch', 'Modal / CoreWeave', 'arXiv / Ai2'];
+        const buckets = ['Kernel AI', 'Wide-EP MoE', 'RLVR Sandboxes', 'DiLoCo / Sub-4b'];
+
+        // Left: Frontier Lab Sources
+        labs.forEach((name, i) => {
+          const y = 28 + i * 38;
+          roundRect(ctx, 26, y, 134, 28, 6);
+          ctx.fillStyle = C.panel;
+          ctx.fill();
+          ctx.strokeStyle = C.blue;
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+          ctx.font = '500 10.5px Inter, sans-serif';
+          ctx.fillStyle = C.text;
+          ctx.textAlign = 'center';
+          ctx.fillText(name, 93, y + 18);
+        });
+
+        // Center: Classifier Engine
+        drawBox(ctx, w / 2 - 64, 78, 128, 76, '2-Hour Indexer', st.clustered ? 'Paradigm Detector' : 'Fetching RSS/Atom', st.clustered ? C.mint : C.amber);
+
+        // Right: Living Chapters & New Paradigms
+        buckets.forEach((name, i) => {
+          const y = 38 + i * 44;
+          roundRect(ctx, w - 166, y, 140, 32, 6);
+          ctx.fillStyle = st.clustered ? C.mintDim : C.panel;
+          ctx.fill();
+          ctx.strokeStyle = st.clustered ? C.mint : 'rgba(255,255,255,0.16)';
+          ctx.stroke();
+          ctx.font = '500 10.5px Inter, sans-serif';
+          ctx.fillStyle = C.text;
+          ctx.textAlign = 'center';
+          ctx.fillText(name, w - 96, y + 20);
+        });
+
+        // Flowing signals Left -> Center -> Right
+        for (let i = 0; i < 5; i++) {
+          const ly = 42 + i * 38;
+          const p = (t * 0.55 + i * 0.2) % 1;
+          ctx.strokeStyle = 'rgba(88,196,221,0.22)';
+          ctx.beginPath();
+          ctx.moveTo(162, ly);
+          ctx.lineTo(w / 2 - 66, 116);
+          ctx.stroke();
+          ctx.fillStyle = C.blue;
+          ctx.beginPath();
+          ctx.arc(162 + p * (w / 2 - 228), ly + p * (116 - ly), 3.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        for (let i = 0; i < 4; i++) {
+          const ry = 54 + i * 44;
+          const p = (t * 0.65 + i * 0.25) % 1;
+          ctx.strokeStyle = st.clustered ? 'rgba(92,214,160,0.38)' : 'rgba(255,255,255,0.12)';
+          ctx.beginPath();
+          ctx.moveTo(w / 2 + 66, 116);
+          ctx.lineTo(w - 168, ry);
+          ctx.stroke();
+          if (st.clustered) {
+            ctx.fillStyle = C.mint;
+            ctx.beginPath();
+            ctx.arc(w / 2 + 66 + p * (w / 2 - 234), 116 + p * (ry - 116), 3.8, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        drawFooter(
+          ctx,
+          w,
+          h,
+          st.clustered
+            ? 'Every 2 hours: new lab posts auto-appear in Chapters, Knowledge Graph & Emerging Paradigms'
+            : '25 frontier lab blogs, releases & arXiv streams monitored continuously',
+          st.clustered ? C.mint : C.muted
         );
       }
     }

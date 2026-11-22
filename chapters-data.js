@@ -363,5 +363,36 @@ export const CHAPTERS = [
     ],
     relatedMilestones: ['rl-posttraining-infra', 'agent-runtime-2026', 'deepseek-infra'],
     brainTopicId: 'topic-rl'
+  },
+  {
+    id: 'ch-11',
+    number: 11,
+    part: 'Part IV · The Frontier',
+    title: 'Emerging Paradigms (Living Chapter)',
+    readTime: 'Auto-updated every 2h',
+    level: 'Living feed',
+    isLivingChapter: true,
+    intro:
+      'ML infrastructure moves fast enough that static textbooks go stale in months. This chapter automatically tracks newly emerging paradigms across Google DeepMind, Meta, PyTorch, Thinking Machines Lab, Allen Institute (Ai2), Modal, CoreWeave, NVIDIA, vLLM, LMSYS, and arXiv every 2 hours.',
+    sections: [
+      {
+        heading: 'How New Paradigms Enter This Handbook',
+        body:
+          'Every two hours, the crawler scans 25 frontier lab blogs, open-source release streams, and arXiv ML systems papers. Incoming breakthroughs are tagged into existing chapters (so Chapters 1–10 continuously pick up new developments) and grouped below whenever new paradigms gain momentum—such as autonomous kernel synthesis, batch-invariant determinism, low-communication DiLoCo training, wide-EP MoE fabrics, sub-4-bit microscaling, and non-autoregressive serving.'
+      }
+    ],
+    practice: [
+      'Scan the active paradigm clusters below to see which labs are publishing on each frontier topic right now.',
+      'Click any linked post or paper to inspect primary engineering details directly from the source lab.'
+    ],
+    readings: [
+      { title: 'Google DeepMind Blog', url: 'https://deepmind.google/discover/blog/' },
+      { title: 'Thinking Machines Lab (Connectionism)', url: 'https://thinkingmachines.ai/blog/' },
+      { title: 'Engineering at Meta (AI Infra)', url: 'https://engineering.fb.com/category/ml-applications/' },
+      { title: 'Modal Engineering & GPU Glossary', url: 'https://modal.com/blog' },
+      { title: 'CoreWeave Engineering Blog', url: 'https://www.coreweave.com/blog' }
+    ],
+    relatedMilestones: ['ai-factories-2026', 'agent-runtime-2026', 'deepseek-infra', 'blackwell'],
+    brainTopicId: 'topic-rl'
   }
 ];

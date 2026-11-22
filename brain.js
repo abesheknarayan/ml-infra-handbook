@@ -3,6 +3,23 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { TOPIC_HUBS } from './brain-data.js';
 import { DOMAINS, NODES, EDGES, BLOG_INDEX } from './data.js';
 
+function escapeHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function safeUrl(url) {
+  try {
+    const u = new URL(String(url || ''), window.location.origin);
+    if (u.protocol === 'https:' || u.protocol === 'http:') return u.href;
+  } catch {}
+  return '#';
+}
+
 function createGlowSpriteTex() {
   const size = 96;
   const c = document.createElement('canvas');
@@ -21,7 +38,7 @@ function createGlowSpriteTex() {
   return tex;
 }
 
-export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpToHistomap }) {
+export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpToHistomap, getLiveFeed }) {
   let active = false;
   let rafId = null;
 
@@ -517,6 +534,11 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
         (h) => h.id !== hub.id && !nextSet.has(h.id) && (h.nextTopics || []).includes(hub.id)
       );
 
+      const liveFeed = typeof getLiveFeed === 'function' ? getLiveFeed() : null;
+      const liveTopicItems = (liveFeed?.items || [])
+        .filter((it) => (it.topics || []).includes(hub.id))
+        .slice(0, 4);
+
       notePanelEl.innerHTML = `
         <div class="brain-note-kicker">Part ${hub.step} of 10 · ${hub.level}</div>
         <h2 class="detail-title">${hub.title}</h2>
@@ -539,6 +561,23 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
             )
             .join('')}
         </div>
+
+        ${
+          liveTopicItems.length
+            ? `<div class="section-label">Latest from the field (auto-updated)</div>
+               <div class="resource-list">
+                 ${liveTopicItems
+                   .map(
+                     (it) => `
+                   <a class="resource-link" href="${safeUrl(it.url)}" target="_blank" rel="noopener noreferrer">
+                     <span><strong>${escapeHtml(it.sourceName)}</strong> — ${escapeHtml(it.title)}</span>
+                     <span class="res-tag">New ↗</span>
+                   </a>`
+                   )
+                   .join('')}
+               </div>`
+            : ''
+        }
 
         <div class="section-label">Related milestones (${connectedMilestones.length})</div>
         <div class="lineage-chips">
