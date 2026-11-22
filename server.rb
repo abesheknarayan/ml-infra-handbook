@@ -11,7 +11,8 @@ MIME = {
   '.js'   => 'application/javascript; charset=utf-8',
   '.json' => 'application/json; charset=utf-8',
   '.svg'  => 'image/svg+xml',
-  '.png'  => 'image/png'
+  '.png'  => 'image/png',
+  '.jpg'  => 'image/jpeg'
 }.freeze
 
 server = WEBrick::HTTPServer.new(Port: 8765)

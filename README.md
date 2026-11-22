@@ -1,5 +1,7 @@
 # ML Infra Handbook (2006 – 2026)
 
+![ML Infra Handbook](./og-image.jpg)
+
 An interactive **3D Helical Histomap**, **3D Knowledge Graph**, **11-Chapter Study Guide with live factory animations**, and **Live RSS / arXiv / GitHub Releases Feed** mapping 20 years of Machine Learning Infrastructure—from CUDA (2006) and AlexNet to FlashAttention, vLLM, SGLang, DeepSeek DualPipe/DeepEP, Blackwell NVL72, and 2026 AI Factories.
 
 ## Highlights
