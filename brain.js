@@ -518,16 +518,16 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
       );
 
       notePanelEl.innerHTML = `
-        <div class="brain-note-kicker">STEP ${hub.step} OF 10 · ${hub.level.toUpperCase()} GUIDE</div>
+        <div class="brain-note-kicker">Part ${hub.step} of 10 · ${hub.level}</div>
         <h2 class="detail-title">${hub.title}</h2>
         <p class="detail-summary">${hub.summary}</p>
 
         <div class="breakthrough-box">
-          <div class="breakthrough-label">Beginner Mental Model</div>
+          <div class="breakthrough-label">Mental model</div>
           <div class="breakthrough-text">${hub.mentalModel}</div>
         </div>
 
-        <div class="section-label">Key Concepts to Know</div>
+        <div class="section-label">Key concepts</div>
         <div class="glossary-list">
           ${hub.glossary
             .map(
@@ -540,16 +540,16 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
             .join('')}
         </div>
 
-        <div class="section-label">[[Connected Milestones]] (${connectedMilestones.length})</div>
+        <div class="section-label">Related milestones (${connectedMilestones.length})</div>
         <div class="lineage-chips">
           ${connectedMilestones
-            .map((m) => `<button class="lineage-btn" data-brain-jump="${m.id}">[[${m.name}]]</button>`)
+            .map((m) => `<button class="lineage-btn" data-brain-jump="${m.id}">${m.name}</button>`)
             .join('')}
         </div>
 
         ${
           connectedBlogs.length
-            ? `<div class="section-label">Best Beginner &amp; Deep-Dive Readings</div>
+            ? `<div class="section-label">Recommended reading</div>
                <div class="resource-list">
                  ${connectedBlogs
                    .map(
@@ -564,10 +564,10 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
             : ''
         }
 
-        <div class="section-label">Learning Path Navigation</div>
+        <div class="section-label">Continue learning</div>
         <div class="lineage-chips">
-          ${prevHubs.map((h) => `<button class="lineage-btn" data-brain-jump="${h.id}">← [[${h.short}]]</button>`).join('')}
-          ${nextHubs.map((h) => `<button class="lineage-btn" data-brain-jump="${h.id}">[[${h.short}]] →</button>`).join('')}
+          ${prevHubs.map((h) => `<button class="lineage-btn" data-brain-jump="${h.id}">← ${h.short}</button>`).join('')}
+          ${nextHubs.map((h) => `<button class="lineage-btn" data-brain-jump="${h.id}">${h.short} →</button>`).join('')}
         </div>
       `;
     } else if (node.kind === 'milestone') {

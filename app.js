@@ -8,6 +8,7 @@ import {
   BLOG_INDEX
 } from './data.js';
 import { TOPIC_HUBS } from './brain-data.js';
+import { CHAPTERS } from './chapters-data.js';
 import { createObsidianBrain } from './brain.js';
 
 const STORAGE_KEY = 'ml-infra-galaxy-custom-v1';
@@ -1301,6 +1302,7 @@ let currentView = 'histomap';
 const viewEls = {
   histomap: document.getElementById('view-histomap'),
   brain: document.getElementById('view-brain'),
+  chapters: document.getElementById('view-chapters'),
   indexer: document.getElementById('view-indexer')
 };
 
@@ -1330,6 +1332,9 @@ function switchView(viewName) {
     brainInstance.start();
   } else {
     brainInstance.stop();
+  }
+  if (viewName === 'chapters') {
+    renderChaptersView();
   }
   if (viewName === 'indexer') {
     loadIndexedFeed();
@@ -1362,6 +1367,159 @@ document.getElementById('brain-spread')?.addEventListener('input', (e) => {
 document.getElementById('btn-brain-reset')?.addEventListener('click', () => {
   brainInstance.resetCamera();
 });
+
+// ==================== CHAPTER-WISE STUDY GUIDE ====================
+const CHAPTER_STORAGE_KEY = 'ml-infra-atlas-chapters-done-v1';
+let activeChapterId = CHAPTERS[0].id;
+
+function loadCompletedChapters() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(CHAPTER_STORAGE_KEY) || '[]'));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveCompletedChapters(set) {
+  localStorage.setItem(CHAPTER_STORAGE_KEY, JSON.stringify([...set]));
+}
+
+function renderChaptersView() {
+  const tocEl = document.getElementById('chapters-toc-list');
+  const readerEl = document.getElementById('chapters-reader');
+  const progEl = document.getElementById('chapters-progress');
+  if (!tocEl || !readerEl) return;
+
+  const doneSet = loadCompletedChapters();
+  progEl.textContent = `${doneSet.size} / ${CHAPTERS.length} completed`;
+
+  // Group chapters by Part
+  let lastPart = '';
+  tocEl.innerHTML = CHAPTERS.map((ch) => {
+    const partHeader = ch.part !== lastPart ? `<div class="toc-part-label">${ch.part}</div>` : '';
+    lastPart = ch.part;
+    const isDone = doneSet.has(ch.id);
+    const isActive = ch.id === activeChapterId;
+    return `${partHeader}
+      <button class="toc-item ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" data-ch="${ch.id}">
+        <span class="toc-num">${isDone ? '✓' : ch.number}</span>
+        <span>${ch.title}</span>
+      </button>`;
+  }).join('');
+
+  tocEl.querySelectorAll('[data-ch]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeChapterId = btn.dataset.ch;
+      renderChaptersView();
+      readerEl.scrollTop = 0;
+    });
+  });
+
+  const idx = CHAPTERS.findIndex((c) => c.id === activeChapterId);
+  const ch = CHAPTERS[idx] || CHAPTERS[0];
+  const prevCh = idx > 0 ? CHAPTERS[idx - 1] : null;
+  const nextCh = idx < CHAPTERS.length - 1 ? CHAPTERS[idx + 1] : null;
+  const isDone = doneSet.has(ch.id);
+
+  const relMilestones = (ch.relatedMilestones || [])
+    .map((id) => state.nodes.find((n) => n.id === id))
+    .filter(Boolean);
+
+  readerEl.innerHTML = `
+    <article class="chapter-article">
+      <div class="chapter-meta">
+        <span>Chapter ${ch.number}</span>
+        <span>·</span>
+        <span>${ch.part}</span>
+        <span>·</span>
+        <span>${ch.readTime}</span>
+      </div>
+      <h1 class="chapter-title">${ch.title}</h1>
+      <p class="chapter-intro">${ch.intro}</p>
+
+      ${ch.sections
+        .map(
+          (s) => `
+        <section class="chapter-section">
+          <h3>${s.heading}</h3>
+          <p>${s.body}</p>
+        </section>`
+        )
+        .join('')}
+
+      <div class="practice-box">
+        <h4>How to practice this chapter</h4>
+        <ul class="practice-list">
+          ${ch.practice.map((p) => `<li>${p}</li>`).join('')}
+        </ul>
+      </div>
+
+      <div class="section-label">Primary readings</div>
+      <div class="resource-list">
+        ${ch.readings
+          .map(
+            (r) => `
+          <a class="resource-link" href="${r.url}" target="_blank" rel="noopener">
+            <span>${r.title}</span>
+            <span class="res-tag">Read ↗</span>
+          </a>`
+          )
+          .join('')}
+      </div>
+
+      <div class="section-label">Explore interactively</div>
+      <div class="lineage-chips">
+        <button class="lineage-btn" id="btn-ch-brain">Open in Knowledge Graph →</button>
+        ${relMilestones
+          .map((m) => `<button class="lineage-btn" data-ch-milestone="${m.id}">${m.name} (${m.year})</button>`)
+          .join('')}
+      </div>
+
+      <div class="chapter-footer">
+        <label class="complete-toggle">
+          <input type="checkbox" id="chk-ch-done" ${isDone ? 'checked' : ''} />
+          <span>Mark chapter as completed</span>
+        </label>
+        <div class="chapter-nav-btns">
+          ${prevCh ? `<button class="nav-link" id="btn-ch-prev">← Ch ${prevCh.number}</button>` : ''}
+          ${nextCh ? `<button class="nav-link primary" id="btn-ch-next">Next: Ch ${nextCh.number} →</button>` : ''}
+        </div>
+      </div>
+    </article>
+  `;
+
+  readerEl.querySelector('#chk-ch-done')?.addEventListener('change', (e) => {
+    const nextSet = loadCompletedChapters();
+    if (e.target.checked) nextSet.add(ch.id);
+    else nextSet.delete(ch.id);
+    saveCompletedChapters(nextSet);
+    renderChaptersView();
+  });
+
+  readerEl.querySelector('#btn-ch-brain')?.addEventListener('click', () => {
+    switchView('brain');
+    if (ch.brainTopicId) brainInstance.focusNode(ch.brainTopicId);
+  });
+
+  readerEl.querySelectorAll('[data-ch-milestone]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      switchView('histomap');
+      selectNode(btn.dataset.chMilestone);
+    });
+  });
+
+  readerEl.querySelector('#btn-ch-prev')?.addEventListener('click', () => {
+    activeChapterId = prevCh.id;
+    renderChaptersView();
+    readerEl.scrollTop = 0;
+  });
+
+  readerEl.querySelector('#btn-ch-next')?.addEventListener('click', () => {
+    activeChapterId = nextCh.id;
+    renderChaptersView();
+    readerEl.scrollTop = 0;
+  });
+}
 
 // ==================== LIVE INDEXER TAB ====================
 let indexerData = null;
@@ -1421,7 +1579,7 @@ function renderIndexerView() {
           const topicChips = (it.topics || [])
             .map((tid) => {
               const hub = TOPIC_HUBS.find((h) => h.id === tid);
-              return `<button class="lineage-btn" data-open-brain-topic="${tid}">[[${hub ? hub.short : tid}]]</button>`;
+              return `<button class="lineage-btn" data-open-brain-topic="${tid}">${hub ? hub.short : tid}</button>`;
             })
             .join('');
           return `
@@ -1477,7 +1635,7 @@ function renderIndexerView() {
 
 document.getElementById('btn-sync-now')?.addEventListener('click', async () => {
   const btn = document.getElementById('btn-sync-now');
-  btn.textContent = '⟳ Crawling 18 feeds...';
+  btn.textContent = 'Refreshing...';
   btn.disabled = true;
   try {
     const res = await fetch('/api/sync', { method: 'POST' });
@@ -1489,7 +1647,7 @@ document.getElementById('btn-sync-now')?.addEventListener('click', async () => {
   } catch (err) {
     document.getElementById('indexer-status').textContent = `Crawl error: ${err.message}`;
   } finally {
-    btn.textContent = '⟳ Run Live Crawl';
+    btn.textContent = 'Refresh feed';
     btn.disabled = false;
   }
 });

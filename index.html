@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ML Infra Atlas — Interactive 3D Histomap, Knowledge Brain &amp; Live Indexer (2006–2026)</title>
-  <meta name="description" content="ML Infra Atlas: Explore 20 years of Machine Learning Infrastructure (2006–2026) through a 3D helical histomap, 3D Obsidian knowledge brain for beginners, and live RSS/arXiv/GitHub indexer." />
+  <title>ML Infra Atlas — History, Knowledge Graph &amp; Study Guide (2006–2026)</title>
+  <meta name="description" content="ML Infra Atlas: Interactive 3D timeline, 3D knowledge graph, chapter-wise study guide, and live engineering feed for Machine Learning Infrastructure (2006–2026)." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ML Infra Atlas — 2006–2026 Interactive 3D History &amp; Knowledge Brain" />
-  <meta property="og:description" content="From CUDA &amp; AlexNet to FlashAttention, vLLM, SGLang, DeepSeek DualPipe &amp; 2026 AI Factories — plus a 3D Obsidian Brain for beginners and 26 curated ML engineer &amp; lab blogs." />
+  <meta property="og:title" content="ML Infra Atlas — 2006–2026" />
+  <meta property="og:description" content="An interactive 3D histomap, 3D knowledge graph, and 10-chapter study guide covering GPUs, CUDA, Triton, FlashAttention, distributed training, vLLM, SGLang, and RL infra." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ML Infra Atlas — 2006–2026" />
-  <meta name="twitter:description" content="Interactive 3D helical histomap + 3D Obsidian Knowledge Brain + Live RSS/arXiv Indexer for Machine Learning Infrastructure." />
+  <meta name="twitter:description" content="Interactive 3D histomap, knowledge graph, and chapter-wise field guide to Machine Learning Infrastructure." />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
   <script type="importmap">
     {
@@ -26,18 +26,18 @@
   </script>
 </head>
 <body>
-  <!-- Minimalist Editorial Top Header -->
+  <!-- Clean Unified Top Header -->
   <header class="top-bar">
     <div class="top-left">
       <div class="brand-title">
-        <span>ML Infra</span> <em>Atlas</em>
+        ML Infra <span>Atlas</span>
       </div>
 
-      <!-- Primary Workspace Tabs -->
       <nav class="main-tabs" role="tablist">
-        <button class="main-tab active" data-view="histomap">3D Histomap</button>
-        <button class="main-tab" data-view="brain">Obsidian Brain</button>
-        <button class="main-tab" data-view="indexer">Live Indexer</button>
+        <button class="main-tab active" data-view="histomap">Histomap</button>
+        <button class="main-tab" data-view="brain">Knowledge Graph</button>
+        <button class="main-tab" data-view="chapters">Chapters</button>
+        <button class="main-tab" data-view="indexer">Live Feed</button>
       </nav>
     </div>
 
@@ -50,17 +50,17 @@
         <input
           id="search-input"
           type="text"
-          placeholder="Search systems, topics, blogs..."
+          placeholder="Search systems, chapters, blogs..."
           autocomplete="off"
         />
         <div id="search-results" class="search-results hidden"></div>
       </div>
 
-      <button id="btn-blogs" class="nav-link" title="Top ML Engineers & Research Lab Blogs">
-        Blogs &amp; Labs <span id="blogs-count-badge" class="count-tag">26</span>
+      <button id="btn-blogs" class="nav-link" title="Curated ML engineers and research lab blogs">
+        Blogs <span id="blogs-count-badge" class="count-tag">26</span>
       </button>
-      <button id="btn-add-modal" class="nav-link" title="Add X Article or Custom Milestone">+ Add X</button>
-      <button id="btn-share-x" class="nav-link primary" title="Share current view on X / Twitter">Share 𝕏</button>
+      <button id="btn-add-modal" class="nav-link" title="Add an article or milestone">Add link</button>
+      <button id="btn-share-x" class="nav-link primary" title="Share on X">Share</button>
     </div>
   </header>
 
@@ -69,29 +69,26 @@
     <div id="webgl-container"></div>
     <div id="labels-layer"></div>
 
-    <!-- Clean Stage Controls Bar (Domain Filters + POV Reset) -->
     <div class="stage-top-bar">
       <div class="domain-pills" id="domain-filters"></div>
       <div class="stage-pov-controls">
-        <button id="btn-reset-pov" class="mini-pov-btn" title="Drag to orbit 360° · Scroll to travel through time">Reset POV</button>
+        <button id="btn-reset-pov" class="mini-pov-btn" title="Reset camera angle">Reset view</button>
       </div>
     </div>
 
-    <!-- Right Editorial Feed / Deep-Dive Panel -->
     <aside class="editorial-panel" id="editorial-panel">
       <div class="editorial-header" id="editorial-header">
         <h2 class="editorial-heading" id="editorial-heading">This year</h2>
         <div class="editorial-sub-actions">
-          <button id="btn-back-year" class="back-btn hidden">← Back to year</button>
+          <button id="btn-back-year" class="back-btn hidden">Back to year</button>
         </div>
       </div>
       <div class="editorial-body" id="editorial-body"></div>
     </aside>
 
-    <!-- Bottom Histogram Scrubber + Giant Serif Year Display -->
     <footer class="bottom-bar">
       <div class="histogram-section">
-        <button id="btn-play" class="mini-play-btn" title="Auto-scroll through time (2006 → 2026)">
+        <button id="btn-play" class="mini-play-btn" title="Auto-scroll timeline">
           <span id="play-icon">▶</span>
         </button>
         <div class="histogram-wrap" id="histogram-wrap">
@@ -109,14 +106,14 @@
         </div>
       </div>
 
-      <div class="giant-year-block" id="giant-year-block" title="Click to jump to 2026 & reset POV">
+      <div class="giant-year-block" id="giant-year-block" title="Jump to 2026">
         <div class="giant-year" id="giant-year">2026</div>
-        <div class="giant-year-sub" id="giant-year-sub">Scroll to travel · 2006–2026</div>
+        <div class="giant-year-sub" id="giant-year-sub">Scroll to move through time</div>
       </div>
     </footer>
   </section>
 
-  <!-- ==================== VIEW 2: OBSIDIAN BRAIN (3D) ==================== -->
+  <!-- ==================== VIEW 2: 3D KNOWLEDGE GRAPH ==================== -->
   <section id="view-brain" class="view-section hidden">
     <div class="brain-stage">
       <div id="brain-webgl"></div>
@@ -124,7 +121,7 @@
       <div class="brain-toolbar">
         <label class="toggle-chip">
           <input type="checkbox" id="chk-guided" checked />
-          <span>Path (1 → 10)</span>
+          <span>Learning path</span>
         </label>
         <label class="toggle-chip">
           <input type="checkbox" id="chk-milestones" checked />
@@ -134,39 +131,53 @@
           <input type="checkbox" id="chk-blogs" />
           <span>Blogs</span>
         </label>
-        <label class="spread-control" title="Elongate / expand spacing between clusters in 3D">
-          <span>Elongate</span>
+        <label class="spread-control" title="Expand spacing between clusters">
+          <span>Spacing</span>
           <input type="range" id="brain-spread" min="0.7" max="2.4" step="0.05" value="1.15" />
         </label>
-        <button id="btn-brain-reset" class="mini-pov-btn">Center 3D</button>
+        <button id="btn-brain-reset" class="mini-pov-btn">Center</button>
       </div>
     </div>
 
     <aside class="editorial-panel brain-note-panel">
       <div class="editorial-header">
-        <h2 class="editorial-heading">Knowledge Note</h2>
-        <span class="count-tag">Obsidian View</span>
+        <h2 class="editorial-heading">Notes</h2>
       </div>
       <div class="editorial-body" id="brain-note-body"></div>
     </aside>
   </section>
 
-  <!-- ==================== VIEW 3: LIVE INDEXER & CRAWLER ==================== -->
+  <!-- ==================== VIEW 3: CHAPTER-WISE STUDY GUIDE ==================== -->
+  <section id="view-chapters" class="view-section hidden">
+    <div class="chapters-layout">
+      <aside class="chapters-toc">
+        <div class="toc-header">
+          <h2>Study Guide</h2>
+          <span id="chapters-progress" class="toc-progress">0 / 10 completed</span>
+        </div>
+        <div id="chapters-toc-list" class="toc-list"></div>
+      </aside>
+
+      <main class="chapters-reader" id="chapters-reader"></main>
+    </div>
+  </section>
+
+  <!-- ==================== VIEW 4: LIVE FEED & INDEXER ==================== -->
   <section id="view-indexer" class="view-section hidden">
     <div class="indexer-layout">
       <div class="indexer-main">
         <div class="indexer-header">
           <div>
-            <h2 class="editorial-heading" style="font-style:normal;">Live ML Infra Indexer</h2>
-            <p class="indexer-sub" id="indexer-status">Crawls 18 official RSS/Atom feeds, GitHub Releases &amp; arXiv ML Systems papers, auto-tagging each entry into the Obsidian Brain.</p>
+            <h2 class="editorial-heading">Live Engineering Feed</h2>
+            <p class="indexer-sub" id="indexer-status">Tracks 18 official RSS feeds, GitHub releases, and arXiv ML systems papers.</p>
           </div>
           <div class="indexer-actions">
-            <button id="btn-sync-now" class="nav-link primary">⟳ Run Live Crawl</button>
+            <button id="btn-sync-now" class="nav-link primary">Refresh feed</button>
           </div>
         </div>
 
         <div class="indexer-cli-box">
-          <span class="cli-label">CLI / Cron Automation:</span>
+          <span class="cli-label">Local crawl command</span>
           <code>/usr/bin/ruby /Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy/indexer.rb</code>
         </div>
 
@@ -175,69 +186,69 @@
       </div>
 
       <aside class="indexer-sources-col">
-        <div class="section-label" style="margin-top:0;">Monitored Sources (18 Feeds)</div>
+        <div class="section-label" style="margin-top:0;">Monitored Sources (18)</div>
         <div class="sources-list" id="indexer-sources"></div>
       </aside>
     </div>
   </section>
 
-  <!-- Blogs & Research Labs Observatory Drawer -->
+  <!-- Blogs & Research Labs Drawer -->
   <aside id="blogs-drawer" class="drawer left-wide hidden">
     <div class="drawer-header">
       <div>
-        <h2 class="drawer-title">ML Infra Blogs &amp; Labs Index</h2>
-        <p class="drawer-sub">Curated blogs from top ML engineers, frontier labs &amp; systems researchers</p>
+        <h2 class="drawer-title">Blogs &amp; Labs</h2>
+        <p class="drawer-sub">Engineering blogs from ML infra practitioners and research labs</p>
       </div>
-      <button id="btn-close-blogs" class="icon-btn small" title="Close (Esc)">✕</button>
+      <button id="btn-close-blogs" class="icon-btn small" title="Close">✕</button>
     </div>
     <div class="blogs-controls">
-      <input id="blogs-search" type="text" placeholder="Filter by engineer, lab, topic (e.g. CUDA, DeepMind, vLLM)..." />
+      <input id="blogs-search" type="text" placeholder="Filter by author, lab, or topic..." />
       <div class="blogs-tabs">
         <button class="tab-btn active" data-cat="all">All</button>
-        <button class="tab-btn" data-cat="engineer">Top Engineers</button>
-        <button class="tab-btn" data-cat="lab">AI Companies &amp; Labs</button>
+        <button class="tab-btn" data-cat="engineer">Engineers</button>
+        <button class="tab-btn" data-cat="lab">Companies &amp; Labs</button>
       </div>
     </div>
     <div id="blogs-list" class="blogs-list"></div>
   </aside>
 
-  <!-- Add X Article / Custom Milestone Modal -->
+  <!-- Add Link / Custom Milestone Modal -->
   <div id="add-modal" class="modal-backdrop hidden">
     <div class="modal-card">
       <div class="modal-header">
-        <h2>Add X Article or Custom Milestone</h2>
+        <h2>Add Link or Milestone</h2>
         <button id="btn-close-modal" class="icon-btn small">✕</button>
       </div>
       <div class="modal-tabs">
-        <button class="tab-btn active" data-modal-tab="attach">Attach Link / X Thread</button>
-        <button class="tab-btn" data-modal-tab="newstar">Create New Milestone</button>
+        <button class="tab-btn active" data-modal-tab="attach">Attach article or post</button>
+        <button class="tab-btn" data-modal-tab="newstar">New milestone</button>
       </div>
 
       <form id="form-attach" class="modal-form">
         <label>
-          <span>Target Milestone</span>
+          <span>Target milestone</span>
           <select id="attach-node-select" required></select>
         </label>
         <label>
-          <span>Resource Title</span>
-          <input id="attach-title" type="text" placeholder="e.g. Horace He thread on FP8 Matmuls" required />
+          <span>Title</span>
+          <input id="attach-title" type="text" placeholder="e.g. Horace He thread on FP8 matmuls" required />
         </label>
         <label>
-          <span>URL (X article, thread, blog, or paper)</span>
-          <input id="attach-url" type="url" placeholder="https://x.com/..." required />
+          <span>URL</span>
+          <input id="attach-url" type="url" placeholder="https://..." required />
         </label>
         <label>
           <span>Type</span>
           <select id="attach-type">
-            <option value="x">X Article / Thread</option>
-            <option value="blog">Engineering Blog</option>
+            <option value="x">X post / article</option>
+            <option value="blog">Blog post</option>
             <option value="paper">Paper</option>
-            <option value="repo">GitHub Repo</option>
+            <option value="repo">Repository</option>
           </select>
         </label>
         <div class="modal-footer">
-          <button type="button" id="btn-export-json" class="nav-link">Export Custom JSON</button>
-          <button type="submit" class="nav-link primary">Save Resource</button>
+          <button type="button" id="btn-export-json" class="nav-link">Export JSON</button>
+          <button type="submit" class="nav-link primary">Save</button>
         </div>
       </form>
 
@@ -258,7 +269,7 @@
             <select id="new-domain" required></select>
           </label>
           <label>
-            <span>Entity Type</span>
+            <span>Type</span>
             <select id="new-type">
               <option value="breakthrough">Breakthrough</option>
               <option value="framework">Framework</option>
@@ -269,19 +280,19 @@
           </label>
         </div>
         <label>
-          <span>Organization / Author</span>
+          <span>Organization or author</span>
           <input id="new-org" type="text" placeholder="e.g. PyTorch Team" />
         </label>
         <label>
-          <span>One-line Summary</span>
-          <input id="new-tagline" type="text" placeholder="Why did this matter in ML infra?" required />
+          <span>One-line summary</span>
+          <input id="new-tagline" type="text" placeholder="Why did this matter?" required />
         </label>
         <label>
-          <span>Primary Link (X Article / Blog / Paper)</span>
-          <input id="new-url" type="url" placeholder="https://x.com/... or https://..." />
+          <span>Link (optional)</span>
+          <input id="new-url" type="url" placeholder="https://..." />
         </label>
         <label>
-          <span>Connect From Existing Milestone (Optional)</span>
+          <span>Connected from (optional)</span>
           <select id="new-parent"></select>
         </label>
         <div class="modal-footer">
