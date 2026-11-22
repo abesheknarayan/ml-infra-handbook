@@ -2,11 +2,11 @@
 // Clean chalkboard-navy aesthetic, vector arrows, live data packets, and interactive challenges.
 
 export const FACTORY_STATIONS = [
-  { id: 'cluster',  label: '1. Cluster & Data',   chapters: ['ch-9', 'ch-10'] },
-  { id: 'serving',  label: '2. Serving Engine',   chapters: ['ch-7', 'ch-8'] },
-  { id: 'fabric',   label: '3. NVLink / Network', chapters: ['ch-6'] },
-  { id: 'hbm',      label: '4. HBM Memory',       chapters: ['ch-1', 'ch-4', 'ch-5'] },
-  { id: 'compute',  label: '5. SRAM & Cores',     chapters: ['ch-1', 'ch-2', 'ch-3'] }
+  { id: 'cluster',  label: '1. Cluster & Data',   chapters: ['ch-0', 'ch-9', 'ch-10'] },
+  { id: 'serving',  label: '2. Serving Engine',   chapters: ['ch-0', 'ch-7', 'ch-8'] },
+  { id: 'fabric',   label: '3. NVLink / Network', chapters: ['ch-0', 'ch-6'] },
+  { id: 'hbm',      label: '4. HBM Memory',       chapters: ['ch-0', 'ch-1', 'ch-4', 'ch-5'] },
+  { id: 'compute',  label: '5. SRAM & Cores',     chapters: ['ch-0', 'ch-1', 'ch-2', 'ch-3'] }
 ];
 
 const C = {
@@ -68,6 +68,116 @@ function drawArrow(ctx, x1, y1, x2, y2, color = 'rgba(255,255,255,0.22)') {
 
 export function mountChapterSimulation({ chapterId, containerEl, onChallengeSolved }) {
   const configs = {
+    'ch-0': {
+      title: 'The Full ML Infra Factory: End-to-End Request & Training Flow',
+      challenge: 'Switch between Inference Mode and Training Mode to see how the same 5 stations run both workloads.',
+      controlsHtml: `
+        <div class="sim-btn-group">
+          <button class="sim-btn active" data-fmode="inference">Inference (Serving a Prompt)</button>
+          <button class="sim-btn" data-fmode="training">Training (Updating Weights)</button>
+        </div>`,
+      state: { mode: 'inference', seenTraining: false, solved: false },
+      bind(el, st) {
+        el.querySelectorAll('[data-fmode]').forEach((b) => {
+          b.addEventListener('click', () => {
+            el.querySelectorAll('[data-fmode]').forEach((x) => x.classList.remove('active'));
+            b.classList.add('active');
+            st.mode = b.dataset.fmode;
+            if (st.mode === 'training') st.seenTraining = true;
+          });
+        });
+      },
+      draw(ctx, w, h, t, st, markSolved) {
+        const isTrain = st.mode === 'training';
+        if (st.seenTraining && !st.solved) {
+          st.solved = true;
+          markSolved();
+        }
+
+        const stations = [
+          { title: isTrain ? 'Data & Cluster' : 'User Prompt', sub: isTrain ? 'K8s / Slurm / Ray' : 'API Gateway', color: C.blue },
+          { title: isTrain ? 'Batch Loader' : 'Serving Engine', sub: isTrain ? 'Sharded Batches' : 'vLLM / SGLang', color: C.blue },
+          { title: 'Network Fabric', sub: 'NVLink / IB', color: C.amber },
+          { title: 'HBM Memory', sub: isTrain ? 'Weights + Grads' : 'Weights + KV', color: C.amber },
+          { title: 'SRAM & Cores', sub: 'Matmuls & Kernels', color: C.mint }
+        ];
+
+        const gap = 16;
+        const pad = 22;
+        const bw = (w - pad * 2 - gap * 4) / 5;
+        const bh = 86;
+        const y = 52;
+
+        stations.forEach((s, i) => {
+          const x = pad + i * (bw + gap);
+          drawBox(ctx, x, y, bw, bh, s.title, s.sub, s.color);
+
+          // Tiny internal activity indicator
+          const pulse = 0.35 + 0.65 * Math.abs(Math.sin(t * 3.2 - i * 0.6));
+          roundRect(ctx, x + 14, y + 54, bw - 28, 16, 4);
+          ctx.fillStyle = `rgba(88, 196, 221, ${0.12 + pulse * 0.28})`;
+          ctx.fill();
+
+          if (i < stations.length - 1) {
+            drawArrow(ctx, x + bw + 2, y + bh / 2, x + bw + gap - 2, y + bh / 2, 'rgba(255,255,255,0.35)');
+          }
+        });
+
+        // Forward packet traveling left -> right across the whole factory
+        const p = (t * 0.32) % 1;
+        const totalSpan = w - pad * 2 - bw;
+        const fx = pad + bw / 2 + p * totalSpan;
+        ctx.beginPath();
+        ctx.arc(fx, y + bh / 2, 5.5, 0, Math.PI * 2);
+        ctx.fillStyle = isTrain ? C.amber : C.blue;
+        ctx.fill();
+
+        // Return feedback arc (Tokens out in Inference / Gradients + Weight Update in Training)
+        ctx.beginPath();
+        ctx.moveTo(w - pad - bw / 2, y + bh + 6);
+        ctx.quadraticCurveTo(w / 2, y + bh + 54, pad + bw / 2, y + bh + 6);
+        ctx.strokeStyle = isTrain ? 'rgba(244, 185, 66, 0.5)' : 'rgba(92, 214, 160, 0.5)';
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+
+        // Moving return packet along quadratic curve
+        const rp = (t * 0.38 + 0.5) % 1;
+        const x0 = w - pad - bw / 2;
+        const y0 = y + bh + 6;
+        const xc = w / 2;
+        const yc = y + bh + 54;
+        const x2 = pad + bw / 2;
+        const y2 = y + bh + 6;
+        const omt = 1 - rp;
+        const rx = omt * omt * x0 + 2 * omt * rp * xc + rp * rp * x2;
+        const ry = omt * omt * y0 + 2 * omt * rp * yc + rp * rp * y2;
+        ctx.beginPath();
+        ctx.arc(rx, ry, 4.5, 0, Math.PI * 2);
+        ctx.fillStyle = isTrain ? C.amber : C.mint;
+        ctx.fill();
+
+        ctx.font = '500 11px "JetBrains Mono", monospace';
+        ctx.fillStyle = isTrain ? C.amber : C.mint;
+        ctx.textAlign = 'center';
+        ctx.fillText(
+          isTrain ? 'Backward Pass: AllReduce Gradients → Update Weights in HBM' : 'Stream Generated Output Tokens Back to User',
+          w / 2,
+          y + bh + 44
+        );
+
+        ctx.font = '500 12px "JetBrains Mono", monospace';
+        ctx.textAlign = 'left';
+        ctx.fillStyle = C.muted;
+        ctx.fillText(
+          isTrain
+            ? 'Training bottlenecks: MFU, HBM capacity & multi-node NVLink/IB gradient sync'
+            : 'Inference bottlenecks: TTFT (prefill compute) & TPOT (HBM bandwidth during decode)',
+          22,
+          h - 12
+        );
+      }
+    },
+
     'ch-1': {
       title: 'HBM → SRAM → Tensor Cores (Roofline Simulator)',
       challenge: 'Increase Batch Size until Tensor Core utilization passes 80% (compute-bound).',

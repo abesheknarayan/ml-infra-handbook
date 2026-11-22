@@ -1432,9 +1432,11 @@ function renderChaptersView() {
 
   const factoryHtml = FACTORY_STATIONS.map((st, sIdx) => {
     const isFocus = st.chapters.includes(ch.id);
-    const isMastered = st.chapters.some((cid) => doneSet.has(cid));
+    const nonZeroChapters = st.chapters.filter((cid) => cid !== 'ch-0');
+    const isMastered = nonZeroChapters.some((cid) => doneSet.has(cid));
+    const targetCh = nonZeroChapters[0] || 'ch-0';
     const arrow = sIdx < FACTORY_STATIONS.length - 1 ? '<span class="factory-arrow">→</span>' : '';
-    return `<button class="factory-node ${isFocus ? 'focus' : ''} ${isMastered ? 'mastered' : ''}" data-factory-ch="${st.chapters[0]}">${st.label}</button>${arrow}`;
+    return `<button class="factory-node ${isFocus ? 'focus' : ''} ${isMastered ? 'mastered' : ''}" data-factory-ch="${targetCh}">${st.label}</button>${arrow}`;
   }).join('');
 
   readerEl.innerHTML = `

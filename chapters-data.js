@@ -3,6 +3,39 @@
 
 export const CHAPTERS = [
   {
+    id: 'ch-0',
+    number: 0,
+    part: 'Part 0 · Big Picture',
+    title: 'The ML Infra Factory: End-to-End Overview',
+    readTime: '6 min read',
+    level: 'Start here',
+    intro:
+      'Before zooming into GPUs, kernels, or serving engines, step back and look at the entire machine. Whether you are training a trillion-parameter model or streaming a single ChatGPT reply, every workload travels through the same five-station factory.',
+    sections: [
+      {
+        heading: 'The Five Stations in Order',
+        body:
+          '1) Cluster & Data (Ch. 9–10): Schedulers like Kubernetes, Slurm, and Ray allocate thousands of GPUs, stream training data, checkpoint progress, and run RL rollout sandboxes. 2) Serving Engine (Ch. 7–8): Systems like vLLM and SGLang accept user prompts, batch requests dynamically, and manage KV cache memory. 3) Network Fabric (Ch. 6): NVLink (inside a server) and InfiniBand/Ethernet (across servers) move gradients and KV caches between GPUs. 4) HBM Memory Vault (Ch. 1, 4–5): High-Bandwidth Memory holds the model weights and KV cache on each chip. 5) SRAM & Tensor Cores (Ch. 1–3): The actual matrix-multiply engines that turn weights and tokens into predictions.'
+      },
+      {
+        heading: 'Why Chapter 1 Starts at the GPU',
+        body:
+          'Once you see the whole factory, one question naturally follows: why is everything above the chip so complicated? Because of the physics at Stations 4 and 5. A modern GPU does math far faster than it can read weights from HBM, and a single chip is too small to hold frontier models. Every tool you will learn—Triton, torch.compile, FlashAttention, quantization, FSDP, vLLM, and disaggregated serving—exists to work around those exact hardware limits. Understanding the GPU first makes every other chapter click immediately.'
+      }
+    ],
+    practice: [
+      'Toggle the factory animation above between Inference Mode and Training Mode and trace where each workload spends most of its time.',
+      'Click any of the 5 stations in the Factory Strip at the top to preview how each chapter maps to a specific part of the stack.',
+      'When you are ready, click "Next: Ch 1" to zoom straight into Station 4 & 5 (HBM → SRAM → Tensor Cores).'
+    ],
+    readings: [
+      { title: 'How to Scale Your Model (Overview) — Google DeepMind', url: 'https://jax-ml.github.io/scaling-book/' },
+      { title: 'The Ultra-Scale Playbook — Hugging Face', url: 'https://huggingface.co/spaces/nanotron/ultrascale-playbook' }
+    ],
+    relatedMilestones: ['cuda', 'pytorch', 'flashattention', 'vllm', 'deepseek-infra'],
+    brainTopicId: 'topic-gpus'
+  },
+  {
     id: 'ch-1',
     number: 1,
     part: 'Part I · Hardware & Execution',
