@@ -1,9 +1,9 @@
 {
-  "name": "ml-infra-atlas",
+  "name": "ml-infra-handbook",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "ML Infra Atlas — Interactive 3D Helical Histomap, 3D Obsidian Knowledge Brain & Live Indexer of Machine Learning Infrastructure (2006–2026)",
+  "description": "ML Infra Handbook — Interactive 3D Helical Histomap, 3D Knowledge Graph, Chapter-Wise Study Guide & Live Feed (2006–2026)",
   "engines": {
     "node": ">=20.0.0"
   },

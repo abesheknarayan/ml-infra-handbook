@@ -1,6 +1,6 @@
-# ML Infra Atlas (2006 – 2026)
+# ML Infra Handbook (2006 – 2026)
 
-An interactive **3D Helical Histomap**, **3D Obsidian-style Beginner Knowledge Brain**, and **Live RSS / arXiv / GitHub Releases Indexer** mapping 20 years of Machine Learning Infrastructure—from CUDA (2006) and AlexNet to FlashAttention, vLLM, SGLang, DeepSeek DualPipe/DeepEP, Blackwell NVL72, and 2026 AI Factories.
+An interactive **3D Helical Histomap**, **3D Knowledge Graph**, **11-Chapter Study Guide with live factory animations**, and **Live RSS / arXiv / GitHub Releases Feed** mapping 20 years of Machine Learning Infrastructure—from CUDA (2006) and AlexNet to FlashAttention, vLLM, SGLang, DeepSeek DualPipe/DeepEP, Blackwell NVL72, and 2026 AI Factories.
 
 ## Highlights
 - **3D Histomap:** Sweeping blue helical mosaic cylinder (`Three.js`), scroll-wheel time travel (`2006 ↔ 2026`), full 360° POV orbiting, bottom density histogram scrubber, and live right-hand editorial feed.

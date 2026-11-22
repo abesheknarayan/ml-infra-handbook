@@ -1082,7 +1082,7 @@ document.getElementById('btn-export-json').addEventListener('click', () => {
   const blob = new Blob([JSON.stringify(loadCustomData(), null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'ml-infra-atlas-custom.json';
+  a.download = 'ml-infra-handbook-custom.json';
   a.click();
 });
 
@@ -1720,10 +1720,12 @@ document.getElementById('btn-share-x')?.addEventListener('click', () => {
   const shareUrl = window.location.href;
   const selNode = state.selectedNodeId ? state.nodes.find((n) => n.id === state.selectedNodeId) : null;
   const text = selNode
-    ? `Exploring ${selNode.name} (${selNode.year}) on ML Infra Atlas — interactive 3D Histomap & 3D Knowledge Brain (2006–2026):`
+    ? `Exploring ${selNode.name} (${selNode.year}) in the ML Infra Handbook — interactive 3D Histomap, Knowledge Graph & Chapters (2006–2026):`
     : currentView === 'brain'
-      ? `Check out the 3D Obsidian Knowledge Brain on ML Infra Atlas (10-step beginner roadmap from CUDA to vLLM, DeepSeek & RL infra):`
-      : `Built ML Infra Atlas — an interactive 3D Helical Histomap (2006–2026) + 3D Knowledge Brain + live RSS/arXiv indexer for Machine Learning Infrastructure:`;
+      ? `Check out the 3D Knowledge Graph in the ML Infra Handbook (from GPUs & CUDA to FlashAttention, vLLM, DeepSeek & RL infra):`
+      : currentView === 'chapters'
+        ? `Check out the interactive ML Infra Handbook — 11 chapters with live HBM-to-GPU factory animations:`
+        : `ML Infra Handbook — an interactive 3D Helical Histomap (2006–2026), 3D Knowledge Graph, 11-chapter guide & live engineering feed:`;
   window.open(
     `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`,
     '_blank',
