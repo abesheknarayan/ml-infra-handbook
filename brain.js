@@ -682,6 +682,11 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
   window.addEventListener('resize', () => {
     if (active) resize();
   });
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(() => {
+      if (active) resize();
+    }).observe(container);
+  }
 
   const projVec = new THREE.Vector3();
   const clock = new THREE.Clock();

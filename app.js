@@ -1120,6 +1120,9 @@ function syncCameraToViewport() {
 }
 
 window.addEventListener('resize', syncCameraToViewport);
+if (typeof ResizeObserver !== 'undefined') {
+  new ResizeObserver(() => syncCameraToViewport()).observe(container);
+}
 syncCameraToViewport();
 
 // ==================== 60FPS ANIMATION LOOP ====================
@@ -1424,6 +1427,9 @@ function renderChaptersView() {
   tocEl.querySelectorAll('[data-ch]').forEach((btn) => {
     btn.addEventListener('click', () => {
       activeChapterId = btn.dataset.ch;
+      document.getElementById('chapters-toc')?.classList.remove('open');
+      const actEl = document.getElementById('mobile-toc-action');
+      if (actEl) actEl.textContent = 'Chapters ▾';
       renderChaptersView();
       readerEl.scrollTop = 0;
     });
@@ -1431,6 +1437,8 @@ function renderChaptersView() {
 
   const idx = CHAPTERS.findIndex((c) => c.id === activeChapterId);
   const ch = CHAPTERS[idx] || CHAPTERS[0];
+  const mobileCurEl = document.getElementById('mobile-toc-current');
+  if (mobileCurEl) mobileCurEl.textContent = `Ch ${ch.number} · ${ch.title}`;
   const prevCh = idx > 0 ? CHAPTERS[idx - 1] : null;
   const nextCh = idx < CHAPTERS.length - 1 ? CHAPTERS[idx + 1] : null;
   const isDone = doneSet.has(ch.id);
@@ -1582,6 +1590,14 @@ function renderChaptersView() {
     readerEl.scrollTop = 0;
   });
 }
+
+document.getElementById('btn-mobile-toc')?.addEventListener('click', () => {
+  const toc = document.getElementById('chapters-toc');
+  const act = document.getElementById('mobile-toc-action');
+  if (!toc) return;
+  const opened = toc.classList.toggle('open');
+  if (act) act.textContent = opened ? 'Close ▴' : 'Chapters ▾';
+});
 
 // ==================== LIVE INDEXER TAB ====================
 let indexerData = null;

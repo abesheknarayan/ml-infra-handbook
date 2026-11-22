@@ -1050,9 +1050,8 @@ export function mountChapterSimulation({ chapterId, containerEl, onChallengeSolv
     if (!running) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const clientW = canvas.clientWidth || 680;
-    // Use a 640px logical coordinate system on narrow mobile screens so diagrams scale like crisp vectors with zero text overlap
-    const logicalW = Math.max(640, clientW);
-    const logicalH = 256;
+    const logicalW = Math.max(600, clientW);
+    const logicalH = 264;
     const scale = clientW / logicalW;
     const displayH = Math.round(logicalH * scale);
 

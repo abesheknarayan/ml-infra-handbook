@@ -154,10 +154,15 @@
   <!-- ==================== VIEW 3: CHAPTER-WISE STUDY GUIDE ==================== -->
   <section id="view-chapters" class="view-section hidden">
     <div class="chapters-layout">
-      <aside class="chapters-toc">
+      <button id="btn-mobile-toc" class="mobile-toc-bar" type="button">
+        <span id="mobile-toc-current">Ch 0 · The ML Infra Factory</span>
+        <span class="mobile-toc-action" id="mobile-toc-action">Chapters ▾</span>
+      </button>
+
+      <aside class="chapters-toc" id="chapters-toc">
         <div class="toc-header">
           <h2>Study Guide</h2>
-          <span id="chapters-progress" class="toc-progress">0 / 10 completed</span>
+          <span id="chapters-progress" class="toc-progress">0 / 11 completed</span>
         </div>
         <div id="chapters-toc-list" class="toc-list"></div>
       </aside>
