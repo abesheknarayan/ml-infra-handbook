@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-22T15:54:30.482Z",
-  "totalItems": 119,
+  "lastSyncedAt": "2026-11-22T21:30:55.100Z",
+  "totalItems": 126,
   "sources": [
     {
       "id": "deepmind",
@@ -182,9 +182,8 @@
       "name": "SGLang Releases",
       "kind": "release",
       "url": "https://github.com/sgl-project/sglang/releases.atom",
-      "status": "error",
-      "error": "This operation was aborted",
-      "count": 0
+      "status": "ok",
+      "count": 7
     },
     {
       "id": "gh-pytorch",
@@ -282,10 +281,10 @@
   ],
   "items": [
     {
-      "title": "trunk/4324c01ab74732eebd6f90d73c08ec3996389140",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4324c01ab74732eebd6f90d73c08ec3996389140",
-      "publishedAt": "2026-11-22T12:37:38.000Z",
-      "summary": "Revert \"Declare has_denorm of the float8 numeric_limits as a float_de…",
+      "title": "viable/strict/1795380584",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795380584",
+      "publishedAt": "2026-11-22T16:46:14.000Z",
+      "summary": "[Test Refactoring] Standardizing the definition format for `device_ty…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -294,10 +293,34 @@
       ]
     },
     {
-      "title": "trunk/642748a888d9034acb357bb7b68f105c96a5b20f",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F642748a888d9034acb357bb7b68f105c96a5b20f",
-      "publishedAt": "2026-11-22T10:31:26.000Z",
-      "summary": "Round float64 to float16, bfloat16 and float8 once in default convers…",
+      "title": "viable/strict/1795378803: [XPU] Enable SDPA training checks in test_fused_attention (#201614)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795378803",
+      "publishedAt": "2026-11-22T15:56:34.000Z",
+      "summary": "Since #162454 and #181559 have been landed, this PR is to remove the XPU skip for sdpa backward from _check_common , so XPU runs the training half of the pattern rewriter tests. The only tests that break are test_sdpa_rewriter_25/26/27 . Th",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795368000",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795368000",
+      "publishedAt": "2026-11-22T12:56:10.000Z",
+      "summary": "[MPS] Fix conv2d and conv_transpose2d for batch sizes above 65535 ( #2 …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795366216",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795366216",
+      "publishedAt": "2026-11-22T12:37:39.000Z",
+      "summary": "Revert \"Round float64 to float16, bfloat16 and float8 once in default…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -308,18 +331,6 @@
     {
       "title": "viable/strict/1795339242",
       "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795339242",
-      "publishedAt": "2026-11-22T04:48:02.000Z",
-      "summary": "[c10d] Fix Gloo runLoop deadlock: release finished works outside work…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/60a7fa585a70d2daefe9f3ab7889fbcc89f1cee2",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F60a7fa585a70d2daefe9f3ab7889fbcc89f1cee2",
       "publishedAt": "2026-11-22T04:48:02.000Z",
       "summary": "[c10d] Fix Gloo runLoop deadlock: release finished works outside work…",
       "sourceId": "gh-pytorch",
@@ -354,13 +365,13 @@
       ]
     },
     {
-      "title": "trunk/2571acd9719ac8c69d075300e881ee18b88f7043: [torchtitan hash update] update the pinned torchtitan hash (#206041)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F2571acd9719ac8c69d075300e881ee18b88f7043",
-      "publishedAt": "2026-11-22T04:20:28.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206041 Approved by: https://github.com/pytorchbot",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "Perplexity and Intelligence",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "publishedAt": "2026-11-22T00:00:00.000Z",
+      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
@@ -650,10 +661,10 @@
       ]
     },
     {
-      "title": "Explore the Codex Security Plugin",
-      "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+      "title": "Deploying Daybreak Red",
+      "url": "https://openai.com/business/learn/deploying-daybreak-red",
       "publishedAt": "2026-11-19T00:00:00.000Z",
-      "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "summary": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.",
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
       "kind": "lab",
@@ -666,18 +677,6 @@
       "url": "https://openai.com/business/learn/pr-scans-demo",
       "publishedAt": "2026-11-19T00:00:00.000Z",
       "summary": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Get started with Daybreak Blue",
-      "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
-      "publishedAt": "2026-11-19T00:00:00.000Z",
-      "summary": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started.",
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
       "kind": "lab",
@@ -806,6 +805,18 @@
         "topic-gpus",
         "topic-quantization",
         "topic-inference"
+      ]
+    },
+    {
+      "title": "router-v0.1.0",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/router-v0.1.0",
+      "publishedAt": "2026-11-18T00:34:15.000Z",
+      "summary": "[CI] sgl-router: Release the router image and PyPI wheel from router-…",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
       ]
     },
     {
@@ -1125,6 +1136,18 @@
       ]
     },
     {
+      "title": "v0.5.23",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.23",
+      "publishedAt": "2026-11-02T22:14:10.000Z",
+      "summary": "Highlights 1007 PRs from 257 contributors. New models Model Type Cookbook Muse Spark Open LLM / VLM link Beam-1.0 LLM / VLM link MiniMax-M3.1-Flash LLM / VLM link MiniCPM-V 4.7 LLM / VLM link Kev LLM / VLM link Cosmos3-Nano-Sim (Bimanual, T",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
       "title": "v0.33.0",
       "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0",
       "publishedAt": "2026-11-01T09:21:10.000Z",
@@ -1210,6 +1233,18 @@
       ]
     },
     {
+      "title": "v0.5.22",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.22",
+      "publishedAt": "2026-10-19T05:55:53.000Z",
+      "summary": "Highlights 950 PRs from 245 contributors. New models Model Type Cookbook Clef / Clef Flash LLM / VLM link PPLX-Decider v1 / v1.1 LLM / VLM link EmbeddingGemma 2 LLM / VLM link LLaDA2.2 LLM / VLM HunyuanImage-3.0-Instruct Diffusion link Kand",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
       "title": "Meta shakes up the frontiers, open and closed",
       "url": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
       "publishedAt": "2026-10-17T14:06:54.000Z",
@@ -1240,6 +1275,18 @@
       "summary": "gfx950 tutorial pin v3.0: upstream main at 3b0c7f0 (PR #12209 , the …",
       "sourceId": "gh-triton",
       "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.5.21",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.21",
+      "publishedAt": "2026-10-02T19:42:55.000Z",
+      "summary": "Highlights 779 PRs from 227 contributors. New models Model Type Cookbook DeepSeek-V4.1 Flash LLM / VLM link GigaChat 3.5 LLM / VLM link IQuest-Q1 LLM / VLM link MiMo-V2.6 / MiMo-V2.6-Pro LLM / VLM link Ling-3.0-flash-VL LLM / VLM link Diffu",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
       "kind": "release",
       "topics": [
         "topic-frameworks"
@@ -1282,6 +1329,30 @@
       ]
     },
     {
+      "title": "v0.5.20",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.20",
+      "publishedAt": "2026-09-18T22:41:33.000Z",
+      "summary": "Highlights 713 PRs from 237 contributors. New models in this release (see the cookbook for all supported models): Model Type PRs Cookbook GLM-5.3-Flash Autoregressive #36507 , #38621 link Hy4-Preview Autoregressive #36805 link Qwen3.8-Flash",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.5.19",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.19",
+      "publishedAt": "2026-09-05T02:27:42.000Z",
+      "summary": "Highlights 786 PRs from 214 contributors. New models in this release (see the cookbook for all supported models): Model Type PRs Cookbook Qwen3.8 (2.4T-A95B) Autoregressive #35758 ⭐ link Qwen3.8-27B Autoregressive #34859 link dots3.note Aut",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
       "title": "gfx950-tutorial-v2.1",
       "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v2.1",
       "publishedAt": "2026-08-31T03:20:09.000Z",
@@ -1303,6 +1374,18 @@
       "kind": "release",
       "topics": [
         "topic-kernels",
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.5.18",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.18",
+      "publishedAt": "2026-08-24T23:08:04.000Z",
+      "summary": "Highlights 710 PRs from 212 contributors. New models in this release (see the cookbook for all supported models): Model Type PRs Cookbook Muse Glimmer Autoregressive (Multimodal) #34262 link Intern-S2-Mobius Autoregressive #33691 link SANA-",
+      "sourceId": "gh-sglang",
+      "sourceName": "SGLang Releases",
+      "kind": "release",
+      "topics": [
         "topic-frameworks"
       ]
     },
