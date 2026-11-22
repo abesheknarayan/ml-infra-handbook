@@ -1658,8 +1658,18 @@ let indexerData = null;
 let indexerTopicFilter = 'all';
 let indexerPage = 1;
 const INDEXER_PER_PAGE = 10;
+const FEED_AUTO_REFRESH_MS = 2 * 60 * 60 * 1000; // 2 hours
+let feedAutoTimer = null;
+
+function ensureFeedAutoRefresh() {
+  if (feedAutoTimer || !ownerEnabled) return;
+  feedAutoTimer = setInterval(() => {
+    if (currentView === 'indexer') loadIndexedFeed();
+  }, FEED_AUTO_REFRESH_MS);
+}
 
 async function loadIndexedFeed() {
+  ensureFeedAutoRefresh();
   try {
     const secret = getOwnerSecret();
     const headers = secret ? { 'x-admin-secret': secret } : {};
