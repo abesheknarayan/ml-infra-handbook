@@ -1049,36 +1049,41 @@ export function mountChapterSimulation({ chapterId, containerEl, onChallengeSolv
   function frame(now) {
     if (!running) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const w = canvas.clientWidth || 680;
-    const h = 256;
-    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      canvas.style.height = `${h}px`;
+    const clientW = canvas.clientWidth || 680;
+    // Use a 640px logical coordinate system on narrow mobile screens so diagrams scale like crisp vectors with zero text overlap
+    const logicalW = Math.max(640, clientW);
+    const logicalH = 256;
+    const scale = clientW / logicalW;
+    const displayH = Math.round(logicalH * scale);
+
+    if (canvas.width !== Math.round(clientW * dpr) || canvas.height !== Math.round(displayH * dpr)) {
+      canvas.width = Math.round(clientW * dpr);
+      canvas.height = Math.round(displayH * dpr);
+      canvas.style.height = `${displayH}px`;
     }
 
     ctx.save();
-    ctx.scale(dpr, dpr);
+    ctx.scale(dpr * scale, dpr * scale);
     ctx.fillStyle = C.bg;
-    ctx.fillRect(0, 0, w, h);
+    ctx.fillRect(0, 0, logicalW, logicalH);
 
     // Subtle 3B1B-style coordinate grid
     ctx.strokeStyle = 'rgba(255,255,255,0.025)';
     ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 28) {
+    for (let x = 0; x < logicalW; x += 28) {
       ctx.beginPath();
       ctx.moveTo(x, 0);
-      ctx.lineTo(x, h);
+      ctx.lineTo(x, logicalH);
       ctx.stroke();
     }
-    for (let y = 0; y < h; y += 28) {
+    for (let y = 0; y < logicalH; y += 28) {
       ctx.beginPath();
       ctx.moveTo(0, y);
-      ctx.lineTo(w, y);
+      ctx.lineTo(logicalW, y);
       ctx.stroke();
     }
 
-    cfg.draw(ctx, w, h, (now - startTime) * 0.001, st, markSolved);
+    cfg.draw(ctx, logicalW, logicalH, (now - startTime) * 0.001, st, markSolved);
     ctx.restore();
 
     rafId = requestAnimationFrame(frame);

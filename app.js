@@ -1109,13 +1109,18 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-window.addEventListener('resize', () => {
+function syncCameraToViewport() {
   const { w, h } = getStageSize();
+  const isMobile = window.innerWidth <= 900;
   camera.aspect = w / h;
-  camera.position.z = w < 640 ? 198 : w < 900 ? 178 : 162;
+  camera.position.set(isMobile ? 0 : 14, isMobile ? 10 : 14, isMobile ? (w < 460 ? 225 : 195) : 162);
+  camera.lookAt(isMobile ? 0 : 6, -2, 0);
   camera.updateProjectionMatrix();
   renderer.setSize(w, h);
-});
+}
+
+window.addEventListener('resize', syncCameraToViewport);
+syncCameraToViewport();
 
 // ==================== 60FPS ANIMATION LOOP ====================
 const dummy = new THREE.Object3D();
@@ -1133,11 +1138,12 @@ function animate() {
   state.tiltY += (state.targetTiltY - state.tiltY) * 0.08;
 
   const { w: stageW, h: stageH } = getStageSize();
+  const isMobile = window.innerWidth <= 900;
 
-  // Slide the helical tunnel smoothly with generous margin away from the right sidebar
+  // Slide the helical tunnel smoothly centered inside the stage
   const activeX = yearToX(state.displayYear);
-  helixRoot.position.x = -18 - (activeX - 10) * 0.45;
-  helixRoot.rotation.y = 0.42 + state.tiltY;
+  helixRoot.position.x = (isMobile ? -4 : -18) - (activeX - 10) * (isMobile ? 0.35 : 0.45);
+  helixRoot.rotation.y = (isMobile ? 0.34 : 0.42) + state.tiltY;
   helixRoot.rotation.x = 0.08 + state.tiltX;
 
   // Helical rotation driven smoothly by scrolling through time + ultra-gentle cosmic breath
@@ -1210,8 +1216,8 @@ function animate() {
     obj.group.scale.setScalar(scale);
     obj.cardMat.opacity = isSelected || isHovered ? 1 : Math.max(0.18, proximity * 0.95);
 
-    // Collect only the tight active-year candidates for non-overlapping labels
-    if (isSelected || isHovered || dist <= 1.1) {
+    // Collect active-year candidates for non-overlapping labels (hidden on small phones where feed sits directly below)
+    if (window.innerWidth > 680 && (isSelected || isHovered || dist <= 1.1)) {
       obj.group.getWorldPosition(projVec);
       projVec.project(camera);
       if (projVec.z < 1 && projVec.z > -1) {
