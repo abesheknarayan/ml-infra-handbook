@@ -9,6 +9,7 @@ import {
 } from './data.js';
 import { TOPIC_HUBS } from './brain-data.js';
 import { CHAPTERS } from './chapters-data.js';
+import { FACTORY_STATIONS, mountChapterSimulation } from './chapter-visuals.js';
 import { createObsidianBrain } from './brain.js';
 
 const STORAGE_KEY = 'ml-infra-galaxy-custom-v1';
@@ -1335,6 +1336,9 @@ function switchView(viewName) {
   }
   if (viewName === 'chapters') {
     renderChaptersView();
+  } else if (stopChapterSim) {
+    stopChapterSim();
+    stopChapterSim = null;
   }
   if (viewName === 'indexer') {
     loadIndexedFeed();
@@ -1368,9 +1372,10 @@ document.getElementById('btn-brain-reset')?.addEventListener('click', () => {
   brainInstance.resetCamera();
 });
 
-// ==================== CHAPTER-WISE STUDY GUIDE ====================
+// ==================== CHAPTER-WISE STUDY GUIDE + 3B1B FACTORY SIMULATIONS ====================
 const CHAPTER_STORAGE_KEY = 'ml-infra-atlas-chapters-done-v1';
 let activeChapterId = CHAPTERS[0].id;
+let stopChapterSim = null;
 
 function loadCompletedChapters() {
   try {
@@ -1425,8 +1430,19 @@ function renderChaptersView() {
     .map((id) => state.nodes.find((n) => n.id === id))
     .filter(Boolean);
 
+  const factoryHtml = FACTORY_STATIONS.map((st, sIdx) => {
+    const isFocus = st.chapters.includes(ch.id);
+    const isMastered = st.chapters.some((cid) => doneSet.has(cid));
+    const arrow = sIdx < FACTORY_STATIONS.length - 1 ? '<span class="factory-arrow">→</span>' : '';
+    return `<button class="factory-node ${isFocus ? 'focus' : ''} ${isMastered ? 'mastered' : ''}" data-factory-ch="${st.chapters[0]}">${st.label}</button>${arrow}`;
+  }).join('');
+
   readerEl.innerHTML = `
     <article class="chapter-article">
+      <div class="factory-strip" title="ML Infra Factory — highlighted stations are the focus of this chapter">
+        ${factoryHtml}
+      </div>
+
       <div class="chapter-meta">
         <span>Chapter ${ch.number}</span>
         <span>·</span>
@@ -1436,6 +1452,8 @@ function renderChaptersView() {
       </div>
       <h1 class="chapter-title">${ch.title}</h1>
       <p class="chapter-intro">${ch.intro}</p>
+
+      <div id="chapter-sim-mount"></div>
 
       ${ch.sections
         .map(
@@ -1487,6 +1505,39 @@ function renderChaptersView() {
       </div>
     </article>
   `;
+
+  if (stopChapterSim) {
+    stopChapterSim();
+    stopChapterSim = null;
+  }
+  const simMount = readerEl.querySelector('#chapter-sim-mount');
+  if (simMount) {
+    stopChapterSim = mountChapterSimulation({
+      chapterId: ch.id,
+      containerEl: simMount,
+      onChallengeSolved(solvedChId) {
+        const nextSet = loadCompletedChapters();
+        if (!nextSet.has(solvedChId)) {
+          nextSet.add(solvedChId);
+          saveCompletedChapters(nextSet);
+          progEl.textContent = `${nextSet.size} / ${CHAPTERS.length} completed`;
+          tocEl.querySelector(`[data-ch="${solvedChId}"]`)?.classList.add('done');
+          const numEl = tocEl.querySelector(`[data-ch="${solvedChId}"] .toc-num`);
+          if (numEl) numEl.textContent = '✓';
+          const chk = readerEl.querySelector('#chk-ch-done');
+          if (chk) chk.checked = true;
+        }
+      }
+    });
+  }
+
+  readerEl.querySelectorAll('[data-factory-ch]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeChapterId = btn.dataset.factoryCh;
+      renderChaptersView();
+      readerEl.scrollTop = 0;
+    });
+  });
 
   readerEl.querySelector('#chk-ch-done')?.addEventListener('change', (e) => {
     const nextSet = loadCompletedChapters();
