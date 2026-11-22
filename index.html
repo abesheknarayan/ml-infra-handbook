@@ -41,7 +41,7 @@
         <button class="main-tab active" data-view="histomap">Histomap</button>
         <button class="main-tab" data-view="brain"><span class="tab-long">Knowledge </span>Graph</button>
         <button class="main-tab" data-view="chapters">Chapters</button>
-        <button class="main-tab" data-view="indexer">Live Feed</button>
+        <button id="tab-live-feed" class="main-tab hidden" data-view="indexer">Live Feed</button>
       </nav>
     </div>
 
@@ -184,11 +184,6 @@
           <div class="indexer-actions">
             <button id="btn-sync-now" class="nav-link primary">Refresh feed</button>
           </div>
-        </div>
-
-        <div class="indexer-cli-box">
-          <span class="cli-label">Local crawl command</span>
-          <code>/usr/bin/ruby /Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy/indexer.rb</code>
         </div>
 
         <div class="indexer-filters" id="indexer-topic-filters"></div>

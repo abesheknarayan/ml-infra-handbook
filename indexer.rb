@@ -2,7 +2,7 @@
 # ML Infra Histomap — Live RSS / Atom / arXiv / GitHub Releases Indexer
 # Zero external dependencies (uses macOS built-in Ruby stdlib).
 # Run manually:   /usr/bin/ruby indexer.rb
-# Or via cron:    0 */6 * * * /usr/bin/ruby /Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy/indexer.rb
+# Or via cron:    0 */6 * * * ruby /path/to/ml-infra-handbook/indexer.rb
 
 require 'net/http'
 require 'uri'

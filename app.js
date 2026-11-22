@@ -1326,7 +1326,30 @@ const brainInstance = createObsidianBrain({
   }
 });
 
+// Live Feed is private (visible only on localhost or when unlocked with ?admin=1)
+const ADMIN_STORAGE_KEY = 'ml-infra-handbook-owner-v1';
+function isOwnerMode() {
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') return true;
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('admin') === '1') {
+    localStorage.setItem(ADMIN_STORAGE_KEY, '1');
+    return true;
+  }
+  if (params.get('admin') === '0') {
+    localStorage.removeItem(ADMIN_STORAGE_KEY);
+    return false;
+  }
+  return localStorage.getItem(ADMIN_STORAGE_KEY) === '1';
+}
+
+const ownerEnabled = isOwnerMode();
+if (ownerEnabled) {
+  document.getElementById('tab-live-feed')?.classList.remove('hidden');
+}
+
 function switchView(viewName) {
+  if (viewName === 'indexer' && !ownerEnabled) viewName = 'histomap';
   currentView = viewName;
   document.querySelectorAll('.main-tab').forEach((t) => {
     t.classList.toggle('active', t.dataset.view === viewName);
@@ -1620,8 +1643,8 @@ function renderIndexerView() {
   if (!indexerData) return;
   const statusEl = document.getElementById('indexer-status');
   const syncText = indexerData.lastSyncedAt
-    ? `Last synced: ${new Date(indexerData.lastSyncedAt).toLocaleString()} · ${indexerData.items?.length || 0} indexed items`
-    : `Starter index loaded (${indexerData.items?.length || 0} items). Click "Run Live Crawl" or run indexer.rb in your terminal to pull live RSS/arXiv/GitHub updates.`;
+    ? `Last updated ${new Date(indexerData.lastSyncedAt).toLocaleString()} · ${indexerData.items?.length || 0} indexed articles & releases`
+    : `Curated feed loaded (${indexerData.items?.length || 0} items). Click "Refresh feed" to fetch the latest RSS, GitHub, and arXiv updates.`;
   statusEl.textContent = syncText;
 
   // Topic filter pills

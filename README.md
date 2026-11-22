@@ -14,22 +14,20 @@ An interactive **3D Helical Histomap**, **3D Knowledge Graph**, **11-Chapter Stu
 ## Deploy to Vercel (Recommended)
 
 ### Option A: GitHub → Vercel (1-Click, No CLI Needed)
-1. Push `/Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy` to a new GitHub repository.
+1. Fork or clone this repository.
 2. Go to [vercel.com/new](https://vercel.com/new), import the repo, and click **Deploy**.
 3. Zero build config required—Vercel automatically serves the static frontend from the Edge CDN, deploys `/api/feed` and `/api/sync` as Node 20 serverless functions with 1-hour Edge caching, and enables the daily cron job in `vercel.json`.
 
 ### Option B: Vercel CLI
 ```bash
-cd /Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy
 npx vercel --prod
 ```
 
 ## Run Locally
 ```bash
-cd /Users/abeshek/.gemini/antigravity/scratch/ml-infra-galaxy
-/usr/bin/ruby server.rb
+ruby server.rb
 ```
 Open `http://localhost:8765`. To run a live crawl locally:
 ```bash
-/usr/bin/ruby indexer.rb
+ruby indexer.rb
 ```
