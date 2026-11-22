@@ -1,194 +1,1738 @@
 {
-  "lastSyncedAt": "2026-11-22T06:00:00Z",
-  "totalItems": 12,
+  "lastSyncedAt": "2026-11-22T15:54:30.482Z",
+  "totalItems": 119,
   "sources": [
-    { "id": "deepmind", "name": "Google DeepMind", "kind": "lab", "url": "https://deepmind.google/blog/rss.xml", "status": "ready", "count": 0 },
-    { "id": "meta-eng", "name": "Engineering at Meta", "kind": "lab", "url": "https://engineering.fb.com/category/ml-applications/feed/", "status": "ready", "count": 0 },
-    { "id": "openai", "name": "OpenAI News & Research", "kind": "lab", "url": "https://openai.com/news/rss.xml", "status": "ready", "count": 0 },
-    { "id": "thinking-mach", "name": "Thinking Machines Lab", "kind": "lab", "url": "https://thinkingmachines.ai/blog/index.xml", "status": "ready", "count": 0 },
-    { "id": "ai2", "name": "Allen Institute (Ai2)", "kind": "lab", "url": "https://blog.allenai.org/feed", "status": "ready", "count": 0 },
-    { "id": "epoch-ai", "name": "Epoch AI Institute", "kind": "lab", "url": "https://epoch.ai/atom.xml", "status": "ready", "count": 0 },
-    { "id": "pytorch", "name": "PyTorch Blog", "kind": "lab", "url": "https://pytorch.org/feed.xml", "status": "ready", "count": 0 },
-    { "id": "huggingface", "name": "Hugging Face Blog", "kind": "lab", "url": "https://huggingface.co/blog/feed.xml", "status": "ready", "count": 0 },
-    { "id": "vllm", "name": "vLLM Blog", "kind": "lab", "url": "https://blog.vllm.ai/feed.xml", "status": "ready", "count": 0 },
-    { "id": "lmsys", "name": "LMSYS / SGLang Blog", "kind": "lab", "url": "https://lmsys.org/atom.xml", "status": "ready", "count": 0 },
-    { "id": "nvidia", "name": "NVIDIA Tech Blog", "kind": "lab", "url": "https://developer.nvidia.com/blog/feed/", "status": "ready", "count": 0 },
-    { "id": "modal", "name": "Modal Blog", "kind": "lab", "url": "https://modal.com/blog/feed.xml", "status": "ready", "count": 0 },
-    { "id": "coreweave", "name": "CoreWeave Blog", "kind": "lab", "url": "https://www.coreweave.com/blog/rss.xml", "status": "ready", "count": 0 },
-    { "id": "semianalysis", "name": "SemiAnalysis", "kind": "lab", "url": "https://www.semianalysis.com/feed", "status": "ready", "count": 0 },
-    { "id": "lilian-weng", "name": "Lilian Weng (Lil'Log)", "kind": "engineer", "url": "https://lilianweng.github.io/index.xml", "status": "ready", "count": 0 },
-    { "id": "horace-he", "name": "Horace He", "kind": "engineer", "url": "https://horace.io/feed.xml", "status": "ready", "count": 0 },
-    { "id": "tim-dettmers", "name": "Tim Dettmers", "kind": "engineer", "url": "https://timdettmers.com/feed/", "status": "ready", "count": 0 },
-    { "id": "interconnects", "name": "Nathan Lambert", "kind": "engineer", "url": "https://www.interconnects.ai/feed", "status": "ready", "count": 0 },
-    { "id": "chip-huyen", "name": "Chip Huyen", "kind": "engineer", "url": "https://huyenchip.com/feed.xml", "status": "ready", "count": 0 },
-    { "id": "simon-boehm", "name": "Simon Boehm", "kind": "engineer", "url": "https://siboehm.com/feed.xml", "status": "ready", "count": 0 },
-    { "id": "gh-vllm", "name": "vLLM Releases", "kind": "release", "url": "https://github.com/vllm-project/vllm/releases.atom", "status": "ready", "count": 0 },
-    { "id": "gh-sglang", "name": "SGLang Releases", "kind": "release", "url": "https://github.com/sgl-project/sglang/releases.atom", "status": "ready", "count": 0 },
-    { "id": "gh-pytorch", "name": "PyTorch Releases", "kind": "release", "url": "https://github.com/pytorch/pytorch/releases.atom", "status": "ready", "count": 0 },
-    { "id": "gh-triton", "name": "Triton Releases", "kind": "release", "url": "https://github.com/triton-lang/triton/releases.atom", "status": "ready", "count": 0 },
-    { "id": "arxiv-mlsys", "name": "arXiv ML Systems", "kind": "paper", "url": "https://export.arxiv.org/api/query", "status": "ready", "count": 0 }
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "kind": "lab",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "meta-eng",
+      "name": "Engineering at Meta",
+      "kind": "lab",
+      "url": "https://engineering.fb.com/category/ml-applications/feed/",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI News & Research",
+      "kind": "lab",
+      "url": "https://openai.com/news/rss.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "thinking-mach",
+      "name": "Thinking Machines Lab",
+      "kind": "lab",
+      "url": "https://thinkingmachines.ai/blog/index.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "ai2",
+      "name": "Allen Institute (Ai2)",
+      "kind": "lab",
+      "url": "https://blog.allenai.org/feed",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "epoch-ai",
+      "name": "Epoch AI Institute",
+      "kind": "lab",
+      "url": "https://epoch.ai/atom.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch Blog",
+      "kind": "lab",
+      "url": "https://pytorch.org/feed.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face Blog",
+      "kind": "lab",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM Blog",
+      "kind": "lab",
+      "url": "https://blog.vllm.ai/feed.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "lmsys",
+      "name": "LMSYS / SGLang Blog",
+      "kind": "lab",
+      "url": "https://lmsys.org/atom.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "url": "https://developer.nvidia.com/blog/feed/",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "modal",
+      "name": "Modal Blog",
+      "kind": "lab",
+      "url": "https://modal.com/blog/feed.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave Blog",
+      "kind": "lab",
+      "url": "https://www.coreweave.com/blog/rss.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "semianalysis",
+      "name": "SemiAnalysis",
+      "kind": "lab",
+      "url": "https://www.semianalysis.com/feed",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "lilian-weng",
+      "name": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "url": "https://lilianweng.github.io/index.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "horace-he",
+      "name": "Horace He",
+      "kind": "engineer",
+      "url": "https://horace.io/feed.xml",
+      "status": "error",
+      "error": "HTTP 404",
+      "count": 0
+    },
+    {
+      "id": "tim-dettmers",
+      "name": "Tim Dettmers",
+      "kind": "engineer",
+      "url": "https://timdettmers.com/feed/",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "interconnects",
+      "name": "Nathan Lambert",
+      "kind": "engineer",
+      "url": "https://www.interconnects.ai/feed",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "chip-huyen",
+      "name": "Chip Huyen",
+      "kind": "engineer",
+      "url": "https://huyenchip.com/feed.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "simon-boehm",
+      "name": "Simon Boehm",
+      "kind": "engineer",
+      "url": "https://siboehm.com/feed.xml",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "gh-vllm",
+      "name": "vLLM Releases",
+      "kind": "release",
+      "url": "https://github.com/vllm-project/vllm/releases.atom",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "gh-sglang",
+      "name": "SGLang Releases",
+      "kind": "release",
+      "url": "https://github.com/sgl-project/sglang/releases.atom",
+      "status": "error",
+      "error": "This operation was aborted",
+      "count": 0
+    },
+    {
+      "id": "gh-pytorch",
+      "name": "PyTorch Releases",
+      "kind": "release",
+      "url": "https://github.com/pytorch/pytorch/releases.atom",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "gh-triton",
+      "name": "Triton Releases",
+      "kind": "release",
+      "url": "https://github.com/triton-lang/triton/releases.atom",
+      "status": "ok",
+      "count": 7
+    },
+    {
+      "id": "arxiv-mlsys",
+      "name": "arXiv ML Systems",
+      "kind": "paper",
+      "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
+      "status": "ok",
+      "count": 7
+    }
   ],
   "emergingParadigms": [
     {
-      "id": "paradigm-kernel-ai",
-      "name": "Autonomous Kernel Synthesis & Deterministic Kernels",
-      "description": "RL-guided agents (AlphaEvolve, KernelBench) synthesizing GPU kernels and batch-invariant deterministic numerics (Thinking Machines).",
-      "signalCount": 2,
-      "items": [
-        { "title": "Connectionism — Batch-Invariant Kernels & Inference Determinism", "url": "https://thinkingmachines.ai/blog/", "sourceName": "Thinking Machines Lab", "publishedAt": "2025-09-10T00:00:00Z" },
-        { "title": "KernelBench: Evaluating LLMs on Writing Fast GPU Kernels", "url": "https://arxiv.org/abs/2502.10517", "sourceName": "arXiv ML Systems", "publishedAt": "2025-02-15T00:00:00Z" }
-      ]
-    },
-    {
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
-      "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained MoE experts over NVL72 & RDMA.",
-      "signalCount": 2,
+      "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
+      "signalCount": 4,
       "items": [
-        { "title": "DeepSeek Open-Source Infra Index (DualPipe, DeepEP, FlashMLA, 3FS)", "url": "https://github.com/deepseek-ai/open-infra-index", "sourceName": "DeepSeek AI", "publishedAt": "2025-03-01T00:00:00Z" },
-        { "title": "SGLang & RadixAttention: Wide-EP MoE & PD Disaggregation", "url": "https://lmsys.org/blog/", "sourceName": "LMSYS / SGLang Blog", "publishedAt": "2025-03-10T00:00:00Z" }
+        {
+          "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
+          "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
+          "sourceName": "CoreWeave Blog",
+          "publishedAt": "2026-11-19T22:51:31.000Z"
+        },
+        {
+          "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
+          "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+          "sourceName": "NVIDIA Tech Blog",
+          "publishedAt": "2026-11-19T20:28:13.000Z"
+        },
+        {
+          "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
+          "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-09-16T17:38:01.000Z"
+        },
+        {
+          "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
+          "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-08-20T04:56:35.000Z"
+        }
       ]
     },
     {
-      "id": "paradigm-rl-factories",
-      "name": "Async RLVR & Sandboxed Agent Compute",
-      "description": "Merging high-throughput serving engines with ephemeral microVM sandboxes for verifiable-reward reinforcement learning.",
-      "signalCount": 2,
-      "items": [
-        { "title": "HybridFlow / verl: Flexible RLHF & GRPO Post-Training Engine", "url": "https://arxiv.org/abs/2409.19256", "sourceName": "arXiv ML Systems", "publishedAt": "2025-01-20T00:00:00Z" },
-        { "title": "OLMo & Tulu Open Post-Training Recipes", "url": "https://allenai.org/blog", "sourceName": "Allen Institute (Ai2)", "publishedAt": "2025-02-05T00:00:00Z" }
-      ]
+      "id": "paradigm-kernel-ai",
+      "name": "Autonomous Kernel Synthesis & Discovery",
+      "description": "RL-guided and evolutionary agents (AlphaEvolve, KernelBench) automatically writing, verifying, and optimizing CUDA, Triton, and PTX kernels.",
+      "signalCount": 0,
+      "items": []
     },
     {
       "id": "paradigm-decentralized",
       "name": "Low-Communication & Decentralized Training (DiLoCo)",
-      "description": "Training across geo-distributed clusters over standard internet links by synchronizing outer gradients infrequently.",
-      "signalCount": 1,
-      "items": [
-        { "title": "INTELLECT & Decentralized Training with DiLoCo", "url": "https://www.primeintellect.ai/blog", "sourceName": "Prime Intellect", "publishedAt": "2025-01-12T00:00:00Z" }
-      ]
+      "description": "Training frontier models across geographically distributed clusters over standard internet links by synchronizing gradients infrequently.",
+      "signalCount": 0,
+      "items": []
+    },
+    {
+      "id": "paradigm-rl-factories",
+      "name": "Async RLVR & Sandboxed Agent Compute",
+      "description": "Merging high-throughput serving engines with fleets of ephemeral microVM sandboxes for verifiable-reward reinforcement learning.",
+      "signalCount": 0,
+      "items": []
+    },
+    {
+      "id": "paradigm-sub4bit",
+      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
+      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
+      "signalCount": 0,
+      "items": []
+    },
+    {
+      "id": "paradigm-non-ar",
+      "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
+      "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
+      "signalCount": 0,
+      "items": []
     }
   ],
   "items": [
     {
-      "title": "Connectionism — Batch-Invariant Kernels, LoRA & Post-Training Systems",
-      "url": "https://thinkingmachines.ai/blog/",
-      "publishedAt": "2025-09-10T00:00:00Z",
-      "summary": "Deep systems essays on inference determinism, batch-invariant GPU reductions, and RL post-training dynamics.",
-      "sourceId": "thinking-mach",
-      "sourceName": "Thinking Machines Lab",
-      "kind": "lab",
-      "topics": ["topic-kernels", "topic-inference", "topic-rl"]
+      "title": "trunk/4324c01ab74732eebd6f90d73c08ec3996389140",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4324c01ab74732eebd6f90d73c08ec3996389140",
+      "publishedAt": "2026-11-22T12:37:38.000Z",
+      "summary": "Revert \"Declare has_denorm of the float8 numeric_limits as a float_de…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "How to Scale Your Model: A Systems View of LLMs on TPUs",
-      "url": "https://jax-ml.github.io/scaling-book/",
-      "publishedAt": "2025-02-10T00:00:00Z",
-      "summary": "Google DeepMind's roofline-first textbook on distributed sharding, accelerators, and inference math.",
-      "sourceId": "deepmind",
-      "sourceName": "Google DeepMind",
-      "kind": "lab",
-      "topics": ["topic-gpus", "topic-distributed", "topic-inference"]
+      "title": "trunk/642748a888d9034acb357bb7b68f105c96a5b20f",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F642748a888d9034acb357bb7b68f105c96a5b20f",
+      "publishedAt": "2026-11-22T10:31:26.000Z",
+      "summary": "Round float64 to float16, bfloat16 and float8 once in default convers…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "Building Meta’s 24K+ GPU Clusters, RoCE Fabrics & TorchTitan",
-      "url": "https://engineering.fb.com/category/ml-applications/",
-      "publishedAt": "2025-03-18T00:00:00Z",
-      "summary": "Production cluster networking, GPU failure diagnostics, FSDP2, and large-scale Llama training engineering.",
-      "sourceId": "meta-eng",
-      "sourceName": "Engineering at Meta",
-      "kind": "lab",
-      "topics": ["topic-distributed", "topic-orchestration", "topic-frameworks"]
+      "title": "viable/strict/1795339242",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795339242",
+      "publishedAt": "2026-11-22T04:48:02.000Z",
+      "summary": "[c10d] Fix Gloo runLoop deadlock: release finished works outside work…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "Bare-Metal Kubernetes, InfiniBand & GB200 NVL72 Cluster Engineering",
-      "url": "https://www.coreweave.com/blog",
-      "publishedAt": "2025-04-05T00:00:00Z",
-      "summary": "High-density liquid-cooled Blackwell clusters, Slurm-on-Kubernetes scheduling, and MLPerf benchmarks.",
-      "sourceId": "coreweave",
-      "sourceName": "CoreWeave Blog",
-      "kind": "lab",
-      "topics": ["topic-gpus", "topic-orchestration", "topic-distributed"]
+      "title": "trunk/60a7fa585a70d2daefe9f3ab7889fbcc89f1cee2",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F60a7fa585a70d2daefe9f3ab7889fbcc89f1cee2",
+      "publishedAt": "2026-11-22T04:48:02.000Z",
+      "summary": "[c10d] Fix Gloo runLoop deadlock: release finished works outside work…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "The GPU Glossary — Interactive Reference to GPU Architecture & CUDA",
-      "url": "https://modal.com/gpu-glossary",
-      "publishedAt": "2025-04-01T00:00:00Z",
-      "summary": "Clean visual guide to SMs, warps, Tensor Cores, HBM, shared memory, and CUDA execution.",
-      "sourceId": "modal",
-      "sourceName": "Modal Blog",
-      "kind": "lab",
-      "topics": ["topic-gpus", "topic-kernels"]
+      "title": "viable/strict/1795337411: [vision hash update] update the pinned vision hash (#205962)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795337411",
+      "publishedAt": "2026-11-22T04:30:55.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Update the pinned vision hash. Pull Request resolved: #205962 Approved by: https://github.com/pytorchbot",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "PyTorch Engineering Blog — FlexAttention, FSDP2 & torch.compile",
-      "url": "https://pytorch.org/blog/",
-      "publishedAt": "2025-03-22T00:00:00Z",
-      "summary": "Compiler-backed custom attention masks, composable DTensor parallelism, and FP8 training recipes.",
-      "sourceId": "pytorch",
-      "sourceName": "PyTorch Blog",
-      "kind": "lab",
-      "topics": ["topic-frameworks", "topic-attention", "topic-distributed"]
+      "title": "viable/strict/1795335789: [torchtitan hash update] update the pinned torchtitan hash (#206041)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795335789",
+      "publishedAt": "2026-11-22T04:20:28.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206041 Approved by: https://github.com/pytorchbot",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "OLMo & Tulu Open Pretraining and Post-Training Systems",
-      "url": "https://allenai.org/blog",
-      "publishedAt": "2025-02-05T00:00:00Z",
-      "summary": "Open data pipelines, training stability ablations, and RLVR post-training infrastructure from Ai2.",
-      "sourceId": "ai2",
-      "sourceName": "Allen Institute (Ai2)",
-      "kind": "lab",
-      "topics": ["topic-rl", "topic-distributed", "topic-orchestration"]
+      "title": "trunk/2571acd9719ac8c69d075300e881ee18b88f7043: [torchtitan hash update] update the pinned torchtitan hash (#206041)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F2571acd9719ac8c69d075300e881ee18b88f7043",
+      "publishedAt": "2026-11-22T04:20:28.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206041 Approved by: https://github.com/pytorchbot",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "The Ultra-Scale Playbook: Training LLMs on GPU Clusters",
-      "url": "https://huggingface.co/spaces/nanotron/ultrascale-playbook",
-      "publishedAt": "2025-02-20T00:00:00Z",
-      "summary": "Deep practical handbook covering 5D parallelism (DP, TP, PP, CP, EP), FSDP, and cluster communication.",
+      "title": "Combatting adversarial distillation",
+      "url": "https://openai.com/index/combatting-adversarial-distillation",
+      "publishedAt": "2026-11-20T10:00:00.000Z",
+      "summary": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Can AI help scientists identify promising drug candidates?",
+      "url": "https://openai.com/index/introducing-medchembench",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "summary": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+      "url": "https://huggingface.co/blog/inkling2mini",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "summary": "",
       "sourceId": "huggingface",
       "sourceName": "Hugging Face Blog",
       "kind": "lab",
-      "topics": ["topic-distributed", "topic-orchestration"]
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "DeepSeek Open-Source Infra Index (DualPipe, DeepEP, FlashMLA, 3FS)",
-      "url": "https://github.com/deepseek-ai/open-infra-index",
-      "publishedAt": "2025-03-01T00:00:00Z",
-      "summary": "Bare-metal MoE communication kernels, bidirectional pipelining, FP8 GEMMs, and distributed storage.",
-      "sourceId": "gh-deepseek",
-      "sourceName": "DeepSeek AI",
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
+      "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
+      "publishedAt": "2026-11-19T22:51:31.000Z",
+      "summary": "CoreWeave publishes first-ever measured silicon performance of NVIDIA Vera Rubin NVL72, marking a new milestone in AI infrastructure.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Engineered for Agentic AI: NVIDIA HGX B300 on CoreWeave Cloud",
+      "url": "https://wf.coreweave.com/blog/engineered-for-agentic-ai-nvidia-hgx-b300-on-coreweave-cloud",
+      "publishedAt": "2026-11-19T22:51:31.000Z",
+      "summary": "Unlock the performance of NVIDIA HGX B300 at scale on CoreWeave.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Why Leading AI Teams Rely on CoreWeave Mission Control™",
+      "url": "https://wf.coreweave.com/blog/why-leading-ai-teams-rely-on-coreweave-mission-control",
+      "publishedAt": "2026-11-19T22:51:31.000Z",
+      "summary": "CoreWeave Mission Control defines the new operating standard for the AI Cloud—delivering reliability, transparency, and insight so large-scale AI workloads stay fast, secure, and resilient at scale.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "CoreWeave delivers another industry first: End-to-end automated user provisioning for Slurm clusters",
+      "url": "https://wf.coreweave.com/blog/introducing-automated-user-provisioning-and-sunk-user-provisioning",
+      "publishedAt": "2026-11-19T22:51:31.000Z",
+      "summary": "Accelerate cluster access with AUP and SUP. Automated, secure user provisioning for SUNK (Slurm on Kubernetes) that syncs identities from your IdP or CW IAM in minutes.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
+      "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+      "publishedAt": "2026-11-19T20:28:13.000Z",
+      "summary": "Reinforcement learning (RL) uses rewards to train models to solve problems and complete tasks more successfully. Inference drives this process. Workers generate...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks",
+        "topic-inference",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming",
+      "url": "https://arxiv.org/abs/2611.26619v1",
+      "publishedAt": "2026-11-19T18:58:31.000Z",
+      "summary": "Hybrid architectures have become mainstream among open-weight language models. Their global-attention and bounded-state layers maintain heterogeneous caches whose demands vary with context length and concurrency. We present TideCache, a ser",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-inference",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Why General-Purpose Cloud Platforms Throttle AI Innovation",
+      "url": "https://wf.coreweave.com/blog/why-general-purpose-cloud-platforms-throttle-ai-innovation",
+      "publishedAt": "2026-11-19T18:51:38.000Z",
+      "summary": "General purpose cloud platforms weren’t built for AI. Discover why AI teams need purpose-built infrastructure to move faster and innovate without compromise.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "CoreWeave Data Center Operations: Built for AI",
+      "url": "https://wf.coreweave.com/blog/coreweave-data-center-operations-built-for-ai",
+      "publishedAt": "2026-11-19T18:51:38.000Z",
+      "summary": "Our AI-optimized data centers feature purpose-built infrastructure, including NVIDIA Quantum-2 InfiniBand networking and liquid cooling for high-density, low-latency AI workloads.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "AURA: AUdio-dRiven streaming Avatar",
+      "url": "https://arxiv.org/abs/2611.26540v1",
+      "publishedAt": "2026-11-19T18:17:38.000Z",
+      "summary": "Current audio-driven video diffusion models can synthesize realistic talking-head videos but generally require dozens of diffusion denoising steps over multi-second video chunks, making them unsuitable for streaming applications such as voi",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Aggron: Aggressive Compression of Agentic KV Caches during Head-of-Line Stalls in the Request Queue",
+      "url": "https://arxiv.org/abs/2611.26435v1",
+      "publishedAt": "2026-11-19T17:09:37.000Z",
+      "summary": "LLM agents run long, multi-turn programs whose contexts grow at every step, and serving them is limited by KV cache capacity. To alleviate this limitation, systems use context compression techniques, which typically wait until the KV cache ",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Enabling Real-Time AI for Scientific Instruments with GPU-Native Data Acquisition",
+      "url": "https://developer.nvidia.com/blog/enabling-real-time-ai-for-scientific-instruments-with-gpu-native-data-acquisition/",
+      "publishedAt": "2026-11-19T17:00:00.000Z",
+      "summary": "In science and industry, analyzing sensor measurements in real time can enable AI to adjust processes, guide experiments, and search for better operating...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs",
+      "url": "https://arxiv.org/abs/2611.26363v1",
+      "publishedAt": "2026-11-19T16:31:46.000Z",
+      "summary": "Attention in large language models (LLMs) scores every query against every key with a full dot product. We investigate whether this dot product must be computed completely for attention to be effective. We propose Hidden Sparse Attention (H",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention"
+      ]
+    },
+    {
+      "title": "Build Tool-Calling Parsers in Rust with AI Agents",
+      "url": "https://developer.nvidia.com/blog/build-tool-calling-parsers-in-rust-with-ai-agents/",
+      "publishedAt": "2026-11-19T16:30:46.000Z",
+      "summary": "A tool call can arrive in pieces, an argument can be cut short, or model-specific markup can leak into the answer. A frontend parser turns that output, received...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Beam Model Technical Report",
+      "url": "https://arxiv.org/abs/2611.26358v1",
+      "publishedAt": "2026-11-19T16:28:23.000Z",
+      "summary": "Beam is a sparse Mixture-of-Experts (MoE) model with 501.3B total parameters and 23.4B active parameters, specifically built and optimized for coding, reasoning, and agentic workloads. Beam delivers frontier level reasoning, while requiring",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed",
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "Online Temporal Rotations for 2 Bit KV-Cache Quantization in Video Diffusion Transformers",
+      "url": "https://arxiv.org/abs/2611.26334v1",
+      "publishedAt": "2026-11-19T16:14:13.000Z",
+      "summary": "Video diffusion transformers reuse key--value (KV) caches across denoising steps, which quickly becomes a bottleneck for long video generation. We find that quantizing temporally distant cache vectors leads to a large range and high quantiz",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-quantization"
+      ]
+    },
+    {
+      "title": "How an AI Operating Model Turns Ambition into Lasting Advantage",
+      "url": "https://wf.coreweave.com/blog/how-an-ai-operating-model-turns-ambition-into-lasting-advantage",
+      "publishedAt": "2026-11-19T15:43:42.000Z",
+      "summary": "New Humatica research in partnership with CoreWeave shows that enterprises that rethink their operating models turn AI ambition into lasting, compounding value.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Towards Scale-Up Networking: Challenges and Open Questions",
+      "url": "https://arxiv.org/abs/2611.26156v1",
+      "publishedAt": "2026-11-19T14:12:24.000Z",
+      "summary": "The rapid growth of AI models and the widespread use of distributed training and inference have made inter-accelerator communication a critical system bottleneck. Scale-up fabrics address this bottleneck by combining high per-accelerator ba",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "publishedAt": "2026-11-19T08:00:00.000Z",
+      "summary": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Explore the Codex Security Plugin",
+      "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "See PR scans in action",
+      "url": "https://openai.com/business/learn/pr-scans-demo",
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "summary": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Get started with Daybreak Blue",
+      "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
+      "publishedAt": "2026-11-19T00:00:00.000Z",
+      "summary": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Introducing Gemini 4 Neon",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+      "publishedAt": "2026-11-18T21:35:43.000Z",
+      "summary": "",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.34.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0",
+      "publishedAt": "2026-11-18T21:02:33.000Z",
+      "summary": "v0.34.0 1,061 commits from 412 contributors (120 new). Thank you! TL;DR 10 new models (Mistral Large 4, MiniMax-M3.1-Flash, Nemotron-3.5-Transcribe, and more!) Extensible KV cache is on by default: vLLM sizes the KV cache from memory actual",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
       "kind": "release",
-      "topics": ["topic-distributed", "topic-kernels", "topic-attention", "topic-quantization"]
+      "topics": [
+        "topic-attention",
+        "topic-inference"
+      ]
     },
     {
-      "title": "vLLM V1 Architecture & High-Throughput Serving",
-      "url": "https://blog.vllm.ai/",
-      "publishedAt": "2025-01-27T00:00:00Z",
-      "summary": "Zero-overhead multiprocessing engine, chunked prefill, prefix caching, and disaggregated KV caches.",
-      "sourceId": "vllm",
-      "sourceName": "vLLM Blog",
+      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "publishedAt": "2026-11-18T19:54:56.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
       "kind": "lab",
-      "topics": ["topic-inference", "topic-disagg"]
+      "topics": [
+        "topic-rl"
+      ]
     },
     {
-      "title": "SGLang & RadixAttention: Wide-EP MoE & PD Disaggregation",
-      "url": "https://lmsys.org/blog/",
-      "publishedAt": "2025-03-10T00:00:00Z",
-      "summary": "Radix-tree KV reuse, wide-EP MoE serving, speculative decoding, and RL rollout integration.",
-      "sourceId": "lmsys",
-      "sourceName": "LMSYS / SGLang Blog",
+      "title": "Why your fine-tuning job takes longer than the FLOPs say",
+      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "publishedAt": "2026-11-18T18:53:43.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
       "kind": "lab",
-      "topics": ["topic-inference", "topic-disagg", "topic-rl"]
+      "topics": [
+        "topic-frameworks"
+      ]
     },
     {
-      "title": "Making Deep Learning Go Brrrr From First Principles",
-      "url": "https://horace.io/brrr_intro.html",
-      "publishedAt": "2025-01-15T00:00:00Z",
-      "summary": "Foundational mental models for GPU compute, memory bandwidth, and overhead bottlenecks.",
-      "sourceId": "horace-he",
-      "sourceName": "Horace He",
+      "title": "Genie 4 is now available",
+      "url": "https://deepmind.google/blog/genie-4-is-now-available/",
+      "publishedAt": "2026-11-18T18:13:42.000Z",
+      "summary": "",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+      "url": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "publishedAt": "2026-11-18T17:00:00.000Z",
+      "summary": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models. Now, we’re sharing how",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "Build Training-Ready Physical AI Datasets with Two Prompts in NVIDIA Cosmos",
+      "url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos/",
+      "publishedAt": "2026-11-18T17:00:00.000Z",
+      "summary": "World model accuracy starts with high-quality, diverse training datasets. Yet capturing rare defects, nighttime incidents, and other challenging scenarios is...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+      "url": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
+      "publishedAt": "2026-11-18T16:59:38.000Z",
+      "summary": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
+      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "publishedAt": "2026-11-18T15:00:23.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Tackling GPU Bottlenecks in Plane-Wave DFT with K-Point Batching and Mixed Precision",
+      "url": "https://developer.nvidia.com/blog/tackling-gpu-bottlenecks-in-plane-wave-dft-with-k-point-batching-and-mixed-precision/",
+      "publishedAt": "2026-11-18T15:00:00.000Z",
+      "summary": "Training a next-generation machine learning interatomic potential (MLIP) requires ground truth: tens to hundreds of millions of density functional theory (DFT)...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-quantization",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Agentic inference capacity grew 4.6× in a year, versus 2.6× for compute capacity",
+      "url": "https://epoch.ai/data-insights/agentic-inference-capacity-growth",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "summary": "Our Inference Performance Index and chip sales data show agentic inference capacity grew nearly twice as much as 8-bit compute.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Anthropic’s compute spending is increasing by 4x per year, outpacing OpenAI’s 3x",
+      "url": "https://epoch.ai/data-insights/anthropic-openai-compute-spend-growth",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "summary": "Anthropic spent nearly $10 billion on compute and infrastructure in the third quarter of 2026, or close to $40 billion on an annualized basis, up from just $433 million in 2023.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
+      "url": "https://huggingface.co/blog/moe-expert-streaming",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-distributed",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
+      "url": "https://huggingface.co/blog/rumble-2-flash",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Co-Designing Sparse Attention for Efficient Long-Context Inference",
+      "url": "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/",
+      "publishedAt": "2026-11-17T17:30:00.000Z",
+      "summary": "Agentic workloads, long documents, and large codebases are pushing context lengths from tens of thousands of tokens to hundreds of thousands. At those lengths,...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-attention",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Integrating QPUs into Supercomputing Centers Using Slurm HRES Plugins",
+      "url": "https://developer.nvidia.com/blog/integrating-qpus-into-supercomputing-centers-using-slurm-hres-plugins/",
+      "publishedAt": "2026-11-17T17:00:00.000Z",
+      "summary": "Quantum processors are being integrated into supercomputing centers worldwide. National programs in North America, Europe, and Asia are driving the installation...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "How good are Fable 5.2 and GPT-6.2 Astra at real work?",
+      "url": "https://epoch.ai/publications/how-good-are-fable-5-2-and-gpt-6-2-astra-at-real-work",
+      "publishedAt": "2026-11-17T00:00:00.000Z",
+      "summary": "We tested Fable 5.2, GPT-6.2 Astra, and four other models on real Epoch work tasks. None met our employee standard, including the two that top our ECI.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Open-source AI without Jensen",
+      "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+      "publishedAt": "2026-11-14T12:23:15.000Z",
+      "summary": "A decapitation. It&#8217;s time to rebuild.",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
       "kind": "engineer",
-      "topics": ["topic-gpus", "topic-kernels", "topic-frameworks"]
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.34.0rc4",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0rc4",
+      "publishedAt": "2026-11-14T10:15:55.000Z",
+      "summary": "[Release][Tests] Give the #67296 warmup-gate test runner num_speculat…",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.34.0rc3",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0rc3",
+      "publishedAt": "2026-11-13T22:52:29.000Z",
+      "summary": "[KVConnector] Allocate the extensible KV cache exportable for EXPORTS…",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-attention"
+      ]
+    },
+    {
+      "title": "Incident report: AI agents attempted exploits on our website during a third-party alignment evaluation",
+      "url": "https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website",
+      "publishedAt": "2026-11-13T00:00:00.000Z",
+      "summary": "Three October 2026 events involving Trajectory Labs, PBC, in which agents probed our site and impersonated staff. No private data was accessed.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Introducing Gemini 4 Hydrogen",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+      "publishedAt": "2026-11-12T18:00:50.000Z",
+      "summary": "",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.34.0rc2",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0rc2",
+      "publishedAt": "2026-11-12T06:21:02.000Z",
+      "summary": "[Doc][Tests] Stop setting gpu_memory_utilization in most extensible…",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "v0.34.0rc1",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0rc1",
+      "publishedAt": "2026-11-11T19:37:13.000Z",
+      "summary": "[Bugfix][Spec Decode][XPU] greedy_argmax: treat NaN as -inf on the to…",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Intelligent Delivery: Making Every Unit of Compute Serve Better Ads",
+      "url": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
+      "publishedAt": "2026-11-11T17:00:38.000Z",
+      "summary": "Ads ranking models are growing toward LLM scale faster than the hardware to run them can keep up. An extra unit of compute has more impact on some ad requests, models, and chips than on others. The challenge is deciding where to allocate it",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "publishedAt": "2026-11-11T15:00:15.000Z",
+      "summary": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Your Algorithm: Giving People More Ways to Personalize Facebook Recommendations",
+      "url": "https://engineering.fb.com/2026/11/10/ml-applications/your-algorithm-giving-people-more-ways-to-personalize-facebook-recommendations/",
+      "publishedAt": "2026-11-10T17:00:49.000Z",
+      "summary": "Your algorithm is a suite of AI-powered tools that makes Facebook recommendations more transparent and steerable, with a single editable view of the interests that shape Feed and Reels. We’re sharing how Your algorithm turns people’s natura",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "How We Built TLX: A Hardware-Native GPU Compiler for Production ML at Scale",
+      "url": "https://engineering.fb.com/2026/11/10/open-source/tlx-a-hardware-native-gpu-compiler-for-production-ml/",
+      "publishedAt": "2026-11-10T16:59:31.000Z",
+      "summary": "Triton Low-Level Extensions (TLX), is an extension to Triton that helps engineers optimize GPU performance while preserving Triton&#8217;s productive programming model. TLX introduces explicit warp-group and cluster-level orchestration, let",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-kernels",
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Gemini 4 Carbon is now available",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+      "publishedAt": "2026-11-10T16:03:47.000Z",
+      "summary": "",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+      "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+      "publishedAt": "2026-11-10T12:02:28.000Z",
+      "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Opening the datasets behind our AI weather models",
+      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+      "publishedAt": "2026-11-10T11:13:04.000Z",
+      "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Inference Performance Index: changing the way we measure inference capacity",
+      "url": "https://epoch.ai/publications/inference-performance-index",
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "summary": "Comparing AI hardware for inference beyond FLOP/s with memory and inter-chip communication",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "v0.34.0rc0: [Transformers backend] Migrate Gemma and StableLM (#66393)",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0rc0",
+      "publishedAt": "2026-11-08T18:38:57.000Z",
+      "summary": "Signed-off-by: Harry Mellor 19981378+hmellor@users.noreply.github.com Co-authored-by: Claude Opus 5.5 noreply@anthropic.com",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "What Huawei’s Horinger data center reveals about China’s compute gap",
+      "url": "https://epoch.ai/publications/huawei-horinger-china-compute-gap",
+      "publishedAt": "2026-11-06T00:00:00.000Z",
+      "summary": "Huawei’s AI data center in Horinger, Inner Mongolia, uses Ascend chips and has an estimated AI computing capacity that is just 7% that of the world’s largest AI data center, SpaceX’s Colossus 2 in Tennessee.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "How big is the open model economy today?",
+      "url": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+      "publishedAt": "2026-11-04T16:35:44.000Z",
+      "summary": "Our first open model economy research note for paid subscribers.",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "F3 Lightning: How Meta Accelerates Ads ML Features to Production at Scale",
+      "url": "https://engineering.fb.com/2026/11/03/ml-applications/f3-lightning-how-meta-accelerates-ads-ml-features-to-production/",
+      "publishedAt": "2026-11-03T17:00:35.000Z",
+      "summary": "Facebook Feature Framework (F3) is Meta&#8217;s framework for authoring, compiling, and serving the machine learning features underlying ads ranking models, where a single request can require more than 20,000 features. We first presented F3",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "v0.33.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0",
+      "publishedAt": "2026-11-01T09:21:10.000Z",
+      "summary": "vLLM v0.33.0",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Was I wrong about open models & cyber risks?",
+      "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
+      "publishedAt": "2026-10-30T17:36:56.000Z",
+      "summary": "Last week coined the term &#8220;Black October&#8220; after an onslaught of critical vulnerability disclosures, including PHP2Shell and a long-standing GitLab bug, signified the moment when the cyber risks of AI models started to materializ",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
+      "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+      "publishedAt": "2026-10-29T16:00:12.000Z",
+      "summary": "Over the last year we&#8217;ve been sharing our work leveraging large language models to catch bugs on the fly — a novel approach we call Catching Just-in-Time Tests (JiTTests). Now, we&#8217;re sharing the results and positive impact we&#8",
+      "sourceId": "meta-eng",
+      "sourceName": "Engineering at Meta",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+      "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+      "publishedAt": "2026-10-28T12:58:39.000Z",
+      "summary": "A sort of review of the benchmarking industry and what's missing.",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Triton 3.9.0 Release Notes",
+      "url": "https://github.com/triton-lang/triton/releases/tag/v3.9.0",
+      "publishedAt": "2026-10-27T18:56:41.000Z",
+      "summary": "Triton 3.9.0 Release Notes Table of Contents Dialect &amp; Frontend Backend &amp; Compiler AMD/HIP Backend NVIDIA Backend Gluon &amp; Layout Improvements Kernels &amp; Benchmarks Proton Profiling Testing &amp; CI Build &amp; Infrastructure ",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+      "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+      "publishedAt": "2026-10-25T11:49:00.000Z",
+      "summary": "#20",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+      "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+      "publishedAt": "2026-10-20T17:04:21.000Z",
+      "summary": "Western open models strike back",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Meta shakes up the frontiers, open and closed",
+      "url": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+      "publishedAt": "2026-10-17T14:06:54.000Z",
+      "summary": "US open weights are back!",
+      "sourceId": "interconnects",
+      "sourceName": "Nathan Lambert",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "gfx950-tutorial-v3.1",
+      "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v3.1",
+      "publishedAt": "2026-10-11T22:47:19.000Z",
+      "summary": "gfx950 tutorial pin v3.1: upstream main at b575c0c (PR #12229 , the …",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "gfx950-tutorial-v3.0",
+      "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v3.0",
+      "publishedAt": "2026-10-10T02:40:04.000Z",
+      "summary": "gfx950 tutorial pin v3.0: upstream main at 3b0c7f0 (PR #12209 , the …",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "gfx950-tutorial-v2.3",
+      "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v2.3",
+      "publishedAt": "2026-09-29T05:22:03.000Z",
+      "summary": "Upstream triton main at d19d4ca (Revert \"[AMD][GFX9] Enable amdgpu-use-amdgpu-trackers LLVM flag\", #11763 ). Plain upstream: nothing is carried on top. What the gfx950 tutorial relies on at this commit: [LLVM] Always set the target machine ",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "gfx950-tutorial-v2.2",
+      "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v2.2",
+      "publishedAt": "2026-09-26T05:15:03.000Z",
+      "summary": "Upstream triton main at 01c5d2a ([AMD][gfx950][Gluon] Add cd_regclass to mfma and mfma_scaled, #11792 ) plus two upstream PRs that are in review. No fork-only feature is carried any more. [LLVM] Always set the target machine when arch is sp",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "dlab Open Source Week: Frontier AI on Your Own Hardware",
+      "url": "https://timdettmers.com/2026/09/21/dlab-open-source-week/",
+      "publishedAt": "2026-09-21T14:23:46.000Z",
+      "summary": "In one of my classes I asked the question I was afraid to ask but I just needed the answer to: &#8220;Who is afraid of not getting a job after graduating?&#8221; About eighty percent of the 150 people in the room raised their hands. That is",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "gfx950-tutorial-v2.1",
+      "url": "https://github.com/triton-lang/triton/releases/tag/gfx950-tutorial-v2.1",
+      "publishedAt": "2026-08-31T03:20:09.000Z",
+      "summary": "Rebases the tutorial pin onto current upstream triton main ( c349ce5 ), 340 commits ahead of the v1.1/v2.0 fork point. Two commits are carried; the warp-pipeline barrier commit from v2.0 is deliberately dropped (see below). [AMD] gfx950 tut",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "Triton 3.8.0 Release Notes",
+      "url": "https://github.com/triton-lang/triton/releases/tag/v3.8.0",
+      "publishedAt": "2026-08-31T00:12:12.000Z",
+      "summary": "Triton 3.8.0 Release Notes Table of Contents Dialect &amp; Frontend Backend &amp; Compiler AMD/HIP Backend NVIDIA Backend Gluon &amp; Layout Improvements Kernels &amp; Benchmarks Proton Profiling Testing &amp; CI Build &amp; Infrastructure ",
+      "sourceId": "gh-triton",
+      "sourceName": "Triton Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Harness Engineering for Self-Improvement",
+      "url": "https://lilianweng.github.io/posts/2026-07-04-harness/",
+      "publishedAt": "2026-07-04T00:00:00.000Z",
+      "summary": "The concept of recursive self-improvement (RSI) dates back to I. J. Good (1965) , where he defined an &ldquo;ultraintelligent machine&rdquo; as a system that can surpass humans in all intellectual activities and design better machines to im",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Scaling Laws, Carefully",
+      "url": "https://lilianweng.github.io/posts/2026-06-24-scaling-laws/",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "summary": "Scaling laws are one of the most critical empirical findings in deep learning. The observation is simple in form: the training loss $L$ decreases predictably as we scale up model size $N$, dataset size $D$, and compute $C$, following a powe",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "What you need to know about AI chips",
+      "url": "https://epoch.ai/publications/chips-topic-overview",
+      "publishedAt": "2026-05-01T00:00:00.000Z",
+      "summary": "A look at the specialized hardware driving modern AI — why chips cost tens of thousands of dollars each, and why demand continues to outstrip supply.",
+      "sourceId": "epoch-ai",
+      "sourceName": "Epoch AI Institute",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "My Journey Towards Coding Agents: Building SERA",
+      "url": "https://timdettmers.com/2026/01/27/building-open-coding-agent-sera/",
+      "publishedAt": "2026-01-27T12:32:00.000Z",
+      "summary": "If you look at how people cook coding agents today, they have an industrial kitchen: large-scale reinforcement learning systems with many components for efficiency spanning hundreds of GPUs, complex repository mixing, and large teams workin",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Use Agents or Be Left Behind? A Personal Guide to Automating Your Own Work",
+      "url": "https://timdettmers.com/2026/01/13/use-agents-or-be-left-behind/",
+      "publishedAt": "2026-01-13T12:56:37.000Z",
+      "summary": "If you are reading this, you probably feel the FOMO. Maybe you have seen the Twitter threads about coding agents completing entire features in minutes. Maybe a colleague mentioned they are &#8220;10x more productive&#8221; now &#8212; or “I",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Why AGI Will Not Happen",
+      "url": "https://timdettmers.com/2025/12/10/why-agi-will-not-happen/",
+      "publishedAt": "2025-12-10T15:05:30.000Z",
+      "summary": "If you are reading this, you probably have strong opinions about AGI, superintelligence, and the future of AI. Maybe you believe we are on the cusp of a transformative breakthrough. Maybe you are skeptical. This blog post is for those who w",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
+      "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
+      "publishedAt": "2025-09-16T17:38:01.000Z",
+      "summary": "Much has been written about xAI’s Colossus 1. The Memphis build belongs in the history books: the largest AI training cluster, erected from scratch in 122 days. With roughly 200,000 H100/H200s and ~30,000 GB200 NVL72, it remains, today, the",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Another Giant Leap: The Rubin CPX Specialized Accelerator &#038; Rack",
+      "url": "https://semianalysis.com/2025/09/10/another-giant-leap-the-rubin-cpx-specialized-accelerator-rack/",
+      "publishedAt": "2025-09-10T19:57:18.000Z",
+      "summary": "Nvidia announced the Rubin CPX, a solution that is specifically designed to be optimized for the prefill phase, with the single-die Rubin CPX heavily emphasizing compute FLOPS over memory bandwidth. This is a game changer for inference, and",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-inference",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Huawei Ascend Production Ramp: Die Banks, TSMC Continued Production, HBM is The Bottleneck",
+      "url": "https://semianalysis.com/2025/09/08/huawei-ascend-production-ramp/",
+      "publishedAt": "2025-09-08T09:54:57.000Z",
+      "summary": "Compute is the lifeblood of AI. He who controls the spice controls the universe the compute will control the production of tokens and reap the benefits of AI. Without compute you do not have a seat at the table. The United States technology",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "Amazon’s AI Resurgence: AWS &#038; Anthropic&#8217;s Multi-Gigawatt Trainium Expansion",
+      "url": "https://semianalysis.com/2025/09/03/amazons-ai-resurgence-aws-anthropics-multi-gigawatt-trainium-expansion/",
+      "publishedAt": "2025-09-03T20:55:46.000Z",
+      "summary": "Two-and-a-half years ago, we flagged a looming “cloud crisis” at AWS. Today, the evidence has mounted. AWS is the crown jewel of the Amazon empire, generating ~60% of group profits, and dominating the lucrative Cloud Computing market. But i",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
+      "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
+      "publishedAt": "2025-08-20T04:56:35.000Z",
+      "summary": "Frontier model training has pushed GPUs and AI systems to their absolute limits, making cost, efficiency, power, performance per TCO, and reliability central to the discussion on effective training. The Hopper vs Blackwell comparisons are n",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "GPT-5 Set the Stage for Ad Monetization and the SuperApp",
+      "url": "https://semianalysis.com/2025/08/13/gpt-5-ad-monetization-and-the-superapp/",
+      "publishedAt": "2025-08-13T00:27:14.000Z",
+      "summary": "To many power users (Pro and Plus), GPT5 was a disappointing release. But with closer inspection, the real release is focused on the vast majority of ChatGPT’s users, which is the 700m+ free userbase that is growing rapidly. Power users sho",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Scaling the Memory Wall: The Rise and Roadmap of HBM",
+      "url": "https://semianalysis.com/2025/08/12/scaling-the-memory-wall-the-rise-and-roadmap-of-hbm/",
+      "publishedAt": "2025-08-12T01:16:06.000Z",
+      "summary": "The first portion of this report will explain HBM, the manufacturing process, dynamics between vendors, KVCache offload, disaggregated prefill decode, and wide / high-rank EP. The rest of the report will dive deeply into the future of HBM. ",
+      "sourceId": "semianalysis",
+      "sourceName": "SemiAnalysis",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Why We Think",
+      "url": "https://lilianweng.github.io/posts/2025-05-01-thinking/",
+      "publishedAt": "2025-05-01T00:00:00.000Z",
+      "summary": "Special thanks to John Schulman for a lot of super valuable feedback and direct edits on this post. Test time compute ( Graves et al. 2016 , Ling, et al. 2017 , Cobbe et al. 2021 ) and Chain-of-thought (CoT) ( Wei et al. 2022 , Nye et al. 2",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Common pitfalls when building generative AI applications",
+      "url": "https://huyenchip.com//2025/01/16/ai-engineering-pitfalls.html",
+      "publishedAt": "2025-01-16T00:00:00.000Z",
+      "summary": "As we’re still in the early days of building applications with foundation models, it’s normal to make mistakes. This is a quick note with examples of some of the most common pitfalls that I’ve seen, both from public case studies and from my",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Agents",
+      "url": "https://huyenchip.com//2025/01/07/agents.html",
+      "publishedAt": "2025-01-07T00:00:00.000Z",
+      "summary": "Intelligent agents are considered by many to be the ultimate goal of AI. The classic book by Stuart Russell and Peter Norvig, Artificial Intelligence: A Modern Approach (Prentice Hall, 1995), defines the field of AI research as “ the study ",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Reward Hacking in Reinforcement Learning",
+      "url": "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+      "publishedAt": "2024-11-28T00:00:00.000Z",
+      "summary": "Reward hacking occurs when a reinforcement learning (RL) agent exploits flaws or ambiguities in the reward function to achieve high rewards, without genuinely learning or completing the intended task. Reward hacking exists because RL enviro",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "Building A Generative AI Platform",
+      "url": "https://huyenchip.com//2024/07/25/genai-platform.html",
+      "publishedAt": "2024-07-25T00:00:00.000Z",
+      "summary": "After studying how companies deploy generative AI applications, I noticed many similarities in their platforms. This post outlines the common components of a generative AI platform, what they do, and how they are implemented. I try my best ",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Extrinsic Hallucinations in LLMs",
+      "url": "https://lilianweng.github.io/posts/2024-07-07-hallucination/",
+      "publishedAt": "2024-07-07T00:00:00.000Z",
+      "summary": "Hallucination in large language models usually refers to the model generating unfaithful, fabricated, inconsistent, or nonsensical content. As a term, hallucination has been somewhat generalized to cases when the model makes mistakes. Here,",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Measuring personal growth",
+      "url": "https://huyenchip.com//2024/04/17/personal-growth.html",
+      "publishedAt": "2024-04-17T00:00:00.000Z",
+      "summary": "My founder friends constantly think about growth. They think about how to measure their business growth and how to get to the next order of magnitude scale. If they’re making $1M ARR today, they think about how to get to $10M ARR. If they h",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Diffusion Models for Video Generation",
+      "url": "https://lilianweng.github.io/posts/2024-04-12-diffusion-video/",
+      "publishedAt": "2024-04-12T00:00:00.000Z",
+      "summary": "Diffusion models have demonstrated strong results on image synthesis in past years. Now the research community has started working on a harder task&mdash;using it for video generation. The task itself is a superset of the image case, since ",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "What I learned from looking at 900 most popular open source AI tools",
+      "url": "https://huyenchip.com//2024/03/14/ai-oss.html",
+      "publishedAt": "2024-03-14T00:00:00.000Z",
+      "summary": "[ Hacker News discussion , LinkedIn discussion , Twitter thread ] Update (Feb 2026) : The full list of open source AI repos is hosted at Good AI List , updated daily. It’s balooned to 15K repos, and you can submit missing repos. You can als",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Predictive Human Preference: From Model Ranking to Model Routing",
+      "url": "https://huyenchip.com//2024/02/28/predictive-human-preference.html",
+      "publishedAt": "2024-02-28T00:00:00.000Z",
+      "summary": "A challenge of building AI applications is choosing which model to use. What if we don’t have to? What if we can predict the best model for any prompt? Predictive human preference aims to predict which model users might prefer for a specifi",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Thinking about High-Quality Human Data",
+      "url": "https://lilianweng.github.io/posts/2024-02-05-human-data-quality/",
+      "publishedAt": "2024-02-05T00:00:00.000Z",
+      "summary": "[Special thank you to Ian Kivlichan for many useful pointers (E.g. the 100+ year old Nature paper &ldquo;Vox populi&rdquo;) and nice feedback. 🙏 ] High-quality data is the fuel for modern data deep learning model training. Most of the task",
+      "sourceId": "lilian-weng",
+      "sourceName": "Lilian Weng (Lil'Log)",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Generation configurations: temperature, top-k, top-p, and test time compute",
+      "url": "https://huyenchip.com//2024/01/16/sampling.html",
+      "publishedAt": "2024-01-16T00:00:00.000Z",
+      "summary": "ML models are probabilistic. Imagine that you want to know what’s the best cuisine in the world. If you ask someone this question twice, a minute apart, their answers both times should be the same. If you ask a model the same question twice",
+      "sourceId": "chip-huyen",
+      "sourceName": "Chip Huyen",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Can Function Inlining Affect Floating Point Outputs? Exploring FMA and Other Consistency Issues",
+      "url": "http://siboehm.com/articles/23/Inlining-FMA-FP-consistency",
+      "publishedAt": "2023-06-23T07:06:04.000Z",
+      "summary": "A while ago I refactored a 30k LOC numerical simulation codebase. The behavior of the simulation was hard to test for directly, so I took the safe route and required its outputs to stay bit-identical, to guarantee that the refactoring didn’",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning",
+      "url": "https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/",
+      "publishedAt": "2023-01-30T15:50:00.000Z",
+      "summary": "Making the right choice when it comes to buying a GPU is critical. So how do you select the GPU which is right for you? This blog post will delve into that question and will lend you advice which will help you to make choice that is right f",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "How to Optimize a CUDA Matmul Kernel for cuBLAS-like Performance: a Worklog",
+      "url": "http://siboehm.com/articles/22/CUDA-MMM",
+      "publishedAt": "2022-12-31T07:06:04.000Z",
+      "summary": "In this post, I’ll iteratively optimize an implementation of matrix multiplication written in CUDA. My goal is not to build a cuBLAS replacement, but to deeply understand the most important performance characteristics of the GPUs that are u",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-gpus",
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "Pipeline-Parallelism: Distributed Training via Model Partitioning",
+      "url": "http://siboehm.com/articles/22/pipeline-parallel-training",
+      "publishedAt": "2022-10-03T07:06:04.000Z",
+      "summary": "Pipeline parallelism makes it possible to train large models that don’t fit into a single GPU’s memory.Example: Huggingface’s BLOOM model is a 175B parameter Transformer model. Storing the weights as bfloat16 requires 350GB, but the GPUs th",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-gpus",
+        "topic-distributed"
+      ]
+    },
+    {
+      "title": "Data-Parallel Distributed Training of Deep Learning Models",
+      "url": "http://siboehm.com/articles/22/data-parallel-training",
+      "publishedAt": "2022-09-08T07:06:04.000Z",
+      "summary": "In this post, I want to have a look at a common technique for distributing model training: data parallelism. It allows you to train your model faster by replicating the model among multiple compute nodes, and dividing the dataset among them",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-distributed",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "LLM.int8() and Emergent Features",
+      "url": "https://timdettmers.com/2022/08/17/llm-int8-and-emergent-features/",
+      "publishedAt": "2022-08-17T12:51:19.000Z",
+      "summary": "When I attended NAACL, I wanted to do a little test. I had two pitches for my LLM.int8() paper. One pitch is about how I use advanced quantization methods to achieve no performance degradation transformer inference at scale that makes large",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-quantization",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Fast Multidimensional Matrix Multiplication on CPU from Scratch",
+      "url": "http://siboehm.com/articles/22/Fast-MMM-on-CPU",
+      "publishedAt": "2022-08-14T07:06:04.000Z",
+      "summary": "Numpy can multiply two 1024x1024 matrices on a 4-core Intel CPU in ~8ms. This is incredibly fast, considering this boils down to 18 FLOPs / core / cycle, with a cycle taking a third of a nanosecond. Numpy does this using a highly optimized ",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Becoming a Better Programmer by Tightening Feedback Loops",
+      "url": "http://siboehm.com/articles/22/tight-feedback-loops",
+      "publishedAt": "2022-05-12T07:06:04.000Z",
+      "summary": "I’m interested in strategies to improve deliberately and continuously as a programmer.I wrote up this post as a rough working note to get thoughts on it from others. I’ve thought about this on and off for the last two years, and have talked",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "How to Choose Your Grad School",
+      "url": "https://timdettmers.com/2022/03/13/how-to-choose-your-grad-school/",
+      "publishedAt": "2022-03-13T22:43:57.000Z",
+      "summary": "If you are reading this, then you probably finished the long and arduous journey to grad school. You emerged victoriously, and this success is well-deserved. But which school should you choose? How to make a right choice if all schools look",
+      "sourceId": "tim-dettmers",
+      "sourceName": "Tim Dettmers",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "lleaves - Compiling Decision Trees for Fast Prediction using LLVM",
+      "url": "http://siboehm.com/articles/21/lleaves",
+      "publishedAt": "2021-09-20T07:06:04.000Z",
+      "summary": "Gradient-boosted decision trees are a commonly used machine learning algorithm that performs well on real-world tabular datasets. There are many libraries available for training them, most commonly LightGBM and XGBoost. Sadly few of the pop",
+      "sourceId": "simon-boehm",
+      "sourceName": "Simon Boehm",
+      "kind": "engineer",
+      "topics": [
+        "topic-frameworks"
+      ]
     }
   ]
 }
