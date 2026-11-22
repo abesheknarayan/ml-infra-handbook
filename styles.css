@@ -1509,25 +1509,31 @@ html, body {
 .factory-strip {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 6px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   margin-bottom: 24px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: rgba(15, 22, 38, 0.72);
   overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.factory-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .factory-node {
-  flex: 1;
-  min-width: 112px;
-  padding: 8px 10px;
+  flex: 1 1 0;
+  min-width: 96px;
+  padding: 7px 6px;
   border-radius: 7px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
   color: var(--text-muted);
   font-family: var(--font-sans);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 500;
   text-align: center;
   cursor: pointer;
@@ -1598,24 +1604,32 @@ html, body {
 .sim-canvas {
   display: block;
   width: 100%;
-  height: 236px;
+  height: 256px;
 }
 
 .sim-footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 12px 14px;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
   border-top: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+.sim-controls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .sim-btn-group {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .sim-btn {
