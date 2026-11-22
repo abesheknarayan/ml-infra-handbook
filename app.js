@@ -17,6 +17,24 @@ const MIN_YEAR = 2006;
 const MAX_YEAR = 2026;
 const YEAR_SPAN = MAX_YEAR - MIN_YEAR;
 
+function escapeHtml(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function safeUrl(url = '') {
+  try {
+    const u = new URL(String(url));
+    return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : '#';
+  } catch {
+    return '#';
+  }
+}
+
 // ==================== STATE ====================
 const state = {
   nodes: [],
@@ -1326,23 +1344,36 @@ const brainInstance = createObsidianBrain({
   }
 });
 
-// Live Feed is private (visible only on localhost or when unlocked with ?admin=1)
-const ADMIN_STORAGE_KEY = 'ml-infra-handbook-owner-v1';
+// Live Feed is private (visible only on localhost or when unlocked with ?admin=<ADMIN_SECRET>)
+const ADMIN_STORAGE_KEY = 'ml-infra-handbook-owner-secret-v1';
+
+function initOwnerSecret() {
+  const params = new URLSearchParams(window.location.search);
+  const adminParam = params.get('admin');
+  if (adminParam !== null) {
+    if (adminParam === '0' || adminParam === '') {
+      localStorage.removeItem(ADMIN_STORAGE_KEY);
+    } else {
+      localStorage.setItem(ADMIN_STORAGE_KEY, adminParam);
+    }
+    // Strip ?admin=... from the address bar immediately so the secret never leaks in URLs/screenshots
+    params.delete('admin');
+    const cleanQs = params.toString();
+    window.history.replaceState(null, '', cleanQs ? `${window.location.pathname}?${cleanQs}` : window.location.pathname);
+  }
+}
+
+function getOwnerSecret() {
+  return localStorage.getItem(ADMIN_STORAGE_KEY) || '';
+}
+
 function isOwnerMode() {
   const host = window.location.hostname;
   if (host === 'localhost' || host === '127.0.0.1') return true;
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('admin') === '1') {
-    localStorage.setItem(ADMIN_STORAGE_KEY, '1');
-    return true;
-  }
-  if (params.get('admin') === '0') {
-    localStorage.removeItem(ADMIN_STORAGE_KEY);
-    return false;
-  }
-  return localStorage.getItem(ADMIN_STORAGE_KEY) === '1';
+  return Boolean(getOwnerSecret());
 }
 
+initOwnerSecret();
 const ownerEnabled = isOwnerMode();
 if (ownerEnabled) {
   document.getElementById('tab-live-feed')?.classList.remove('hidden');
@@ -1630,7 +1661,13 @@ const INDEXER_PER_PAGE = 10;
 
 async function loadIndexedFeed() {
   try {
-    const res = await fetch('/api/feed');
+    const secret = getOwnerSecret();
+    const headers = secret ? { 'x-admin-secret': secret } : {};
+    const res = await fetch('/api/feed', { headers });
+    if (res.status === 403) {
+      document.getElementById('indexer-status').textContent = 'Access denied — unlock with ?admin=<ADMIN_SECRET>.';
+      return;
+    }
     indexerData = await res.json();
     indexerPage = 1;
     renderIndexerView();
@@ -1686,10 +1723,10 @@ function renderIndexerView() {
           return `
             <article class="indexed-card">
               <div class="indexed-card-top">
-                <a class="indexed-title" href="${it.url}" target="_blank" rel="noopener">${it.title} ↗</a>
-                <span class="indexed-meta">${it.sourceName} · ${dateStr}</span>
+                <a class="indexed-title" href="${safeUrl(it.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.title)} ↗</a>
+                <span class="indexed-meta">${escapeHtml(it.sourceName)} · ${escapeHtml(dateStr)}</span>
               </div>
-              <p class="indexed-summary">${it.summary || ''}</p>
+              <p class="indexed-summary">${escapeHtml(it.summary || '')}</p>
               <div class="indexed-tags">${topicChips}</div>
             </article>`;
         })
@@ -1739,7 +1776,13 @@ document.getElementById('btn-sync-now')?.addEventListener('click', async () => {
   btn.textContent = 'Refreshing...';
   btn.disabled = true;
   try {
-    const res = await fetch('/api/sync', { method: 'POST' });
+    const secret = getOwnerSecret();
+    const headers = secret ? { 'x-admin-secret': secret } : {};
+    const res = await fetch('/api/sync', { method: 'POST', headers });
+    if (res.status === 403) {
+      document.getElementById('indexer-status').textContent = 'Unauthorized — check your ADMIN_SECRET.';
+      return;
+    }
     const data = await res.json();
     if (data.feed) {
       indexerData = data.feed;

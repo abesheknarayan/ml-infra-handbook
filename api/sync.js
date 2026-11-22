@@ -1,13 +1,13 @@
 import { crawlAllSources } from './_crawler.js';
+import { isAuthorizedAdmin } from './_auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Use POST /api/sync' });
     return;
   }
-  const secret = process.env.ADMIN_SECRET;
-  if (secret && req.headers['x-admin-secret'] !== secret) {
-    res.status(403).json({ ok: false, error: 'Unauthorized' });
+  if (!isAuthorizedAdmin(req)) {
+    res.status(403).json({ ok: false, error: 'Forbidden' });
     return;
   }
   try {
