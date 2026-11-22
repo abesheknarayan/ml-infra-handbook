@@ -473,7 +473,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   padding: 8px 10px;
   border-radius: 7px;
   border: 1px solid var(--border);
@@ -482,6 +482,13 @@ html, body {
   text-decoration: none;
   font-size: 12px;
   transition: all 0.16s;
+  min-width: 0;
+}
+
+.resource-link > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
 }
 
 .resource-link:hover {
@@ -1775,30 +1782,50 @@ html, body {
 }
 
 /* ==================== RESPONSIVE: IPAD PORTRAIT & PIXEL / MOBILE PHONES ==================== */
+/* Pure flex-column + 100dvh flow: mathematically impossible for divs to collide or overlap */
 @media (max-width: 900px) {
   :root {
     --sidebar-w: 100vw;
   }
+
+  html, body {
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
   .top-bar {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
     height: auto;
+    flex-shrink: 0;
     flex-direction: column;
     align-items: stretch;
-    padding: 8px 12px 9px;
+    padding: 10px 12px 8px;
     gap: 8px;
+    overflow: hidden;
   }
   .top-left {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
+    min-width: 0;
   }
   .brand-title {
     font-size: 16px;
-    padding-right: 120px;
+    line-height: 28px;
+    padding-right: 128px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .top-right {
     position: absolute;
-    top: 7px;
+    top: 10px;
     right: 12px;
     width: auto;
     gap: 6px;
@@ -1815,89 +1842,114 @@ html, body {
   .main-tabs {
     width: 100%;
     max-width: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    padding: 3px;
-  }
-  .main-tab {
-    padding: 6px 4px;
-    font-size: 11px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* Histomap vertical split */
-  #webgl-container,
-  #labels-layer {
-    top: 84px;
-    left: 0;
-    right: 0;
-    bottom: auto;
-    height: 36vh;
-    touch-action: none;
-  }
-  .stage-top-bar {
-    top: 90px;
-    left: 10px;
-    right: 10px;
-    gap: 6px;
-  }
-  .domain-pills {
-    flex-wrap: nowrap;
+    display: flex;
     overflow-x: auto;
     scrollbar-width: none;
-    max-width: calc(100% - 76px);
+    gap: 4px;
+    padding: 3px;
   }
-  .domain-pills::-webkit-scrollbar {
+  .main-tabs::-webkit-scrollbar {
     display: none;
   }
-  .dom-pill {
-    height: 24px;
-    padding: 0 8px;
-    font-size: 10.5px;
+  .main-tab {
+    flex: 1 0 auto;
+    padding: 6px 10px;
+    font-size: 11.5px;
+    white-space: nowrap;
+    text-align: center;
   }
-  .mini-pov-btn {
-    height: 24px;
-    padding: 0 8px;
-    font-size: 10px;
+
+  /* Active view takes exact remaining screen height */
+  .view-section {
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Histomap: clean 3-band vertical stack (3D Helix -> Editorial Feed -> Histogram) */
+  .stage-top-bar,
+  #labels-layer {
+    display: none;
+  }
+  #webgl-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    flex: 0 0 34%;
+    min-height: 175px;
+    touch-action: none;
   }
   .editorial-panel {
-    top: calc(84px + 36vh);
-    left: 0;
-    right: 0;
-    width: 100vw;
-    bottom: 72px;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
     border-left: none;
     border-top: 1px solid var(--border);
     padding: 12px 14px;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    background: rgba(8, 12, 23, 0.98);
   }
   .editorial-header {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     padding-bottom: 6px;
+    flex-shrink: 0;
   }
   .editorial-heading {
     font-size: 16px;
   }
+  .editorial-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 2px;
+  }
+  .feed-item-title,
+  .detail-title {
+    overflow-wrap: anywhere;
+  }
+  .detail-title {
+    font-size: 18px;
+  }
 
-  /* Bottom histogram scrubber */
+  /* Bottom histogram bar sits naturally at bottom of flex stack */
   .bottom-bar {
-    height: 72px;
-    grid-template-columns: 1fr 94px;
-    background: rgba(8, 12, 23, 0.98);
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 68px;
+    grid-template-columns: 1fr 84px;
+    background: rgba(8, 12, 23, 1);
     border-top: 1px solid var(--border);
   }
   .histogram-section {
-    padding: 0 8px 10px 10px;
+    padding: 0 6px 8px 10px;
     gap: 8px;
+    min-width: 0;
   }
   .histogram-wrap {
     touch-action: none;
+    min-width: 0;
   }
   .histogram-bars {
-    height: 28px;
+    height: 24px;
   }
   .histogram-axis {
     font-size: 9px;
@@ -1905,31 +1957,38 @@ html, body {
   .mini-play-btn {
     width: 26px;
     height: 26px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .giant-year-block {
-    padding: 8px 12px 12px 4px;
+    padding: 6px 12px 10px 4px;
     border-left: none;
+    justify-content: center;
   }
   .giant-year {
-    font-size: 32px;
+    font-size: 28px;
   }
   .giant-year-sub {
     display: none;
   }
 
-  /* 3D Knowledge Graph mobile split */
+  /* 3D Knowledge Graph: clean 2-band stack (3D Graph -> Notes) */
   .brain-stage {
-    top: 84px;
-    left: 0;
-    right: 0;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
     bottom: auto;
-    height: 44vh;
+    width: 100%;
+    flex: 0 0 42%;
+    min-height: 200px;
     touch-action: none;
   }
   .brain-note-panel {
-    top: calc(84px + 44vh) !important;
-    bottom: 0 !important;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    flex: 1;
+    min-height: 0;
   }
   .brain-toolbar {
     bottom: 8px;
@@ -1944,6 +2003,13 @@ html, body {
   .brain-toolbar::-webkit-scrollbar {
     display: none;
   }
+  .brain-3d-label {
+    max-width: 118px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+    padding: 2px 5px;
+  }
   .toggle-chip {
     white-space: nowrap;
     flex-shrink: 0;
@@ -1955,19 +2021,26 @@ html, body {
     padding: 0 6px;
   }
   .spread-control input[type="range"] {
-    width: 60px;
+    width: 58px;
   }
 
-  /* Chapters: sleek horizontal pill bar on mobile! */
+  /* Chapters: single-row pill strip -> full-width scrollable reader */
   .chapters-layout {
-    top: 84px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   .chapters-toc {
+    flex-shrink: 0;
     border-right: none;
     border-bottom: 1px solid var(--border);
-    max-height: none;
   }
   .toc-header,
   .toc-part-label {
@@ -2000,31 +2073,46 @@ html, body {
     padding-top: 0;
   }
   .chapters-reader {
-    padding: 16px 14px 48px;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    padding: 16px 14px 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
+  .chapter-article {
+    max-width: 100%;
+    min-width: 0;
+  }
   .chapter-title {
-    font-size: 22px;
+    font-size: 21px;
+    overflow-wrap: anywhere;
   }
   .chapter-intro {
     font-size: 14px;
-    margin-bottom: 20px;
-    padding-bottom: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+  }
+  .chapter-section p {
+    font-size: 13.5px;
   }
   .factory-strip {
     padding: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .factory-node {
-    min-width: 88px;
+    min-width: 84px;
     font-size: 10.5px;
-    padding: 6px 8px;
+    padding: 6px 7px;
   }
   .sim-top {
     padding: 8px 10px;
+    flex-wrap: wrap;
   }
   .sim-title {
     font-size: 11.5px;
+    line-height: 1.35;
   }
   .sim-footer {
     padding: 10px;
@@ -2033,28 +2121,76 @@ html, body {
     font-size: 11px;
     padding: 0 9px;
   }
+  .chapter-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chapter-nav-btns {
+    justify-content: space-between;
+  }
 
-  /* Live Feed mobile */
+  /* Live Feed: clean full-width scroll with zero overflow */
   .indexer-layout {
-    top: 84px;
-    grid-template-columns: 1fr;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   .indexer-main {
-    padding: 14px;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    padding: 14px 12px 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
   .indexer-header {
     flex-direction: column;
     gap: 10px;
   }
+  .indexer-cli-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .indexer-cli-box code {
+    white-space: normal;
+    word-break: break-all;
+    font-size: 10.5px;
+  }
+  .indexed-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .indexed-title {
+    font-size: 13.5px;
+    overflow-wrap: anywhere;
+  }
+  .indexed-meta {
+    white-space: normal;
+  }
   .indexer-sources-col {
     display: none;
   }
+
+  /* Blogs drawer clean full-screen sheet */
   .drawer {
-    top: 84px;
+    top: 8px;
     left: 8px;
     right: 8px;
-    bottom: 10px;
+    bottom: 8px;
     width: auto;
+  }
+  .blog-card-top {
+    flex-direction: column;
+    gap: 4px;
   }
 }

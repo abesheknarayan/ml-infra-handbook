@@ -1335,6 +1335,9 @@ function switchView(viewName) {
   // Only show Histomap domain filter pills when in 3D Histomap view
   document.getElementById('domain-filters')?.classList.toggle('hidden', viewName !== 'histomap');
 
+  if (viewName === 'histomap') {
+    requestAnimationFrame(syncCameraToViewport);
+  }
   if (viewName === 'brain') {
     brainInstance.start();
   } else {

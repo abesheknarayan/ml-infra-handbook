@@ -721,9 +721,12 @@ export function createObsidianBrain({ container, labelsEl, notePanelEl, onJumpTo
       projVec.project(camera);
 
       const inFront = projVec.z < 1 && projVec.z > -1;
+      const isCompact = w < 640;
       const showLabel =
         inFront &&
-        (n.kind === 'topic' || isSel || isHov || (focusId && isNbr) || camDist < 105);
+        (isCompact
+          ? isSel || isHov || (n.kind === 'topic' && camDist < 190)
+          : n.kind === 'topic' || isSel || isHov || (focusId && isNbr) || camDist < 105);
 
       if (showLabel && !dimmed) {
         const sx = (projVec.x * 0.5 + 0.5) * w;
