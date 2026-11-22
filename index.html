@@ -39,7 +39,7 @@
 
       <nav class="main-tabs" role="tablist">
         <button class="main-tab active" data-view="histomap">Histomap</button>
-        <button class="main-tab" data-view="brain">Knowledge Graph</button>
+        <button class="main-tab" data-view="brain"><span class="tab-long">Knowledge </span>Graph</button>
         <button class="main-tab" data-view="chapters">Chapters</button>
         <button class="main-tab" data-view="indexer">Live Feed</button>
       </nav>
@@ -122,25 +122,26 @@
     <div class="brain-stage">
       <div id="brain-webgl"></div>
       <div id="brain-labels"></div>
-      <div class="brain-toolbar">
-        <label class="toggle-chip">
-          <input type="checkbox" id="chk-guided" checked />
-          <span>Learning path</span>
-        </label>
-        <label class="toggle-chip">
-          <input type="checkbox" id="chk-milestones" checked />
-          <span>Milestones</span>
-        </label>
-        <label class="toggle-chip">
-          <input type="checkbox" id="chk-blogs" />
-          <span>Blogs</span>
-        </label>
-        <label class="spread-control" title="Expand spacing between clusters">
-          <span>Spacing</span>
-          <input type="range" id="brain-spread" min="0.7" max="2.4" step="0.05" value="1.15" />
-        </label>
-        <button id="btn-brain-reset" class="mini-pov-btn">Center</button>
-      </div>
+    </div>
+
+    <div class="brain-toolbar">
+      <label class="toggle-chip">
+        <input type="checkbox" id="chk-guided" checked />
+        <span>Path</span>
+      </label>
+      <label class="toggle-chip">
+        <input type="checkbox" id="chk-milestones" checked />
+        <span>Milestones</span>
+      </label>
+      <label class="toggle-chip">
+        <input type="checkbox" id="chk-blogs" />
+        <span>Blogs</span>
+      </label>
+      <label class="spread-control" title="Expand spacing between clusters">
+        <span>Spread</span>
+        <input type="range" id="brain-spread" min="0.7" max="2.4" step="0.05" value="1.15" />
+      </label>
+      <button id="btn-brain-reset" class="mini-pov-btn">Center</button>
     </div>
 
     <aside class="editorial-panel brain-note-panel">

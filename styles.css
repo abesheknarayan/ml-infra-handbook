@@ -1104,7 +1104,7 @@ html, body {
 }
 
 .brain-toolbar {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 24px;
   z-index: 15;
@@ -1871,12 +1871,13 @@ html, body {
     gap: 3px;
     padding: 3px;
   }
+  .tab-long {
+    display: none;
+  }
   .main-tab {
-    padding: 6px 2px;
-    font-size: 11px;
+    padding: 6px 4px;
+    font-size: 11.5px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
   }
 
@@ -2000,7 +2001,7 @@ html, body {
     display: none;
   }
 
-  /* 3D Knowledge Graph: clean 2-band stack (3D Graph -> Notes) */
+  /* 3D Knowledge Graph: clean 3-band stack (3D Graph -> Docked Controls -> Notes) */
   .brain-stage {
     position: relative;
     top: auto;
@@ -2008,9 +2009,27 @@ html, body {
     right: auto;
     bottom: auto;
     width: 100%;
-    flex: 0 0 42%;
-    min-height: 200px;
+    flex: 0 0 38%;
+    min-height: 185px;
     touch-action: none;
+  }
+  .brain-toolbar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 7px 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px 8px;
+    background: rgba(11, 16, 29, 0.98);
   }
   .brain-note-panel {
     position: relative !important;
@@ -2018,20 +2037,7 @@ html, body {
     bottom: auto !important;
     flex: 1;
     min-height: 0;
-  }
-  .brain-toolbar {
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
-    max-width: calc(100% - 16px);
-    padding: 5px 8px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    gap: 6px;
-  }
-  .brain-toolbar::-webkit-scrollbar {
-    display: none;
+    border-top: none;
   }
   .brain-3d-label {
     max-width: 112px;
@@ -2044,14 +2050,16 @@ html, body {
     white-space: nowrap;
     flex-shrink: 0;
     font-size: 11px;
+    padding: 2px 4px;
   }
   .spread-control {
     flex-shrink: 0;
-    border-left: 1px solid var(--border);
-    padding: 0 6px;
+    border-left: none;
+    padding: 0;
+    gap: 5px;
   }
   .spread-control input[type="range"] {
-    width: 58px;
+    width: 72px;
   }
 
   /* Chapters: vertical-tiled collapsible chapter list + 2-column vertical factory tiles */
@@ -2293,7 +2301,9 @@ html, body {
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-    padding-bottom: 4px;
+    padding: 0 24px 4px 0;
+    -webkit-mask-image: linear-gradient(90deg, #000 86%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 86%, transparent 100%);
   }
   .indexer-filters::-webkit-scrollbar {
     display: none;
