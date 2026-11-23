@@ -1325,26 +1325,62 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// ==================== VIEW SWITCHING (HISTOMAP / OBSIDIAN BRAIN / LIVE INDEXER) ====================
-let currentView = 'histomap';
+// ==================== VIEW SWITCHING (HOME / HISTOMAP / KNOWLEDGE GRAPH / LEARN / LIVE FEED) ====================
+let currentView = 'home';
+let learnTab = 'chapters'; // 'chapters' | 'tutor'
+
+const CHAPTER_TO_SUBSKILL = {
+  'ch-0': 'gpu-roofline',
+  'ch-1': 'gpu-roofline',
+  'ch-2': 'kernels-tiling',
+  'ch-3': 'frameworks-autograd',
+  'ch-4': 'kernels-tiling',
+  'ch-5': 'precision-quant',
+  'ch-6': 'distributed-parallel',
+  'ch-7': 'inference-serving',
+  'ch-8': 'disagg-speculative',
+  'ch-9': 'clusters-rl-infra',
+  'ch-10': 'clusters-rl-infra',
+  'ch-11': 'clusters-rl-infra'
+};
 
 const viewEls = {
+  home: document.getElementById('view-home'),
   histomap: document.getElementById('view-histomap'),
   brain: document.getElementById('view-brain'),
-  chapters: document.getElementById('view-chapters'),
-  tutor: document.getElementById('view-tutor'),
+  learn: document.getElementById('view-learn'),
   indexer: document.getElementById('view-indexer')
 };
 
-// Static public feed updated every 2 hours by GitHub Actions (feeds Chapters & Knowledge Graph)
+// Static public feed updated every 2 hours by GitHub Actions (feeds Home, Chapters & Knowledge Graph)
 let publicFeedData = null;
+
+function renderHomePulse() {
+  const grid = document.getElementById('home-pulse-grid');
+  if (!grid || !publicFeedData?.items?.length) return;
+  const top = publicFeedData.items.slice(0, 3);
+  grid.innerHTML = top
+    .map(
+      (it) => `
+      <a class="pulse-card" href="${safeUrl(it.url)}" target="_blank" rel="noopener noreferrer">
+        <div class="pulse-meta">
+          <strong>${escapeHtml(it.sourceName)}</strong>
+          <span>${escapeHtml((it.publishedAt || '').slice(0, 10))}</span>
+        </div>
+        <div class="pulse-title">${escapeHtml(it.title)}</div>
+        <div class="pulse-link">Read post ↗</div>
+      </a>`
+    )
+    .join('');
+}
 
 async function loadPublicFeed() {
   try {
     const res = await fetch('./indexed_feed.json');
     if (!res.ok) return;
     publicFeedData = await res.json();
-    if (currentView === 'chapters') renderChaptersView();
+    renderHomePulse();
+    if (currentView === 'learn' && learnTab === 'chapters') renderChaptersView();
   } catch {}
 }
 
@@ -1359,15 +1395,26 @@ const brainInstance = createObsidianBrain({
   }
 });
 
+function updateLearnProgressPill() {
+  const pill = document.getElementById('learn-progress-pill');
+  if (!pill) return;
+  const doneCount = loadCompletedChapters().size;
+  const pct = typeof tutorInstance !== 'undefined' ? tutorInstance.getProgressPct() : 0;
+  pill.textContent = `Chapters ${doneCount}/${CHAPTERS.length} · Skill Map ${pct}%`;
+}
+
 const tutorInstance = createSocraticTutor({
   containerEl: document.getElementById('tutor-root'),
   onOpenChapter(chId) {
     activeChapterId = chId;
-    switchView('chapters');
+    switchView('learn', 'chapters');
   },
   onOpenBrainTopic(topicId) {
     switchView('brain');
     brainInstance.focusNode(topicId);
+  },
+  onStateChange() {
+    updateLearnProgressPill();
   }
 });
 
@@ -1406,14 +1453,43 @@ if (ownerEnabled) {
   document.getElementById('tab-live-feed')?.classList.remove('hidden');
 }
 
-function switchView(viewName) {
-  if (viewName === 'indexer' && !ownerEnabled) viewName = 'histomap';
+function setLearnTab(tab) {
+  learnTab = tab === 'tutor' ? 'tutor' : 'chapters';
+  document.querySelectorAll('.learn-subtab').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.learnTab === learnTab);
+  });
+  document.getElementById('learn-pane-chapters')?.classList.toggle('hidden', learnTab !== 'chapters');
+  document.getElementById('learn-pane-tutor')?.classList.toggle('hidden', learnTab !== 'tutor');
+
+  if (learnTab === 'chapters') {
+    renderChaptersView();
+  } else {
+    if (stopChapterSim) {
+      stopChapterSim();
+      stopChapterSim = null;
+    }
+    tutorInstance.render();
+  }
+  updateLearnProgressPill();
+}
+
+function switchView(viewName, subTab = null) {
+  if (viewName === 'chapters') {
+    viewName = 'learn';
+    subTab = 'chapters';
+  } else if (viewName === 'tutor') {
+    viewName = 'learn';
+    subTab = 'tutor';
+  }
+  if (viewName === 'indexer' && !ownerEnabled) viewName = 'home';
+  if (!viewEls[viewName]) viewName = 'home';
+
   currentView = viewName;
   document.querySelectorAll('.main-tab').forEach((t) => {
     t.classList.toggle('active', t.dataset.view === viewName);
   });
   Object.entries(viewEls).forEach(([k, el]) => {
-    el.classList.toggle('hidden', k !== viewName);
+    el?.classList.toggle('hidden', k !== viewName);
   });
 
   // Only show Histomap domain filter pills when in 3D Histomap view
@@ -1427,14 +1503,11 @@ function switchView(viewName) {
   } else {
     brainInstance.stop();
   }
-  if (viewName === 'chapters') {
-    renderChaptersView();
+  if (viewName === 'learn') {
+    setLearnTab(subTab || learnTab);
   } else if (stopChapterSim) {
     stopChapterSim();
     stopChapterSim = null;
-  }
-  if (viewName === 'tutor') {
-    tutorInstance.render();
   }
   if (viewName === 'indexer') {
     loadIndexedFeed();
@@ -1444,6 +1517,42 @@ function switchView(viewName) {
 
 document.querySelectorAll('.main-tab').forEach((btn) => {
   btn.addEventListener('click', () => switchView(btn.dataset.view));
+});
+
+document.getElementById('btn-brand-home')?.addEventListener('click', () => {
+  switchView('home');
+});
+
+document.querySelectorAll('.learn-subtab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    setLearnTab(btn.dataset.learnTab);
+    syncUrlState();
+  });
+});
+
+document.querySelectorAll('[data-home-go]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const dest = btn.dataset.homeGo;
+    if (dest === 'histomap') switchView('histomap');
+    else if (dest === 'brain') switchView('brain');
+    else if (dest === 'learn-chapters') switchView('learn', 'chapters');
+    else if (dest === 'learn-tutor') switchView('learn', 'tutor');
+    else if (dest === 'learn-diagnostic') {
+      switchView('learn', 'tutor');
+      tutorInstance.startDiagnostic();
+    } else if (dest === 'chapter-0') {
+      activeChapterId = 'ch-0';
+      switchView('learn', 'chapters');
+    } else if (dest === 'chapter-11') {
+      activeChapterId = 'ch-11';
+      switchView('learn', 'chapters');
+    }
+  });
+});
+
+document.getElementById('btn-home-blogs')?.addEventListener('click', () => {
+  blogsDrawer.classList.remove('hidden');
+  renderBlogsList();
 });
 
 document.getElementById('btn-reset-pov')?.addEventListener('click', () => {
@@ -1649,6 +1758,7 @@ function renderChaptersView() {
 
       <div class="section-label">Explore interactively</div>
       <div class="lineage-chips">
+        <button class="lineage-btn primary-chip" id="btn-ch-tutor">Drill in Socratic Tutor →</button>
         <button class="lineage-btn" id="btn-ch-brain">Open in Knowledge Graph →</button>
         ${relMilestones
           .map((m) => `<button class="lineage-btn" data-ch-milestone="${m.id}">${m.name} (${m.year})</button>`)
@@ -1706,7 +1816,14 @@ function renderChaptersView() {
     if (e.target.checked) nextSet.add(ch.id);
     else nextSet.delete(ch.id);
     saveCompletedChapters(nextSet);
+    updateLearnProgressPill();
     renderChaptersView();
+  });
+
+  readerEl.querySelector('#btn-ch-tutor')?.addEventListener('click', () => {
+    const targetSub = CHAPTER_TO_SUBSKILL[ch.id] || 'gpu-roofline';
+    switchView('learn', 'tutor');
+    tutorInstance.focusSubskill(targetSub);
   });
 
   readerEl.querySelector('#btn-ch-brain')?.addEventListener('click', () => {
@@ -1897,9 +2014,12 @@ document.getElementById('btn-sync-now')?.addEventListener('click', async () => {
 
 function syncUrlState() {
   const params = new URLSearchParams();
-  if (currentView !== 'histomap') params.set('view', currentView);
-  if (state.selectedNodeId) params.set('node', state.selectedNodeId);
-  else if (Math.round(state.activeYear) !== MAX_YEAR) params.set('year', String(Math.round(state.activeYear)));
+  if (currentView !== 'home') params.set('view', currentView);
+  if (currentView === 'learn' && learnTab === 'tutor') params.set('tab', 'tutor');
+  if (currentView === 'histomap') {
+    if (state.selectedNodeId) params.set('node', state.selectedNodeId);
+    else if (Math.round(state.activeYear) !== MAX_YEAR) params.set('year', String(Math.round(state.activeYear)));
+  }
   const qs = params.toString();
   const nextUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
   window.history.replaceState(null, '', nextUrl);
@@ -1910,14 +2030,14 @@ document.getElementById('btn-share-x')?.addEventListener('click', () => {
   const shareUrl = window.location.href;
   const selNode = state.selectedNodeId ? state.nodes.find((n) => n.id === state.selectedNodeId) : null;
   const text = selNode
-    ? `Exploring ${selNode.name} (${selNode.year}) in the ML Infra Handbook — interactive 3D Histomap, Knowledge Graph & Chapters (2006–2026):`
+    ? `Exploring ${selNode.name} (${selNode.year}) in the ML Infra Handbook — interactive 3D Histomap, Knowledge Graph & Learn workspace (2006–2026):`
     : currentView === 'brain'
       ? `Check out the 3D Knowledge Graph in the ML Infra Handbook (from GPUs & CUDA to FlashAttention, vLLM, DeepSeek & RL infra):`
-      : currentView === 'chapters'
-        ? `Check out the interactive ML Infra Handbook — 12 chapters with live HBM-to-GPU factory animations:`
-        : currentView === 'tutor'
-          ? `Testing my ML Infrastructure foundations with the interactive Socratic Tutor (0–5 skill map, roofline, CUDA/Triton, FSDP, vLLM & RLVR):`
-          : `ML Infra Handbook — an interactive 3D Helical Histomap (2006–2026), 3D Knowledge Graph, 12-chapter guide & Socratic Tutor:`;
+      : currentView === 'learn' && learnTab === 'tutor'
+        ? `Testing my ML Infrastructure foundations with the interactive Socratic Tutor (0–5 skill map, roofline, CUDA/Triton, FSDP, vLLM & RLVR):`
+        : currentView === 'learn'
+          ? `Check out the interactive ML Infra Handbook — 12 visual chapters + Socratic Tutor:`
+          : `ML Infra Handbook — an interactive 3D Histomap (2006–2026), 3D Knowledge Graph, 12 visual chapters & Socratic Tutor:`;
   window.open(
     `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`,
     '_blank',
@@ -1928,17 +2048,29 @@ document.getElementById('btn-share-x')?.addEventListener('click', () => {
 function applyInitialUrlParams() {
   const params = new URLSearchParams(window.location.search);
   const view = params.get('view');
+  const tab = params.get('tab');
   const node = params.get('node');
   const year = params.get('year');
 
   if (node && state.nodes.some((n) => n.id === node)) {
     selectNode(node);
+    if (!view) {
+      switchView('histomap');
+      return;
+    }
   } else if (year && !isNaN(Number(year))) {
     setActiveYear(Number(year));
+    if (!view) {
+      switchView('histomap');
+      return;
+    }
   }
-  if (view && viewEls[view]) {
-    switchView(view);
+  if (view) {
+    switchView(view, tab);
+  } else {
+    switchView('home');
   }
+  updateLearnProgressPill();
 }
 
 // ==================== BOOT ====================

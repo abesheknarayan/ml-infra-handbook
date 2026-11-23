@@ -68,7 +68,7 @@ function loadState() {
   }
 }
 
-export function createSocraticTutor({ containerEl, onOpenChapter, onOpenBrainTopic }) {
+export function createSocraticTutor({ containerEl, onOpenChapter, onOpenBrainTopic, onStateChange }) {
   let st = loadState();
   let stateFeedback = '';
 
@@ -76,6 +76,7 @@ export function createSocraticTutor({ containerEl, onOpenChapter, onOpenBrainTop
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(st));
     } catch {}
+    if (typeof onStateChange === 'function') onStateChange();
   }
 
   function getSubskill(id) {
@@ -922,5 +923,29 @@ export function createSocraticTutor({ containerEl, onOpenChapter, onOpenBrainTop
     bindEvents();
   }
 
-  return { render };
+  function focusSubskill(subskillId) {
+    if (SOCRATIC_SUBSKILLS.some((s) => s.id === subskillId)) {
+      st.focusId = subskillId;
+    }
+    st.mode = 'drill';
+    st.showStateBox = false;
+    st.activeQuestion = pickProbeFor(st.focusId, false);
+    save();
+    render();
+  }
+
+  function startDiagnostic() {
+    st.mode = 'diagnostic';
+    st.diagnosticIndex = 0;
+    st.diagnosticAnswers = {};
+    st.showStateBox = false;
+    save();
+    render();
+  }
+
+  function getProgressPct() {
+    return Math.round(getOverallRatio() * 100);
+  }
+
+  return { render, focusSubskill, startDiagnostic, getProgressPct };
 }

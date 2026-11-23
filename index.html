@@ -33,15 +33,15 @@
   <!-- Clean Unified Top Header -->
   <header class="top-bar">
     <div class="top-left">
-      <div class="brand-title">
+      <button id="btn-brand-home" class="brand-title" type="button" title="Back to Home">
         ML Infra <span>Handbook</span>
-      </div>
+      </button>
 
       <nav class="main-tabs" role="tablist">
-        <button class="main-tab active" data-view="histomap">Histomap</button>
+        <button class="main-tab active" data-view="home">Home</button>
+        <button class="main-tab" data-view="histomap">Histomap</button>
         <button class="main-tab" data-view="brain"><span class="tab-long">Knowledge </span>Graph</button>
-        <button class="main-tab" data-view="chapters">Chapters</button>
-        <button class="main-tab" data-view="tutor"><span class="tab-long">Socratic </span>Tutor</button>
+        <button class="main-tab" data-view="learn">Learn</button>
         <button id="tab-live-feed" class="main-tab hidden" data-view="indexer">Live Feed</button>
       </nav>
     </div>
@@ -69,8 +69,130 @@
     </div>
   </header>
 
+  <!-- ==================== VIEW 0: EDITORIAL HOME ==================== -->
+  <section id="view-home" class="view-section">
+    <div class="home-scroll">
+      <div class="home-shell">
+        <div class="home-hero">
+          <div class="home-kicker">
+            <span class="home-dot"></span>
+            <span>2006–2026 · Interactive Technical Atlas · Auto-synced every 2h</span>
+          </div>
+          <h1 class="home-title">Machine Learning Infrastructure, mapped end to end.</h1>
+          <p class="home-lead">
+            Explore 20 years of GPU architecture, CUDA/Triton kernels, distributed training, inference engines, and RL post-training through three connected views — a 3D historical timeline, an interactive 3D concept graph, and a hands-on learning workspace combining visual chapters with a Socratic tutor.
+          </p>
+          <div class="home-cta-row">
+            <button class="nav-link primary home-btn-lg" data-home-go="learn-tutor">Start Socratic Diagnostic →</button>
+            <button class="nav-link home-btn-lg" data-home-go="learn-chapters">Read Study Guide</button>
+            <button class="nav-link home-btn-lg" data-home-go="histomap">Explore 3D Histomap</button>
+          </div>
+          <div class="home-stats">
+            <div class="home-stat"><strong>39</strong><span>Milestones (2006–2026)</span></div>
+            <div class="home-stat"><strong>12</strong><span>Visual Chapters &amp; Sims</span></div>
+            <div class="home-stat"><strong>8</strong><span>Socratic Subskills (0–5)</span></div>
+            <div class="home-stat"><strong>34</strong><span>Frontier Lab Blogs</span></div>
+          </div>
+        </div>
+
+        <div class="home-section-head">
+          <h2>Three ways to explore</h2>
+          <p>Every view shares the same underlying systems graph — jump seamlessly from a historical breakthrough to its concept hub, interactive chapter, or Socratic drill.</p>
+        </div>
+
+        <div class="home-pillars">
+          <article class="pillar-card" data-home-card="histomap">
+            <div class="pillar-top">
+              <span class="pillar-num">01</span>
+              <span class="pillar-badge">3D Timeline</span>
+            </div>
+            <h3>3D Histomap</h3>
+            <p>Scrub 2006–2026 along a 3D cylindrical timeline of 39 systems breakthroughs — from CUDA and AlexNet to FlashAttention, vLLM, DeepSeek-V3, and Blackwell NVL72.</p>
+            <div class="pillar-tags">
+              <span>Scroll time travel</span>
+              <span>360° orbit</span>
+              <span>Lineage links</span>
+            </div>
+            <div class="pillar-actions">
+              <button class="pillar-btn" data-home-go="histomap">Open Histomap →</button>
+            </div>
+          </article>
+
+          <article class="pillar-card" data-home-card="brain">
+            <div class="pillar-top">
+              <span class="pillar-num">02</span>
+              <span class="pillar-badge">Obsidian View</span>
+            </div>
+            <h3>Knowledge Graph</h3>
+            <p>Navigate an interactive 3D force-directed graph of 10 core ML infra hubs, linked milestones, mental models, and auto-updated papers. Grab and pull nodes in 3D space.</p>
+            <div class="pillar-tags">
+              <span>10 topic hubs</span>
+              <span>3D node physics</span>
+              <span>Live field notes</span>
+            </div>
+            <div class="pillar-actions">
+              <button class="pillar-btn" data-home-go="brain">Open Knowledge Graph →</button>
+            </div>
+          </article>
+
+          <article class="pillar-card pillar-featured" data-home-card="learn">
+            <div class="pillar-top">
+              <span class="pillar-num">03</span>
+              <span class="pillar-badge">Chapters + Tutor</span>
+            </div>
+            <h3>Learn: Chapters &amp; Socratic Tutor</h3>
+            <p>Master the stack through 12 chapters with interactive GPU-factory simulations paired with a Jane Street–style Socratic tutor (diagnostic placement, 0–5 skill map, spaced review).</p>
+            <div class="pillar-tags">
+              <span>12 chapters</span>
+              <span>Live 3B1B sims</span>
+              <span>0–5 Skill Map</span>
+            </div>
+            <div class="pillar-actions">
+              <button class="pillar-btn primary" data-home-go="learn-chapters">Open Chapters →</button>
+              <button class="pillar-btn" data-home-go="learn-tutor">Socratic Tutor →</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="home-section-head">
+          <h2>Where to start</h2>
+          <p>Pick the entry point that fits what you want to do right now.</p>
+        </div>
+
+        <div class="home-paths">
+          <button class="path-card" data-home-go="learn-diagnostic">
+            <strong>New to ML Infra?</strong>
+            <span>Take the 5-question Socratic diagnostic to place your 0–5 skill map and get an exact starting chapter.</span>
+            <em>Start diagnostic →</em>
+          </button>
+          <button class="path-card" data-home-go="chapter-0">
+            <strong>Want the full picture first?</strong>
+            <span>Start with Chapter 0 (The ML Infra Factory) to see how data, GPUs, kernels, parallelism, and serving connect.</span>
+            <em>Read Chapter 0 →</em>
+          </button>
+          <button class="path-card" data-home-go="chapter-11">
+            <strong>Tracking what's new right now?</strong>
+            <span>Open Chapter 11 (Emerging Paradigms) for auto-clustered frontier trends, or browse 34 lab &amp; engineer blogs.</span>
+            <em>Open Living Chapter 11 →</em>
+          </button>
+        </div>
+
+        <div class="home-pulse">
+          <div class="home-pulse-head">
+            <div>
+              <h2>Latest from frontier labs &amp; arXiv</h2>
+              <p id="home-pulse-sub">Auto-synced every 2 hours from DeepMind, Meta, PyTorch, Thinking Machines, Ai2, Modal, CoreWeave, vLLM, LMSYS &amp; arXiv.</p>
+            </div>
+            <button class="nav-link" id="btn-home-blogs">Browse 34 Blogs →</button>
+          </div>
+          <div class="home-pulse-grid" id="home-pulse-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== VIEW 1: 3D HISTOMAP ==================== -->
-  <section id="view-histomap" class="view-section">
+  <section id="view-histomap" class="view-section hidden">
     <div id="webgl-container"></div>
     <div id="labels-layer"></div>
 
@@ -153,32 +275,45 @@
     </aside>
   </section>
 
-  <!-- ==================== VIEW 3: CHAPTER-WISE STUDY GUIDE ==================== -->
-  <section id="view-chapters" class="view-section hidden">
-    <div class="chapters-layout">
-      <button id="btn-mobile-toc" class="mobile-toc-bar" type="button">
-        <span id="mobile-toc-current">Ch 0 · The ML Infra Factory</span>
-        <span class="mobile-toc-action" id="mobile-toc-action">Chapters ▾</span>
-      </button>
-
-      <aside class="chapters-toc" id="chapters-toc">
-        <div class="toc-header">
-          <h2>Study Guide</h2>
-          <span id="chapters-progress" class="toc-progress">0 / 12 completed</span>
+  <!-- ==================== VIEW 3: LEARN (CHAPTERS + SOCRATIC TUTOR) ==================== -->
+  <section id="view-learn" class="view-section hidden">
+    <div class="learn-shell">
+      <div class="learn-subbar">
+        <div class="learn-subtabs" role="tablist">
+          <button class="learn-subtab active" data-learn-tab="chapters">Chapters <span class="subtab-count">12</span></button>
+          <button class="learn-subtab" data-learn-tab="tutor">Socratic Tutor <span class="subtab-count">0–5 Map</span></button>
         </div>
-        <div id="chapters-toc-list" class="toc-list"></div>
-      </aside>
+        <div class="learn-subbar-meta">
+          <span id="learn-progress-pill" class="learn-progress-pill">Chapters 0/12 · Skill Map 0%</span>
+        </div>
+      </div>
 
-      <main class="chapters-reader" id="chapters-reader"></main>
+      <div id="learn-pane-chapters" class="learn-pane">
+        <div class="chapters-layout">
+          <button id="btn-mobile-toc" class="mobile-toc-bar" type="button">
+            <span id="mobile-toc-current">Ch 0 · The ML Infra Factory</span>
+            <span class="mobile-toc-action" id="mobile-toc-action">Chapters ▾</span>
+          </button>
+
+          <aside class="chapters-toc" id="chapters-toc">
+            <div class="toc-header">
+              <h2>Study Guide</h2>
+              <span id="chapters-progress" class="toc-progress">0 / 12 completed</span>
+            </div>
+            <div id="chapters-toc-list" class="toc-list"></div>
+          </aside>
+
+          <main class="chapters-reader" id="chapters-reader"></main>
+        </div>
+      </div>
+
+      <div id="learn-pane-tutor" class="learn-pane hidden">
+        <div id="tutor-root" class="tutor-scroll"></div>
+      </div>
     </div>
   </section>
 
-  <!-- ==================== VIEW 4: SOCRATIC TUTOR & LEARNING PATH ==================== -->
-  <section id="view-tutor" class="view-section hidden">
-    <div id="tutor-root" class="tutor-scroll"></div>
-  </section>
-
-  <!-- ==================== VIEW 5: LIVE FEED & INDEXER ==================== -->
+  <!-- ==================== VIEW 4: LIVE FEED & INDEXER ==================== -->
   <section id="view-indexer" class="view-section hidden">
     <div class="indexer-layout">
       <div class="indexer-main">
@@ -197,7 +332,7 @@
       </div>
 
       <aside class="indexer-sources-col">
-        <div class="section-label" style="margin-top:0;">Monitored Sources (18)</div>
+        <div class="section-label" style="margin-top:0;">Monitored Sources (25)</div>
         <div class="sources-list" id="indexer-sources"></div>
       </aside>
     </div>
