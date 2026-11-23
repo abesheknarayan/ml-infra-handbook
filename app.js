@@ -11,6 +11,7 @@ import { TOPIC_HUBS } from './brain-data.js';
 import { CHAPTERS } from './chapters-data.js';
 import { FACTORY_STATIONS, mountChapterSimulation } from './chapter-visuals.js';
 import { createObsidianBrain } from './brain.js';
+import { createSocraticTutor } from './socratic.js';
 
 const STORAGE_KEY = 'ml-infra-galaxy-custom-v1';
 const MIN_YEAR = 2006;
@@ -1331,6 +1332,7 @@ const viewEls = {
   histomap: document.getElementById('view-histomap'),
   brain: document.getElementById('view-brain'),
   chapters: document.getElementById('view-chapters'),
+  tutor: document.getElementById('view-tutor'),
   indexer: document.getElementById('view-indexer')
 };
 
@@ -1354,6 +1356,18 @@ const brainInstance = createObsidianBrain({
   onJumpToHistomap(nodeId) {
     switchView('histomap');
     selectNode(nodeId);
+  }
+});
+
+const tutorInstance = createSocraticTutor({
+  containerEl: document.getElementById('tutor-root'),
+  onOpenChapter(chId) {
+    activeChapterId = chId;
+    switchView('chapters');
+  },
+  onOpenBrainTopic(topicId) {
+    switchView('brain');
+    brainInstance.focusNode(topicId);
   }
 });
 
@@ -1418,6 +1432,9 @@ function switchView(viewName) {
   } else if (stopChapterSim) {
     stopChapterSim();
     stopChapterSim = null;
+  }
+  if (viewName === 'tutor') {
+    tutorInstance.render();
   }
   if (viewName === 'indexer') {
     loadIndexedFeed();
@@ -1897,8 +1914,10 @@ document.getElementById('btn-share-x')?.addEventListener('click', () => {
     : currentView === 'brain'
       ? `Check out the 3D Knowledge Graph in the ML Infra Handbook (from GPUs & CUDA to FlashAttention, vLLM, DeepSeek & RL infra):`
       : currentView === 'chapters'
-        ? `Check out the interactive ML Infra Handbook — 11 chapters with live HBM-to-GPU factory animations:`
-        : `ML Infra Handbook — an interactive 3D Helical Histomap (2006–2026), 3D Knowledge Graph, 11-chapter guide & live engineering feed:`;
+        ? `Check out the interactive ML Infra Handbook — 12 chapters with live HBM-to-GPU factory animations:`
+        : currentView === 'tutor'
+          ? `Testing my ML Infrastructure foundations with the interactive Socratic Tutor (0–5 skill map, roofline, CUDA/Triton, FSDP, vLLM & RLVR):`
+          : `ML Infra Handbook — an interactive 3D Helical Histomap (2006–2026), 3D Knowledge Graph, 12-chapter guide & Socratic Tutor:`;
   window.open(
     `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`,
     '_blank',
