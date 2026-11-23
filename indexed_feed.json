@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-23T02:12:45.079Z",
-  "totalItems": 119,
+  "lastSyncedAt": "2026-11-23T14:00:03.233Z",
+  "totalItems": 126,
   "sources": [
     {
       "id": "deepmind",
@@ -206,9 +206,8 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "error",
-      "error": "This operation was aborted",
-      "count": 0
+      "status": "ok",
+      "count": 7
     }
   ],
   "emergingParadigms": [
@@ -216,31 +215,37 @@
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
       "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
-      "signalCount": 4,
+      "signalCount": 5,
       "items": [
+        {
+          "title": "trunk/134033073c8d2342daf13e3b4bac833c8a92563a: [dynamo] Use CPython-style arg checks for builtin arity errors (#205749)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F134033073c8d2342daf13e3b4bac833c8a92563a",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-23T12:25:38.000Z"
+        },
+        {
+          "title": "trunk/00772440e665f81a8e9e6426dfc167b8e8dc4fa9: [Dynamo] Fix state pollution in test infra and config restore (#191930)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F00772440e665f81a8e9e6426dfc167b8e8dc4fa9",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-23T03:34:47.000Z"
+        },
+        {
+          "title": "trunk/8254a23b50fb2324b9e867c746bee7f16ca08009",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8254a23b50fb2324b9e867c746bee7f16ca08009",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-23T02:50:59.000Z"
+        },
+        {
+          "title": "trunk/1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-23T02:50:58.000Z"
+        },
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
           "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
           "sourceName": "CoreWeave Blog",
           "publishedAt": "2026-11-19T22:51:31.000Z"
-        },
-        {
-          "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
-          "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
-          "sourceName": "NVIDIA Tech Blog",
-          "publishedAt": "2026-11-19T20:28:13.000Z"
-        },
-        {
-          "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
-          "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
-          "sourceName": "SemiAnalysis",
-          "publishedAt": "2025-09-16T17:38:01.000Z"
-        },
-        {
-          "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
-          "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
-          "sourceName": "SemiAnalysis",
-          "publishedAt": "2025-08-20T04:56:35.000Z"
         }
       ]
     },
@@ -282,10 +287,23 @@
   ],
   "items": [
     {
-      "title": "ciflow/trunk/206172: [INITIAL] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206172",
-      "publishedAt": "2026-11-23T01:59:29.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "trunk/134033073c8d2342daf13e3b4bac833c8a92563a: [dynamo] Use CPython-style arg checks for builtin arity errors (#205749)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F134033073c8d2342daf13e3b4bac833c8a92563a",
+      "publishedAt": "2026-11-23T12:25:38.000Z",
+      "summary": "Replace handwritten checks with CPython-like APIs. This change was authored with an AI assistant (Claude Code). Co-Authored-By: Claude Opus 5.5 noreply@anthropic.com Pull Request resolved: #205749 Approved by: https://github.com/rtimpe",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "viable/strict/1795436868",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795436868",
+      "publishedAt": "2026-11-23T07:30:46.000Z",
+      "summary": "[precompile] Document coverage, the capture gates, and serve-time mis…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -294,10 +312,10 @@
       ]
     },
     {
-      "title": "ciflow/trunk/206171: [INITIAL] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206171",
-      "publishedAt": "2026-11-23T01:59:29.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "viable/strict/1795431011",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795431011",
+      "publishedAt": "2026-11-23T06:42:00.000Z",
+      "summary": "[Testcase Refactoring][Test] Dynamically resolve device-to-backend ma…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -306,20 +324,47 @@
       ]
     },
     {
-      "title": "ciflow/trunk/206170: [INITIAL] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206170",
-      "publishedAt": "2026-11-23T01:59:29.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "trunk/00772440e665f81a8e9e6426dfc167b8e8dc4fa9: [Dynamo] Fix state pollution in test infra and config restore (#191930)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F00772440e665f81a8e9e6426dfc167b8e8dc4fa9",
+      "publishedAt": "2026-11-23T03:34:47.000Z",
+      "summary": "Related Issue Part of #146930 Why pytest test/dynamo in one process had 63 failures; all pass standalone shared test infra leaks state across tests: config restore, repro-script codegen, and import-time device-type setup How snapshot raw co",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-frameworks"
+        "topic-frameworks",
+        "topic-disagg"
       ]
     },
     {
-      "title": "trunk/b4d5f47e3d0b1ff9d458aa03816e669f0a22c793",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Fb4d5f47e3d0b1ff9d458aa03816e669f0a22c793",
+      "title": "trunk/8254a23b50fb2324b9e867c746bee7f16ca08009",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8254a23b50fb2324b9e867c746bee7f16ca08009",
+      "publishedAt": "2026-11-23T02:50:59.000Z",
+      "summary": "[dynamo] Simplify PrecompileContext.create_cache_entries' failure log…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "trunk/1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
+      "publishedAt": "2026-11-23T02:50:58.000Z",
+      "summary": "[dynamo] Move the bypassed-entry reset onto _DynamoCodeCacheEntry ( #2 …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "viable/strict/1795413033",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795413033",
       "publishedAt": "2026-11-23T01:52:09.000Z",
       "summary": "Revert \"[Testcase Refactoring]Refactor test_torchinductor_dynamic_sha…",
       "sourceId": "gh-pytorch",
@@ -330,37 +375,13 @@
       ]
     },
     {
-      "title": "trunk/1c42c77f69bcfae83b7aeadd851b3da1260a334c",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1c42c77f69bcfae83b7aeadd851b3da1260a334c",
-      "publishedAt": "2026-11-23T01:39:02.000Z",
-      "summary": "[Inductor] Tolerate extern choices without a timing in the layout-con…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "ciflow/xpu/203353",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F203353",
-      "publishedAt": "2026-11-23T01:16:18.000Z",
-      "summary": "Enable test_nested_compile_transformer_with_flex_attention_compiled_l…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/04d963cf72f30ece880f5d888b477b506b7f0a59",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F04d963cf72f30ece880f5d888b477b506b7f0a59",
-      "publishedAt": "2026-11-23T01:06:35.000Z",
-      "summary": "[Testcase Refactoring]Refactor test_torchinductor_dynamic_shapes.py f…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "How to build and maintain an agentic evaluation",
+      "url": "https://huggingface.co/blog/agentic-evals",
+      "publishedAt": "2026-11-23T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
@@ -373,6 +394,93 @@
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
       "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+      "url": "https://arxiv.org/abs/2611.27973v1",
+      "publishedAt": "2026-11-20T18:51:29.000Z",
+      "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, t",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed",
+      "url": "https://arxiv.org/abs/2611.27951v1",
+      "publishedAt": "2026-11-20T18:23:42.000Z",
+      "summary": "Long-context models use sparse or structured attention to avoid quadratic cost, yet retrieving a small set of relevant facts embedded among hundreds of thousands of distractors degrades as normalization mass disperses with length. Hub-and-s",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention"
+      ]
+    },
+    {
+      "title": "QuantStream3D: Geometry-Aligned Low-Bit KV Cache Quantization for Streaming Visual Geometry Transformers",
+      "url": "https://arxiv.org/abs/2611.27901v1",
+      "publishedAt": "2026-11-20T17:38:48.000Z",
+      "summary": "Streaming visual geometry transformers retain historical key-value (KV) states as cross-view geometric memory, but growing caches constrain long-sequence inference. We systematically characterize KV quantization in streaming geometry and un",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-inference",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "Speculative Decoding Is Less Speculative Than You Think",
+      "url": "https://arxiv.org/abs/2611.27891v1",
+      "publishedAt": "2026-11-20T17:33:21.000Z",
+      "summary": "Speculative decoding accelerates language-model inference by preparing candidate continuations before the target model generates them. Its efficiency depends on how well limited drafting computation anticipates the path the target will actu",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-inference",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Anchors That Move Without Collapsing: Exclusive-Region Anchor Routing for Vision Transformers",
+      "url": "https://arxiv.org/abs/2611.27855v1",
+      "publishedAt": "2026-11-20T17:04:16.000Z",
+      "summary": "Anchor tokens let a vision transformer exchange global information through a few summaries, but nothing forces different anchors to summarise different things. On one shared backbone we show that a Perceiver-style pathway and an AnchorForme",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Weave: Routing-Adaptive Runtime Warp Scheduling for MoE Megakernels",
+      "url": "https://arxiv.org/abs/2611.27765v1",
+      "publishedAt": "2026-11-20T15:55:34.000Z",
+      "summary": "The Mixture-of-Experts (MoE) architecture is widely used in mainstream large language models. Under expert parallelism (EP), state-of-the-art systems fuse each MoE layer into a persistent megakernel for high performance. By the nature of EP",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed"
+      ]
+    },
+    {
+      "title": "Impulsive ejection of Worthington jets by flow focusing. Influence of a soluble surfactant",
+      "url": "https://arxiv.org/abs/2611.27709v1",
+      "publishedAt": "2026-11-20T15:13:30.000Z",
+      "summary": "We experimentally investigate impulsive Worthington jet generation by flow focusing, considering the liquid meniscus location that maximizes the flow-focusing effect. This effect increases the jet velocity by up to two orders of magnitude o",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
         "topic-frameworks"
       ]
@@ -766,18 +874,6 @@
       "topics": [
         "topic-distributed",
         "topic-inference"
-      ]
-    },
-    {
-      "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
-      "url": "https://huggingface.co/blog/rumble-2-flash",
-      "publishedAt": "2026-11-18T00:00:00.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
       ]
     },
     {
