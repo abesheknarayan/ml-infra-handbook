@@ -947,5 +947,17 @@ export function createSocraticTutor({ containerEl, onOpenChapter, onOpenBrainTop
     return Math.round(getOverallRatio() * 100);
   }
 
-  return { render, focusSubskill, startDiagnostic, getProgressPct };
+  function getSkillSnapshot() {
+    const hasAnyProgress = Object.values(st.levels).some((v) => v > 0);
+    return {
+      diagnosticDone: Boolean(st.diagnosticDone || hasAnyProgress),
+      focusId: st.focusId,
+      targetLevel: st.targetLevel,
+      levels: { ...st.levels },
+      notes: [...(st.notes || [])],
+      overallPct: Math.round(getOverallRatio() * 100)
+    };
+  }
+
+  return { render, focusSubskill, startDiagnostic, getProgressPct, getSkillSnapshot };
 }

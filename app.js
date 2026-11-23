@@ -1344,6 +1344,17 @@ const CHAPTER_TO_SUBSKILL = {
   'ch-11': 'clusters-rl-infra'
 };
 
+const SUBSKILL_TO_PRIMARY_CHAPTER = {
+  'gpu-roofline': 'ch-1',
+  'kernels-tiling': 'ch-2',
+  'frameworks-autograd': 'ch-3',
+  'precision-quant': 'ch-5',
+  'distributed-parallel': 'ch-6',
+  'inference-serving': 'ch-7',
+  'disagg-speculative': 'ch-8',
+  'clusters-rl-infra': 'ch-10'
+};
+
 const viewEls = {
   home: document.getElementById('view-home'),
   histomap: document.getElementById('view-histomap'),
@@ -1397,10 +1408,18 @@ const brainInstance = createObsidianBrain({
 
 function updateLearnProgressPill() {
   const pill = document.getElementById('learn-progress-pill');
-  if (!pill) return;
   const doneCount = loadCompletedChapters().size;
-  const pct = typeof tutorInstance !== 'undefined' ? tutorInstance.getProgressPct() : 0;
-  pill.textContent = `Chapters ${doneCount}/${CHAPTERS.length} · Skill Map ${pct}%`;
+  const snap = typeof tutorInstance !== 'undefined' ? tutorInstance.getSkillSnapshot() : null;
+  const pct = snap ? snap.overallPct : 0;
+  if (pill) {
+    pill.textContent = `Chapters ${doneCount}/${CHAPTERS.length} · Skill Map ${pct}%`;
+  }
+  const homePrimaryCta = document.querySelector('[data-home-go="learn-tutor"]');
+  if (homePrimaryCta && snap) {
+    homePrimaryCta.textContent = snap.diagnosticDone
+      ? `Continue Learning Path (${pct}%) →`
+      : 'Start Socratic Diagnostic →';
+  }
 }
 
 const tutorInstance = createSocraticTutor({
@@ -1603,6 +1622,34 @@ function renderChaptersView() {
   const doneSet = loadCompletedChapters();
   progEl.textContent = `${doneSet.size} / ${CHAPTERS.length} completed`;
 
+  const snap = typeof tutorInstance !== 'undefined' ? tutorInstance.getSkillSnapshot() : null;
+  const focusChapterId = snap?.diagnosticDone
+    ? SUBSKILL_TO_PRIMARY_CHAPTER[snap.focusId] || 'ch-1'
+    : null;
+  const reviewNoteText = (snap?.notes || []).join(' ').toLowerCase();
+
+  function getChapterBadge(ch) {
+    if (!snap?.diagnosticDone || ch.id === 'ch-0' || ch.id === 'ch-11') return '';
+    const subId = CHAPTER_TO_SUBSKILL[ch.id];
+    const lvl = snap.levels[subId] || 0;
+    if (ch.id === focusChapterId) {
+      return `<span class="toc-badge focus">Start here</span>`;
+    }
+    if (lvl >= snap.targetLevel) {
+      return `<span class="toc-badge mastered">Mastered</span>`;
+    }
+    if (
+      reviewNoteText.includes('spaced review miss') &&
+      subId === snap.focusId
+    ) {
+      return `<span class="toc-badge review">Review</span>`;
+    }
+    if (lvl > 0) {
+      return `<span class="toc-badge level">L${lvl}/5</span>`;
+    }
+    return '';
+  }
+
   // Group chapters by Part
   let lastPart = '';
   tocEl.innerHTML = CHAPTERS.map((ch) => {
@@ -1610,10 +1657,15 @@ function renderChaptersView() {
     lastPart = ch.part;
     const isDone = doneSet.has(ch.id);
     const isActive = ch.id === activeChapterId;
+    const isFocus = ch.id === focusChapterId;
+    const badge = getChapterBadge(ch);
     return `${partHeader}
-      <button class="toc-item ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" data-ch="${ch.id}">
+      <button class="toc-item ${isActive ? 'active' : ''} ${isDone ? 'done' : ''} ${isFocus ? 'recommended' : ''}" data-ch="${ch.id}">
         <span class="toc-num">${isDone ? '✓' : ch.number}</span>
-        <span>${ch.title}</span>
+        <span class="toc-title-wrap">
+          <span class="toc-title-text">${ch.title}</span>
+          ${badge}
+        </span>
       </button>`;
   }).join('');
 
@@ -1704,8 +1756,39 @@ function renderChaptersView() {
     return `<button class="factory-node ${isFocus ? 'focus' : ''} ${isMastered ? 'mastered' : ''}" data-factory-ch="${targetCh}">${st.label}</button>${arrow}`;
   }).join('');
 
+  const focusChObj = focusChapterId ? CHAPTERS.find((c) => c.id === focusChapterId) : null;
+  const curSubId = CHAPTER_TO_SUBSKILL[ch.id] || 'gpu-roofline';
+  const curSubLvl = snap?.levels?.[curSubId] || 0;
+  const personalBannerHtml = snap?.diagnosticDone && focusChObj
+    ? `<div class="chapter-personal-bar">
+         <div class="chapter-personal-text">
+           <span class="toc-badge focus">Your path</span>
+           ${
+             ch.id === focusChObj.id
+               ? `<span>You're on your recommended focus chapter (<strong>L${curSubLvl}/5</strong> · goal ${snap.targetLevel}/5).</span>`
+               : `<span>Recommended next: <strong>Ch ${focusChObj.number} · ${escapeHtml(focusChObj.title)}</strong> (Skill Map ${snap.overallPct}%).</span>`
+           }
+         </div>
+         <div class="chapter-personal-actions">
+           ${
+             ch.id !== focusChObj.id
+               ? `<button class="mini-pov-btn active-chip" id="btn-jump-focus-ch">Jump to Ch ${focusChObj.number} →</button>`
+               : `<button class="mini-pov-btn active-chip" id="btn-banner-drill">Drill this chapter →</button>`
+           }
+         </div>
+       </div>`
+    : `<div class="chapter-personal-bar muted">
+         <div class="chapter-personal-text">
+           <span>Want a personalized reading order? Take the 5-question Socratic diagnostic to badge chapters by your 0–5 skill map.</span>
+         </div>
+         <div class="chapter-personal-actions">
+           <button class="mini-pov-btn active-chip" id="btn-banner-diag">Start diagnostic →</button>
+         </div>
+       </div>`;
+
   readerEl.innerHTML = `
     <article class="chapter-article">
+      ${personalBannerHtml}
       <div class="factory-strip" title="ML Infra Factory — highlighted stations are the focus of this chapter">
         ${factoryHtml}
       </div>
@@ -1818,6 +1901,24 @@ function renderChaptersView() {
     saveCompletedChapters(nextSet);
     updateLearnProgressPill();
     renderChaptersView();
+  });
+
+  readerEl.querySelector('#btn-jump-focus-ch')?.addEventListener('click', () => {
+    if (!focusChObj) return;
+    activeChapterId = focusChObj.id;
+    renderChaptersView();
+    readerEl.scrollTop = 0;
+  });
+
+  readerEl.querySelector('#btn-banner-drill')?.addEventListener('click', () => {
+    const targetSub = CHAPTER_TO_SUBSKILL[ch.id] || 'gpu-roofline';
+    switchView('learn', 'tutor');
+    tutorInstance.focusSubskill(targetSub);
+  });
+
+  readerEl.querySelector('#btn-banner-diag')?.addEventListener('click', () => {
+    switchView('learn', 'tutor');
+    tutorInstance.startDiagnostic();
   });
 
   readerEl.querySelector('#btn-ch-tutor')?.addEventListener('click', () => {
