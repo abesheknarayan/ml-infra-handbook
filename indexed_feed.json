@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-22T21:30:55.100Z",
-  "totalItems": 126,
+  "lastSyncedAt": "2026-11-23T02:12:45.079Z",
+  "totalItems": 119,
   "sources": [
     {
       "id": "deepmind",
@@ -206,8 +206,9 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "ok",
-      "count": 7
+      "status": "error",
+      "error": "This operation was aborted",
+      "count": 0
     }
   ],
   "emergingParadigms": [
@@ -281,10 +282,10 @@
   ],
   "items": [
     {
-      "title": "viable/strict/1795380584",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795380584",
-      "publishedAt": "2026-11-22T16:46:14.000Z",
-      "summary": "[Test Refactoring] Standardizing the definition format for `device_ty…",
+      "title": "ciflow/trunk/206172: [INITIAL] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206172",
+      "publishedAt": "2026-11-23T01:59:29.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -293,10 +294,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795378803: [XPU] Enable SDPA training checks in test_fused_attention (#201614)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795378803",
-      "publishedAt": "2026-11-22T15:56:34.000Z",
-      "summary": "Since #162454 and #181559 have been landed, this PR is to remove the XPU skip for sdpa backward from _check_common , so XPU runs the training half of the pattern rewriter tests. The only tests that break are test_sdpa_rewriter_25/26/27 . Th",
+      "title": "ciflow/trunk/206171: [INITIAL] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206171",
+      "publishedAt": "2026-11-23T01:59:29.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -305,10 +306,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795368000",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795368000",
-      "publishedAt": "2026-11-22T12:56:10.000Z",
-      "summary": "[MPS] Fix conv2d and conv_transpose2d for batch sizes above 65535 ( #2 …",
+      "title": "ciflow/trunk/206170: [INITIAL] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206170",
+      "publishedAt": "2026-11-23T01:59:29.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -317,10 +318,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795366216",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795366216",
-      "publishedAt": "2026-11-22T12:37:39.000Z",
-      "summary": "Revert \"Round float64 to float16, bfloat16 and float8 once in default…",
+      "title": "trunk/b4d5f47e3d0b1ff9d458aa03816e669f0a22c793",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Fb4d5f47e3d0b1ff9d458aa03816e669f0a22c793",
+      "publishedAt": "2026-11-23T01:52:09.000Z",
+      "summary": "Revert \"[Testcase Refactoring]Refactor test_torchinductor_dynamic_sha…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -329,10 +330,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795339242",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795339242",
-      "publishedAt": "2026-11-22T04:48:02.000Z",
-      "summary": "[c10d] Fix Gloo runLoop deadlock: release finished works outside work…",
+      "title": "trunk/1c42c77f69bcfae83b7aeadd851b3da1260a334c",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1c42c77f69bcfae83b7aeadd851b3da1260a334c",
+      "publishedAt": "2026-11-23T01:39:02.000Z",
+      "summary": "[Inductor] Tolerate extern choices without a timing in the layout-con…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -341,10 +342,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795337411: [vision hash update] update the pinned vision hash (#205962)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795337411",
-      "publishedAt": "2026-11-22T04:30:55.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Update the pinned vision hash. Pull Request resolved: #205962 Approved by: https://github.com/pytorchbot",
+      "title": "ciflow/xpu/203353",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F203353",
+      "publishedAt": "2026-11-23T01:16:18.000Z",
+      "summary": "Enable test_nested_compile_transformer_with_flex_attention_compiled_l…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -353,10 +354,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795335789: [torchtitan hash update] update the pinned torchtitan hash (#206041)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795335789",
-      "publishedAt": "2026-11-22T04:20:28.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206041 Approved by: https://github.com/pytorchbot",
+      "title": "trunk/04d963cf72f30ece880f5d888b477b506b7f0a59",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F04d963cf72f30ece880f5d888b477b506b7f0a59",
+      "publishedAt": "2026-11-23T01:06:35.000Z",
+      "summary": "[Testcase Refactoring]Refactor test_torchinductor_dynamic_shapes.py f…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -500,20 +501,6 @@
       ]
     },
     {
-      "title": "TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming",
-      "url": "https://arxiv.org/abs/2611.26619v1",
-      "publishedAt": "2026-11-19T18:58:31.000Z",
-      "summary": "Hybrid architectures have become mainstream among open-weight language models. Their global-attention and bounded-state layers maintain heterogeneous caches whose demands vary with context length and concurrency. We present TideCache, a ser",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-inference",
-        "topic-orchestration"
-      ]
-    },
-    {
       "title": "Why General-Purpose Cloud Platforms Throttle AI Innovation",
       "url": "https://wf.coreweave.com/blog/why-general-purpose-cloud-platforms-throttle-ai-innovation",
       "publishedAt": "2026-11-19T18:51:38.000Z",
@@ -538,31 +525,6 @@
       ]
     },
     {
-      "title": "AURA: AUdio-dRiven streaming Avatar",
-      "url": "https://arxiv.org/abs/2611.26540v1",
-      "publishedAt": "2026-11-19T18:17:38.000Z",
-      "summary": "Current audio-driven video diffusion models can synthesize realistic talking-head videos but generally require dozens of diffusion denoising steps over multi-second video chunks, making them unsuitable for streaming applications such as voi",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-orchestration"
-      ]
-    },
-    {
-      "title": "Aggron: Aggressive Compression of Agentic KV Caches during Head-of-Line Stalls in the Request Queue",
-      "url": "https://arxiv.org/abs/2611.26435v1",
-      "publishedAt": "2026-11-19T17:09:37.000Z",
-      "summary": "LLM agents run long, multi-turn programs whose contexts grow at every step, and serving them is limited by KV cache capacity. To alleviate this limitation, systems use context compression techniques, which typically wait until the KV cache ",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-inference"
-      ]
-    },
-    {
       "title": "Enabling Real-Time AI for Scientific Instruments with GPU-Native Data Acquisition",
       "url": "https://developer.nvidia.com/blog/enabling-real-time-ai-for-scientific-instruments-with-gpu-native-data-acquisition/",
       "publishedAt": "2026-11-19T17:00:00.000Z",
@@ -572,18 +534,6 @@
       "kind": "lab",
       "topics": [
         "topic-gpus"
-      ]
-    },
-    {
-      "title": "HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs",
-      "url": "https://arxiv.org/abs/2611.26363v1",
-      "publishedAt": "2026-11-19T16:31:46.000Z",
-      "summary": "Attention in large language models (LLMs) scores every query against every key with a full dot product. We investigate whether this dot product must be computed completely for attention to be effective. We propose Hidden Sparse Attention (H",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention"
       ]
     },
     {
@@ -599,31 +549,6 @@
       ]
     },
     {
-      "title": "Beam Model Technical Report",
-      "url": "https://arxiv.org/abs/2611.26358v1",
-      "publishedAt": "2026-11-19T16:28:23.000Z",
-      "summary": "Beam is a sparse Mixture-of-Experts (MoE) model with 501.3B total parameters and 23.4B active parameters, specifically built and optimized for coding, reasoning, and agentic workloads. Beam delivers frontier level reasoning, while requiring",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "Online Temporal Rotations for 2 Bit KV-Cache Quantization in Video Diffusion Transformers",
-      "url": "https://arxiv.org/abs/2611.26334v1",
-      "publishedAt": "2026-11-19T16:14:13.000Z",
-      "summary": "Video diffusion transformers reuse key--value (KV) caches across denoising steps, which quickly becomes a bottleneck for long video generation. We find that quantizing temporally distant cache vectors leads to a large range and high quantiz",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-quantization"
-      ]
-    },
-    {
       "title": "How an AI Operating Model Turns Ambition into Lasting Advantage",
       "url": "https://wf.coreweave.com/blog/how-an-ai-operating-model-turns-ambition-into-lasting-advantage",
       "publishedAt": "2026-11-19T15:43:42.000Z",
@@ -633,19 +558,6 @@
       "kind": "lab",
       "topics": [
         "topic-orchestration"
-      ]
-    },
-    {
-      "title": "Towards Scale-Up Networking: Challenges and Open Questions",
-      "url": "https://arxiv.org/abs/2611.26156v1",
-      "publishedAt": "2026-11-19T14:12:24.000Z",
-      "summary": "The rapid growth of AI models and the widespread use of distributed training and inference have made inter-accelerator communication a critical system bottleneck. Scale-up fabrics address this bottleneck by combining high per-accelerator ba",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed",
-        "topic-inference"
       ]
     },
     {
