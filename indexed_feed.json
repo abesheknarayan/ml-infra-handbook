@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-24T11:58:42.255Z",
-  "totalItems": 119,
+  "lastSyncedAt": "2026-11-24T22:14:20.744Z",
+  "totalItems": 126,
   "sources": [
     {
       "id": "deepmind",
@@ -206,9 +206,8 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "error",
-      "error": "This operation was aborted",
-      "count": 0
+      "status": "ok",
+      "count": 7
     }
   ],
   "emergingParadigms": [
@@ -216,8 +215,26 @@
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
       "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
-      "signalCount": 4,
+      "signalCount": 5,
       "items": [
+        {
+          "title": "trunk/85528aae36637259d401a67ffabb06856060bde3: [dynamo] Route object.__new__ through the tp_new choke point (#205721)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F85528aae36637259d401a67ffabb06856060bde3",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-24T19:06:18.000Z"
+        },
+        {
+          "title": "viable/strict/1795555211: [dynamo] Call path_prefix() once in DiskDynamoStore.clear (#206410)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795555211",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-24T16:44:39.000Z"
+        },
+        {
+          "title": "trunk/129258ed33144f62638b728a13800c617d29d3da",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F129258ed33144f62638b728a13800c617d29d3da",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-24T16:44:39.000Z"
+        },
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
           "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
@@ -229,32 +246,6 @@
           "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
           "sourceName": "NVIDIA Tech Blog",
           "publishedAt": "2026-11-19T20:28:13.000Z"
-        },
-        {
-          "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
-          "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
-          "sourceName": "SemiAnalysis",
-          "publishedAt": "2025-09-16T17:38:01.000Z"
-        },
-        {
-          "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
-          "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
-          "sourceName": "SemiAnalysis",
-          "publishedAt": "2025-08-20T04:56:35.000Z"
-        }
-      ]
-    },
-    {
-      "id": "paradigm-sub4bit",
-      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
-      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
-      "signalCount": 1,
-      "items": [
-        {
-          "title": "trunk/1d28e3a704d1d634d240e8fe0566c0c6df975458: [MPS] Add _scaled_grouped_mm_v2 (#206066)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1d28e3a704d1d634d240e8fe0566c0c6df975458",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-24T06:55:32.000Z"
         }
       ]
     },
@@ -280,6 +271,13 @@
       "items": []
     },
     {
+      "id": "paradigm-sub4bit",
+      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
+      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
+      "signalCount": 0,
+      "items": []
+    },
+    {
       "id": "paradigm-non-ar",
       "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
       "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
@@ -289,22 +287,10 @@
   ],
   "items": [
     {
-      "title": "trunk/06c79b1e5b4b6a8aa1a62f0b7d9f783c466896c2",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F06c79b1e5b4b6a8aa1a62f0b7d9f783c466896c2",
-      "publishedAt": "2026-11-24T11:29:07.000Z",
-      "summary": "[CUDA] Keep cached segments during graph capture when an allocation f…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-gpus"
-      ]
-    },
-    {
-      "title": "trunk/f29b6d519223d9b95d601b3b08d9145bc34947c1: `F.interpolate`: Add `inter-area` mode on CPU, matching opencv (#205844)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Ff29b6d519223d9b95d601b3b08d9145bc34947c1",
-      "publishedAt": "2026-11-24T10:12:54.000Z",
-      "summary": "BC-breaking? No. This adds a new mode; existing modes are unchanged. Summary (human written only) This PR adds \"inter-area\" mode to F.interpolate() on CPU. The bulk of the PR is just plumbing and tests, and the only new actual logic is the ",
+      "title": "trunk/36347f283048284893e3b6323518c2d9f4f02c99",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F36347f283048284893e3b6323518c2d9f4f02c99",
+      "publishedAt": "2026-11-24T22:08:12.000Z",
+      "summary": "[pytorch][bugfix] Avoid an undefined int64 cast when printing a large…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -313,26 +299,173 @@
       ]
     },
     {
-      "title": "trunk/1d28e3a704d1d634d240e8fe0566c0c6df975458: [MPS] Add _scaled_grouped_mm_v2 (#206066)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1d28e3a704d1d634d240e8fe0566c0c6df975458",
-      "publishedAt": "2026-11-24T06:55:32.000Z",
-      "summary": "torch.nn.functional.scaled_grouped_mm had no MPS kernel. This adds _scaled_grouped_mm_v2 on MPS for RowWise and TensorWise fp8 scaling with 2d x 3d, 3d x 2d, 2d x 2d and 3d x 3d inputs, and for MXFP8 and NVFP4 with 2d x 3d and 2d x 2d input",
+      "title": "Your Slurm Workflow Shouldn’t Change When Your Cluster Does",
+      "url": "https://wf.coreweave.com/blog/your-slurm-workflow-shouldnt-change-when-your-cluster-does",
+      "publishedAt": "2026-11-24T19:37:40.000Z",
+      "summary": "SUNK Anywhere brings CoreWeave's unified training system to GKE. See how to deploy it, connect SkyPilot, and launch the same job on GKE or CoreWeave.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "trunk/57225ed6db174eeb0f973f7fd8211bfec6a6bf45",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F57225ed6db174eeb0f973f7fd8211bfec6a6bf45",
+      "publishedAt": "2026-11-24T19:30:43.000Z",
+      "summary": "Omit skipped tests in instantiate_device_type_tests when `PYTORCH_T…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-kernels",
-        "topic-quantization"
+        "topic-frameworks"
       ]
     },
     {
-      "title": "trunk/4db54c7ee2e3a048a97ec16fac5a41013578663c",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4db54c7ee2e3a048a97ec16fac5a41013578663c",
-      "publishedAt": "2026-11-24T06:19:26.000Z",
-      "summary": "[pytorch][typing] Declare pci_bus_id, pci_device_id and pci_domain_id…",
+      "title": "trunk/85528aae36637259d401a67ffabb06856060bde3: [dynamo] Route object.__new__ through the tp_new choke point (#205721)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F85528aae36637259d401a67ffabb06856060bde3",
+      "publishedAt": "2026-11-24T19:06:18.000Z",
+      "summary": "A class whose new slot owner is object skipped the argument checks of object. new , so C(42) on a class without init or new did not raise. Adding object to _new_slot_owners_with_choke_points makes it use the existing tp_new_impl for object,",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "How to Run NVIDIA Cosmos 3 on Local AI Devices Using Hugging Face Diffusers",
+      "url": "https://developer.nvidia.com/blog/how-to-run-nvidia-cosmos-3-on-local-ai-devices-using-hugging-face-diffusers/",
+      "publishedAt": "2026-11-24T18:44:05.000Z",
+      "summary": "Running video generation models locally can be challenging when model weights and intermediate data exceed available GPU memory. NVIDIA Cosmos 3 Nano is a world...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "Prepare Market Data for Forecasting with NVIDIA Megatron Core",
+      "url": "https://developer.nvidia.com/blog/prepare-market-data-for-forecasting-with-nvidia-megatron-core/",
+      "publishedAt": "2026-11-24T17:00:00.000Z",
+      "summary": "Market data arrives as a stream of trades and quotes: every execution, bid, and ask, timestamped to the microsecond. Preparing this data for AI-based market...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-distributed"
+      ]
+    },
+    {
+      "title": "What’s New for Game Developers: AI Animation and RTX Tools",
+      "url": "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/",
+      "publishedAt": "2026-11-24T17:00:00.000Z",
+      "summary": "This month’s NVIDIA game development updates help teams bring new graphics, animation, and local AI capabilities into their engines while balancing image...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795555211: [dynamo] Call path_prefix() once in DiskDynamoStore.clear (#206410)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795555211",
+      "publishedAt": "2026-11-24T16:44:39.000Z",
+      "summary": "BC-breaking? No Summary (human written only) Agent details Authored with an AI assistant (Claude Code). Part of a five-PR stack of behavior-preserving cleanups to Dynamo's precompile package ( torch/_dynamo/package.py , torch/_dynamo/precom",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg",
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "trunk/129258ed33144f62638b728a13800c617d29d3da",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F129258ed33144f62638b728a13800c617d29d3da",
+      "publishedAt": "2026-11-24T16:44:39.000Z",
+      "summary": "[dynamo] Flatten the missing-backend branch in PrecompileCacheEntry.f…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+      "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "publishedAt": "2026-11-24T16:34:13.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795553445: Enable more test_ops on XPU (#201841)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795553445",
+      "publishedAt": "2026-11-24T16:30:07.000Z",
+      "summary": "Linked issue or supporting maintainer Fixes intel/torch-xpu-ops#5848 Part of #185590 BC-breaking? No Summary (human written only) Result CPU: Pre-change CPU: Post-change XPU: Pre-change XPU: Post-change Test cases 3,559 3,559 3,622 3,622 Pa",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Q&A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5",
+      "url": "https://developer.nvidia.com/blog/qa-how-everstone-brings-where-winds-meet-to-life-with-nvidia-dlss-5/",
+      "publishedAt": "2026-11-24T14:00:00.000Z",
+      "summary": "Where Winds Meet moves between distant mountain landscapes, bustling streets, and quiet moments with its characters. For Everstone Studio, bringing more...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795540860: [Stable ABI] Add cpublas shims (#204470)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795540860",
+      "publishedAt": "2026-11-24T13:02:02.000Z",
+      "summary": "Add PyTorch 2.16 stable ABI access to four at::native::cpublas APIs needed by CPU extensions: brgemm (all 8 overloads) brgemm_release gemm_no_downcast_stub could_pack These APIs are exposed in a new addition to the torch::stable namespace, ",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "publishedAt": "2026-11-24T13:00:00.000Z",
+      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "Searching for distant planets with Astra",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "publishedAt": "2026-11-24T11:00:00.000Z",
+      "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
@@ -352,41 +485,27 @@
       ]
     },
     {
-      "title": "trunk/0d8b36742ee52e2926f5c349cdae9e57c82ed2f0",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F0d8b36742ee52e2926f5c349cdae9e57c82ed2f0",
-      "publishedAt": "2026-11-24T02:46:15.000Z",
-      "summary": "[ROCm] Gate scaled grouped MM layout test on FP8 grouped GEMM support…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-kernels",
-        "topic-quantization"
-      ]
-    },
-    {
-      "title": "trunk/7d47094f2a94f14f8b38cdb485e587d28789f11e",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F7d47094f2a94f14f8b38cdb485e587d28789f11e",
-      "publishedAt": "2026-11-24T02:07:27.000Z",
-      "summary": "[inductor] Drop no-op self slice_scatters of a slice and reinplace sc…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "How Intentful uses dots to make more time for growth",
+      "url": "https://openai.com/business/customer-stories/intentful-dots",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
     },
     {
-      "title": "trunk/990e1ce56708ce777f2294c04f77e4c28c7ea900: [MPS][Inductor] Support float8_e4m3fn and float8_e8m0fnu (#206056)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F990e1ce56708ce777f2294c04f77e4c28c7ea900",
-      "publishedAt": "2026-11-24T00:15:11.000Z",
-      "summary": "Compiling anything that touched fp8 on MPS failed with KeyError: torch.float8_e4m3fn , because DTYPE_TO_METAL had no fp8 entries. Map them to the existing c10::metal fp8 structs and compute in float32, like half/bf16. Two Metal quirks need ",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "url": "https://openai.com/business/customer-stories/ifood",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
-        "topic-frameworks",
-        "topic-quantization"
+        "topic-frameworks"
       ]
     },
     {
@@ -411,6 +530,44 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
+      ]
+    },
+    {
+      "title": "On-Policy Codec Distillation for Efficient All-in-One Video Generation",
+      "url": "https://arxiv.org/abs/2611.31184v1",
+      "publishedAt": "2026-11-23T18:38:20.000Z",
+      "summary": "Modern visual generative models operate on tokens, and every visual asset they receive, whether an identity, a scribble, a depth map, or a motion video, is tokenized and appended to the input token sequence. Consequently, conditioning quick",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Look Back, Draft Ahead: Corrective Prefix Attention for Parallel Speculative Decoding",
+      "url": "https://arxiv.org/abs/2611.31112v1",
+      "publishedAt": "2026-11-23T17:52:33.000Z",
+      "summary": "Parallel speculative decoders propose an entire token block at once, yet one early inconsistency can cause the target to reject its remaining suffix. We introduce Corrective Prefix Attention (CPA), which combines prefix-aware selection with",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "LiveLoRA: Exact KV Cache Migration Across LoRA Updates for LLM Agents",
+      "url": "https://arxiv.org/abs/2611.31105v1",
+      "publishedAt": "2026-11-23T17:43:16.000Z",
+      "summary": "Updating an LLM adapter should not require replaying the full interaction history of every active session. Yet reusing key-value (KV) cache entries computed under an earlier version mixes model versions, while full-history re-prefill become",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-disagg"
       ]
     },
     {
@@ -450,6 +607,55 @@
       ]
     },
     {
+      "title": "LimeTree: Linear-Memory Graph Neural Networks over Tree-Graphs for Resource-Efficient Language Modeling and Context Extrapolation",
+      "url": "https://arxiv.org/abs/2611.30934v1",
+      "publishedAt": "2026-11-23T16:20:50.000Z",
+      "summary": "The search for computationally efficient alternatives to the Transformer has yielded numerous architectures in recent years; however, most exhibit severe weaknesses in associative recall-such as key-value (KV) retrieval-and length extrapola",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Testing Quantized KV-Cache Maintenance: Encoding Layout and Historical Restoration",
+      "url": "https://arxiv.org/abs/2611.30720v1",
+      "publishedAt": "2026-11-23T14:01:47.000Z",
+      "summary": "Repeating rows then selecting originals retains layout-dependent drift despite equal encoding counts. We measure when existing checks fail to establish preservation contracts in fixed quantized KV-cache implementations. In four-bit HQQ axis",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Speculate in the Right Order: Efficient Self-Speculative Decoding for Autoregressive Image Generation",
+      "url": "https://arxiv.org/abs/2611.30704v1",
+      "publishedAt": "2026-11-23T13:49:13.000Z",
+      "summary": "Self-speculative decoding accelerates autoregressive image generation by leveraging the same model for parallel drafting and sequential verification, without requiring an additional draft model. While existing methods primarily focus on imp",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "GC-MoE K3: A Green-Context Role Graph for Latent Mixture-of-Experts Decode",
+      "url": "https://arxiv.org/abs/2611.30542v1",
+      "publishedAt": "2026-11-23T11:49:19.000Z",
+      "summary": "Kimi K3 combines a latent routed mixture of experts with full-width shared experts. A complete feed-forward evaluation must score and select experts, project tokens into the latent space, exchange tokens across expert-parallel ranks, comput",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed",
+        "topic-disagg"
+      ]
+    },
+    {
       "title": "Connected intelligence for in-house legal",
       "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
       "publishedAt": "2026-11-23T08:00:00.000Z",
@@ -480,54 +686,6 @@
       "summary": "",
       "sourceId": "huggingface",
       "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Perplexity and Intelligence",
-      "url": "https://openai.com/index/perplexity-and-intelligence",
-      "publishedAt": "2026-11-22T00:00:00.000Z",
-      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Combatting adversarial distillation",
-      "url": "https://openai.com/index/combatting-adversarial-distillation",
-      "publishedAt": "2026-11-20T10:00:00.000Z",
-      "summary": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
-      "url": "https://openai.com/business/customer-stories/hebbia",
-      "publishedAt": "2026-11-20T00:00:00.000Z",
-      "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Can AI help scientists identify promising drug candidates?",
-      "url": "https://openai.com/index/introducing-medchembench",
-      "publishedAt": "2026-11-20T00:00:00.000Z",
-      "summary": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -645,60 +803,12 @@
       ]
     },
     {
-      "title": "Enabling Real-Time AI for Scientific Instruments with GPU-Native Data Acquisition",
-      "url": "https://developer.nvidia.com/blog/enabling-real-time-ai-for-scientific-instruments-with-gpu-native-data-acquisition/",
-      "publishedAt": "2026-11-19T17:00:00.000Z",
-      "summary": "In science and industry, analyzing sensor measurements in real time can enable AI to adjust processes, guide experiments, and search for better operating...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-gpus"
-      ]
-    },
-    {
-      "title": "Build Tool-Calling Parsers in Rust with AI Agents",
-      "url": "https://developer.nvidia.com/blog/build-tool-calling-parsers-in-rust-with-ai-agents/",
-      "publishedAt": "2026-11-19T16:30:46.000Z",
-      "summary": "A tool call can arrive in pieces, an argument can be cut short, or model-specific markup can leak into the answer. A frontend parser turns that output, received...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "How an AI Operating Model Turns Ambition into Lasting Advantage",
-      "url": "https://wf.coreweave.com/blog/how-an-ai-operating-model-turns-ambition-into-lasting-advantage",
-      "publishedAt": "2026-11-19T15:43:42.000Z",
-      "summary": "New Humatica research in partnership with CoreWeave shows that enterprises that rethink their operating models turn AI ambition into lasting, compounding value.",
-      "sourceId": "coreweave",
-      "sourceName": "CoreWeave Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-orchestration"
-      ]
-    },
-    {
       "title": "Introducing Gemini 4 Neon",
       "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
       "publishedAt": "2026-11-18T21:35:43.000Z",
       "summary": "",
       "sourceId": "deepmind",
       "sourceName": "Google DeepMind",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Connecting Energy Use to Scientific Output with Science per Joule",
-      "url": "https://developer.nvidia.com/blog/connecting-energy-use-to-scientific-output-with-science-per-joule/",
-      "publishedAt": "2026-11-18T21:26:33.000Z",
-      "summary": "For high-performance computing (HPC) centers operating under a fixed power budget, every joule spent computing needs to translate into useful scientific work....",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -766,36 +876,12 @@
       ]
     },
     {
-      "title": "Build Training-Ready Physical AI Datasets with Two Prompts in NVIDIA Cosmos",
-      "url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos/",
-      "publishedAt": "2026-11-18T17:00:00.000Z",
-      "summary": "World model accuracy starts with high-quality, diverse training datasets. Yet capturing rare defects, nighttime incidents, and other challenging scenarios is...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
       "url": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
       "publishedAt": "2026-11-18T16:59:38.000Z",
       "summary": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising",
       "sourceId": "meta-eng",
       "sourceName": "Engineering at Meta",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
-      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
-      "publishedAt": "2026-11-18T15:00:23.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
