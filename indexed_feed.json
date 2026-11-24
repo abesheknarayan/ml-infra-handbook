@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-23T14:00:03.233Z",
+  "lastSyncedAt": "2026-11-24T01:36:25.052Z",
   "totalItems": 126,
   "sources": [
     {
@@ -215,37 +215,31 @@
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
       "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
-      "signalCount": 5,
+      "signalCount": 4,
       "items": [
-        {
-          "title": "trunk/134033073c8d2342daf13e3b4bac833c8a92563a: [dynamo] Use CPython-style arg checks for builtin arity errors (#205749)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F134033073c8d2342daf13e3b4bac833c8a92563a",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-23T12:25:38.000Z"
-        },
-        {
-          "title": "trunk/00772440e665f81a8e9e6426dfc167b8e8dc4fa9: [Dynamo] Fix state pollution in test infra and config restore (#191930)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F00772440e665f81a8e9e6426dfc167b8e8dc4fa9",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-23T03:34:47.000Z"
-        },
-        {
-          "title": "trunk/8254a23b50fb2324b9e867c746bee7f16ca08009",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8254a23b50fb2324b9e867c746bee7f16ca08009",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-23T02:50:59.000Z"
-        },
-        {
-          "title": "trunk/1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-23T02:50:58.000Z"
-        },
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
           "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
           "sourceName": "CoreWeave Blog",
           "publishedAt": "2026-11-19T22:51:31.000Z"
+        },
+        {
+          "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
+          "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+          "sourceName": "NVIDIA Tech Blog",
+          "publishedAt": "2026-11-19T20:28:13.000Z"
+        },
+        {
+          "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
+          "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-09-16T17:38:01.000Z"
+        },
+        {
+          "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
+          "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-08-20T04:56:35.000Z"
         }
       ]
     },
@@ -287,23 +281,34 @@
   ],
   "items": [
     {
-      "title": "trunk/134033073c8d2342daf13e3b4bac833c8a92563a: [dynamo] Use CPython-style arg checks for builtin arity errors (#205749)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F134033073c8d2342daf13e3b4bac833c8a92563a",
-      "publishedAt": "2026-11-23T12:25:38.000Z",
-      "summary": "Replace handwritten checks with CPython-like APIs. This change was authored with an AI assistant (Claude Code). Co-Authored-By: Claude Opus 5.5 noreply@anthropic.com Pull Request resolved: #205749 Approved by: https://github.com/rtimpe",
+      "title": "ciflow/trunk/206114: [CUDA] Skip garbage collection of cached blocks during graph capture",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206114",
+      "publishedAt": "2026-11-24T00:43:45.000Z",
+      "summary": "When an allocation finds no free block, the caching allocator can free cached segments of the default pool before it allocates a new segment. This garbage collection runs when garbage_collection_threshold is set, a memory fraction is set wi",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-frameworks",
-        "topic-disagg"
+        "topic-gpus"
       ]
     },
     {
-      "title": "viable/strict/1795436868",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795436868",
-      "publishedAt": "2026-11-23T07:30:46.000Z",
-      "summary": "[precompile] Document coverage, the capture gates, and serve-time mis…",
+      "title": "ciflow/trunk/206113",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206113",
+      "publishedAt": "2026-11-24T00:43:45.000Z",
+      "summary": "[CUDA] Keep cached segments during graph capture when an allocation f…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "ciflow/trunk/205867",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205867",
+      "publishedAt": "2026-11-24T00:41:45.000Z",
+      "summary": "Update ROCm preview version to 10.3.0a20261123",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -312,10 +317,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795431011",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795431011",
-      "publishedAt": "2026-11-23T06:42:00.000Z",
-      "summary": "[Testcase Refactoring][Test] Dynamically resolve device-to-backend ma…",
+      "title": "ciflow/trunk/205809: Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205809",
+      "publishedAt": "2026-11-24T00:31:46.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -324,52 +329,123 @@
       ]
     },
     {
-      "title": "trunk/00772440e665f81a8e9e6426dfc167b8e8dc4fa9: [Dynamo] Fix state pollution in test infra and config restore (#191930)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F00772440e665f81a8e9e6426dfc167b8e8dc4fa9",
-      "publishedAt": "2026-11-23T03:34:47.000Z",
-      "summary": "Related Issue Part of #146930 Why pytest test/dynamo in one process had 63 failures; all pass standalone shared test infra leaks state across tests: config restore, repro-script codegen, and import-time device-type setup How snapshot raw co",
+      "title": "ciflow/trunk/206166",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206166",
+      "publishedAt": "2026-11-24T00:21:54.000Z",
+      "summary": "update torchtitan commit hash",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/990e1ce56708ce777f2294c04f77e4c28c7ea900: [MPS][Inductor] Support float8_e4m3fn and float8_e8m0fnu (#206056)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F990e1ce56708ce777f2294c04f77e4c28c7ea900",
+      "publishedAt": "2026-11-24T00:15:11.000Z",
+      "summary": "Compiling anything that touched fp8 on MPS failed with KeyError: torch.float8_e4m3fn , because DTYPE_TO_METAL had no fp8 entries. Map them to the existing c10::metal fp8 structs and compute in float32, like half/bf16. Two Metal quirks need ",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
         "topic-frameworks",
-        "topic-disagg"
+        "topic-quantization"
       ]
     },
     {
-      "title": "trunk/8254a23b50fb2324b9e867c746bee7f16ca08009",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8254a23b50fb2324b9e867c746bee7f16ca08009",
-      "publishedAt": "2026-11-23T02:50:59.000Z",
-      "summary": "[dynamo] Simplify PrecompileContext.create_cache_entries' failure log…",
+      "title": "ciflow/trunk/206319: Add WaitCounter instrumentation to CUDA availability checks (#206319)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206319",
+      "publishedAt": "2026-11-24T00:01:51.000Z",
+      "summary": "Summary: Wrap the probe in torch.cuda.is_available() with a pytorch.wait_counter.cuda.is_available WaitCounter so the time spent checking CUDA availability is recorded. Builds without CUDA return before the counter is created. Prepared with",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-frameworks",
-        "topic-disagg"
+        "topic-gpus",
+        "topic-frameworks"
       ]
     },
     {
-      "title": "trunk/1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1277f8cb812c3b982e985dd6a1247c4d5d4085cb",
-      "publishedAt": "2026-11-23T02:50:58.000Z",
-      "summary": "[dynamo] Move the bypassed-entry reset onto _DynamoCodeCacheEntry ( #2 …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "publishedAt": "2026-11-23T21:20:00.000Z",
+      "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
-        "topic-frameworks",
-        "topic-disagg"
+        "topic-frameworks"
       ]
     },
     {
-      "title": "viable/strict/1795413033",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795413033",
-      "publishedAt": "2026-11-23T01:52:09.000Z",
-      "summary": "Revert \"[Testcase Refactoring]Refactor test_torchinductor_dynamic_sha…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "Accelerating Direct Sparse Solvers for Computational Engineering with NVIDIA cuDSS 1.0",
+      "url": "https://developer.nvidia.com/blog/accelerating-direct-sparse-solvers-for-computational-engineering-with-nvidia-cudss-1-0/",
+      "publishedAt": "2026-11-23T19:59:40.000Z",
+      "summary": "Sparse linear systems are at the core of nearly every engineering and scientific simulation, from structural mechanics and computational fluid dynamics to...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+      "url": "https://huggingface.co/blog/allenai/robotrack",
+      "publishedAt": "2026-11-23T17:20:37.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Get Started with GPU-Accelerated DuckDB Analytics Using the Sirius Core Extension",
+      "url": "https://developer.nvidia.com/blog/get-started-with-gpu-accelerated-duckdb-analytics-using-the-sirius-core-extension/",
+      "publishedAt": "2026-11-23T17:09:28.000Z",
+      "summary": "As datasets grow, analytical queries can take longer to run, slowing down data exploration, pipelines, and applications. For developers using DuckDB, reducing...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "Finding faster quantum algorithms with agents and formal verification",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+      "publishedAt": "2026-11-23T16:59:40.000Z",
+      "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "Connected intelligence for in-house legal",
+      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Richpanel helps companies automate 50% of support in 30 days",
+      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "publishedAt": "2026-11-23T08:00:00.000Z",
+      "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
@@ -669,48 +745,24 @@
       ]
     },
     {
-      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-      "publishedAt": "2026-11-19T08:00:00.000Z",
-      "summary": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Deploying Daybreak Red",
-      "url": "https://openai.com/business/learn/deploying-daybreak-red",
-      "publishedAt": "2026-11-19T00:00:00.000Z",
-      "summary": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "See PR scans in action",
-      "url": "https://openai.com/business/learn/pr-scans-demo",
-      "publishedAt": "2026-11-19T00:00:00.000Z",
-      "summary": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Introducing Gemini 4 Neon",
       "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
       "publishedAt": "2026-11-18T21:35:43.000Z",
       "summary": "",
       "sourceId": "deepmind",
       "sourceName": "Google DeepMind",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Connecting Energy Use to Scientific Output with Science per Joule",
+      "url": "https://developer.nvidia.com/blog/connecting-energy-use-to-scientific-output-with-science-per-joule/",
+      "publishedAt": "2026-11-18T21:26:33.000Z",
+      "summary": "For high-performance computing (HPC) centers operating under a fixed power budget, every joule spent computing needs to translate into useful scientific work....",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -814,20 +866,6 @@
       ]
     },
     {
-      "title": "Tackling GPU Bottlenecks in Plane-Wave DFT with K-Point Batching and Mixed Precision",
-      "url": "https://developer.nvidia.com/blog/tackling-gpu-bottlenecks-in-plane-wave-dft-with-k-point-batching-and-mixed-precision/",
-      "publishedAt": "2026-11-18T15:00:00.000Z",
-      "summary": "Training a next-generation machine learning interatomic potential (MLIP) requires ground truth: tens to hundreds of millions of density functional theory (DFT)...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-gpus",
-        "topic-quantization",
-        "topic-inference"
-      ]
-    },
-    {
       "title": "router-v0.1.0",
       "url": "https://github.com/sgl-project/sglang/releases/tag/router-v0.1.0",
       "publishedAt": "2026-11-18T00:34:15.000Z",
@@ -861,44 +899,6 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
-      ]
-    },
-    {
-      "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
-      "url": "https://huggingface.co/blog/moe-expert-streaming",
-      "publishedAt": "2026-11-18T00:00:00.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-distributed",
-        "topic-inference"
-      ]
-    },
-    {
-      "title": "Co-Designing Sparse Attention for Efficient Long-Context Inference",
-      "url": "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/",
-      "publishedAt": "2026-11-17T17:30:00.000Z",
-      "summary": "Agentic workloads, long documents, and large codebases are pushing context lengths from tens of thousands of tokens to hundreds of thousands. At those lengths,...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-attention",
-        "topic-inference"
-      ]
-    },
-    {
-      "title": "Integrating QPUs into Supercomputing Centers Using Slurm HRES Plugins",
-      "url": "https://developer.nvidia.com/blog/integrating-qpus-into-supercomputing-centers-using-slurm-hres-plugins/",
-      "publishedAt": "2026-11-17T17:00:00.000Z",
-      "summary": "Quantum processors are being integrated into supercomputing centers worldwide. National programs in North America, Europe, and Asia are driving the installation...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-orchestration"
       ]
     },
     {
@@ -1064,18 +1064,6 @@
       "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
       "publishedAt": "2026-11-10T12:02:28.000Z",
       "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
-      "sourceId": "deepmind",
-      "sourceName": "Google DeepMind",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Opening the datasets behind our AI weather models",
-      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-      "publishedAt": "2026-11-10T11:13:04.000Z",
-      "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
       "sourceId": "deepmind",
       "sourceName": "Google DeepMind",
       "kind": "lab",
