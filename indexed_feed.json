@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-24T01:36:25.052Z",
-  "totalItems": 126,
+  "lastSyncedAt": "2026-11-24T11:58:42.255Z",
+  "totalItems": 119,
   "sources": [
     {
       "id": "deepmind",
@@ -206,8 +206,9 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "ok",
-      "count": 7
+      "status": "error",
+      "error": "This operation was aborted",
+      "count": 0
     }
   ],
   "emergingParadigms": [
@@ -244,6 +245,20 @@
       ]
     },
     {
+      "id": "paradigm-sub4bit",
+      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
+      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
+      "signalCount": 1,
+      "items": [
+        {
+          "title": "trunk/1d28e3a704d1d634d240e8fe0566c0c6df975458: [MPS] Add _scaled_grouped_mm_v2 (#206066)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1d28e3a704d1d634d240e8fe0566c0c6df975458",
+          "sourceName": "PyTorch Releases",
+          "publishedAt": "2026-11-24T06:55:32.000Z"
+        }
+      ]
+    },
+    {
       "id": "paradigm-kernel-ai",
       "name": "Autonomous Kernel Synthesis & Discovery",
       "description": "RL-guided and evolutionary agents (AlphaEvolve, KernelBench) automatically writing, verifying, and optimizing CUDA, Triton, and PTX kernels.",
@@ -265,13 +280,6 @@
       "items": []
     },
     {
-      "id": "paradigm-sub4bit",
-      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
-      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
-      "signalCount": 0,
-      "items": []
-    },
-    {
       "id": "paradigm-non-ar",
       "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
       "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
@@ -281,21 +289,9 @@
   ],
   "items": [
     {
-      "title": "ciflow/trunk/206114: [CUDA] Skip garbage collection of cached blocks during graph capture",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206114",
-      "publishedAt": "2026-11-24T00:43:45.000Z",
-      "summary": "When an allocation finds no free block, the caching allocator can free cached segments of the default pool before it allocates a new segment. This garbage collection runs when garbage_collection_threshold is set, a memory fraction is set wi",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-gpus"
-      ]
-    },
-    {
-      "title": "ciflow/trunk/206113",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206113",
-      "publishedAt": "2026-11-24T00:43:45.000Z",
+      "title": "trunk/06c79b1e5b4b6a8aa1a62f0b7d9f783c466896c2",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F06c79b1e5b4b6a8aa1a62f0b7d9f783c466896c2",
+      "publishedAt": "2026-11-24T11:29:07.000Z",
       "summary": "[CUDA] Keep cached segments during graph capture when an allocation f…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
@@ -305,10 +301,10 @@
       ]
     },
     {
-      "title": "ciflow/trunk/205867",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205867",
-      "publishedAt": "2026-11-24T00:41:45.000Z",
-      "summary": "Update ROCm preview version to 10.3.0a20261123",
+      "title": "trunk/f29b6d519223d9b95d601b3b08d9145bc34947c1: `F.interpolate`: Add `inter-area` mode on CPU, matching opencv (#205844)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Ff29b6d519223d9b95d601b3b08d9145bc34947c1",
+      "publishedAt": "2026-11-24T10:12:54.000Z",
+      "summary": "BC-breaking? No. This adds a new mode; existing modes are unchanged. Summary (human written only) This PR adds \"inter-area\" mode to F.interpolate() on CPU. The bulk of the PR is just plumbing and tests, and the only new actual logic is the ",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -317,10 +313,23 @@
       ]
     },
     {
-      "title": "ciflow/trunk/205809: Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205809",
-      "publishedAt": "2026-11-24T00:31:46.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "trunk/1d28e3a704d1d634d240e8fe0566c0c6df975458: [MPS] Add _scaled_grouped_mm_v2 (#206066)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F1d28e3a704d1d634d240e8fe0566c0c6df975458",
+      "publishedAt": "2026-11-24T06:55:32.000Z",
+      "summary": "torch.nn.functional.scaled_grouped_mm had no MPS kernel. This adds _scaled_grouped_mm_v2 on MPS for RowWise and TensorWise fp8 scaling with 2d x 3d, 3d x 2d, 2d x 2d and 3d x 3d inputs, and for MXFP8 and NVFP4 with 2d x 3d and 2d x 2d input",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-quantization"
+      ]
+    },
+    {
+      "title": "trunk/4db54c7ee2e3a048a97ec16fac5a41013578663c",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4db54c7ee2e3a048a97ec16fac5a41013578663c",
+      "publishedAt": "2026-11-24T06:19:26.000Z",
+      "summary": "[pytorch][typing] Declare pci_bus_id, pci_device_id and pci_domain_id…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -329,10 +338,37 @@
       ]
     },
     {
-      "title": "ciflow/trunk/206166",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206166",
-      "publishedAt": "2026-11-24T00:21:54.000Z",
-      "summary": "update torchtitan commit hash",
+      "title": "v0.34.1rc0: [Perf][Qwen4Exp] Add SM100 TP=2 and TP=8 skinny GEMM plans (#69529)",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.1rc0",
+      "publishedAt": "2026-11-24T06:01:41.000Z",
+      "summary": "Signed-off-by: Johnsonms lizhaofu@gmail.com Co-authored-by: vllm-agent claw@inferact.ai",
+      "sourceId": "gh-vllm",
+      "sourceName": "vLLM Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-inference",
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "trunk/0d8b36742ee52e2926f5c349cdae9e57c82ed2f0",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F0d8b36742ee52e2926f5c349cdae9e57c82ed2f0",
+      "publishedAt": "2026-11-24T02:46:15.000Z",
+      "summary": "[ROCm] Gate scaled grouped MM layout test on FP8 grouped GEMM support…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-quantization"
+      ]
+    },
+    {
+      "title": "trunk/7d47094f2a94f14f8b38cdb485e587d28789f11e",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F7d47094f2a94f14f8b38cdb485e587d28789f11e",
+      "publishedAt": "2026-11-24T02:07:27.000Z",
+      "summary": "[inductor] Drop no-op self slice_scatters of a slice and reinplace sc…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -351,19 +387,6 @@
       "topics": [
         "topic-frameworks",
         "topic-quantization"
-      ]
-    },
-    {
-      "title": "ciflow/trunk/206319: Add WaitCounter instrumentation to CUDA availability checks (#206319)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206319",
-      "publishedAt": "2026-11-24T00:01:51.000Z",
-      "summary": "Summary: Wrap the probe in torch.cuda.is_available() with a pytorch.wait_counter.cuda.is_available WaitCounter so the time spent checking CUDA availability is recorded. Builds without CUDA return before the counter is created. Prepared with",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-gpus",
-        "topic-frameworks"
       ]
     },
     {
@@ -470,93 +493,6 @@
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
       "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
-      "url": "https://arxiv.org/abs/2611.27973v1",
-      "publishedAt": "2026-11-20T18:51:29.000Z",
-      "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, t",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-inference"
-      ]
-    },
-    {
-      "title": "Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed",
-      "url": "https://arxiv.org/abs/2611.27951v1",
-      "publishedAt": "2026-11-20T18:23:42.000Z",
-      "summary": "Long-context models use sparse or structured attention to avoid quadratic cost, yet retrieving a small set of relevant facts embedded among hundreds of thousands of distractors degrades as normalization mass disperses with length. Hub-and-s",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention"
-      ]
-    },
-    {
-      "title": "QuantStream3D: Geometry-Aligned Low-Bit KV Cache Quantization for Streaming Visual Geometry Transformers",
-      "url": "https://arxiv.org/abs/2611.27901v1",
-      "publishedAt": "2026-11-20T17:38:48.000Z",
-      "summary": "Streaming visual geometry transformers retain historical key-value (KV) states as cross-view geometric memory, but growing caches constrain long-sequence inference. We systematically characterize KV quantization in streaming geometry and un",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-inference",
-        "topic-orchestration"
-      ]
-    },
-    {
-      "title": "Speculative Decoding Is Less Speculative Than You Think",
-      "url": "https://arxiv.org/abs/2611.27891v1",
-      "publishedAt": "2026-11-20T17:33:21.000Z",
-      "summary": "Speculative decoding accelerates language-model inference by preparing candidate continuations before the target model generates them. Its efficiency depends on how well limited drafting computation anticipates the path the target will actu",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-inference",
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "Anchors That Move Without Collapsing: Exclusive-Region Anchor Routing for Vision Transformers",
-      "url": "https://arxiv.org/abs/2611.27855v1",
-      "publishedAt": "2026-11-20T17:04:16.000Z",
-      "summary": "Anchor tokens let a vision transformer exchange global information through a few summaries, but nothing forces different anchors to summarise different things. On one shared backbone we show that a Perceiver-style pathway and an AnchorForme",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Weave: Routing-Adaptive Runtime Warp Scheduling for MoE Megakernels",
-      "url": "https://arxiv.org/abs/2611.27765v1",
-      "publishedAt": "2026-11-20T15:55:34.000Z",
-      "summary": "The Mixture-of-Experts (MoE) architecture is widely used in mainstream large language models. Under expert parallelism (EP), state-of-the-art systems fuse each MoE layer into a persistent megakernel for high performance. By the nature of EP",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed"
-      ]
-    },
-    {
-      "title": "Impulsive ejection of Worthington jets by flow focusing. Influence of a soluble surfactant",
-      "url": "https://arxiv.org/abs/2611.27709v1",
-      "publishedAt": "2026-11-20T15:13:30.000Z",
-      "summary": "We experimentally investigate impulsive Worthington jet generation by flow focusing, considering the liquid meniscus location that maximizes the flow-focusing effect. This effect increases the jet velocity by up to two orders of magnitude o",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
       "topics": [
         "topic-frameworks"
       ]
@@ -1141,18 +1077,6 @@
       "kind": "release",
       "topics": [
         "topic-frameworks"
-      ]
-    },
-    {
-      "title": "v0.33.0",
-      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0",
-      "publishedAt": "2026-11-01T09:21:10.000Z",
-      "summary": "vLLM v0.33.0",
-      "sourceId": "gh-vllm",
-      "sourceName": "vLLM Releases",
-      "kind": "release",
-      "topics": [
-        "topic-inference"
       ]
     },
     {
