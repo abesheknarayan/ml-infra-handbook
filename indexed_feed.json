@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-25T06:55:49.911Z",
-  "totalItems": 119,
+  "lastSyncedAt": "2026-11-25T18:24:57.258Z",
+  "totalItems": 126,
   "sources": [
     {
       "id": "deepmind",
@@ -206,9 +206,8 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "error",
-      "error": "This operation was aborted",
-      "count": 0
+      "status": "ok",
+      "count": 7
     }
   ],
   "emergingParadigms": [
@@ -216,20 +215,8 @@
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
       "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
-      "signalCount": 5,
+      "signalCount": 4,
       "items": [
-        {
-          "title": "trunk/4599532dbf9474b7a5393bdad803aa22da89c513: [dynamo] Refresh PrecompileContext's stale docs (#206494)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4599532dbf9474b7a5393bdad803aa22da89c513",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-25T04:10:12.000Z"
-        },
-        {
-          "title": "trunk/372017fe998fe909ae36dee713ef0401d789f689",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F372017fe998fe909ae36dee713ef0401d789f689",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-25T04:10:11.000Z"
-        },
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
           "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
@@ -247,6 +234,12 @@
           "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
           "sourceName": "SemiAnalysis",
           "publishedAt": "2025-09-16T17:38:01.000Z"
+        },
+        {
+          "title": "H100 vs GB200 NVL72 Training Benchmarks &#8211; Power, TCO, and Reliability Analysis, Software Improvement Over Time",
+          "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-08-20T04:56:35.000Z"
         }
       ]
     },
@@ -288,60 +281,9 @@
   ],
   "items": [
     {
-      "title": "trunk/4599532dbf9474b7a5393bdad803aa22da89c513: [dynamo] Refresh PrecompileContext's stale docs (#206494)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4599532dbf9474b7a5393bdad803aa22da89c513",
-      "publishedAt": "2026-11-25T04:10:12.000Z",
-      "summary": "BC-breaking? No Summary (human written only) Agent details Authored with an AI assistant (Claude Code). Part of a five-PR stack of behavior-preserving cleanups to Dynamo's precompile package ( torch/_dynamo/package.py , torch/_dynamo/precom",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-disagg",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "trunk/372017fe998fe909ae36dee713ef0401d789f689",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F372017fe998fe909ae36dee713ef0401d789f689",
-      "publishedAt": "2026-11-25T04:10:11.000Z",
-      "summary": "[dynamo] Hash CompilePackage.source_id_from_fn through _hash_source (…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "viable/strict/1795589513",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795589513",
-      "publishedAt": "2026-11-25T02:44:49.000Z",
-      "summary": "[Inductor] Emit real-extent block_ptr loads for split reductions via …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/694391bcca4c288dc533e97d01cf372bd42d8f8f",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F694391bcca4c288dc533e97d01cf372bd42d8f8f",
-      "publishedAt": "2026-11-25T02:44:49.000Z",
-      "summary": "[Inductor] Emit real-extent block_ptr loads for split reductions via …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Run forking is now generally available in Weights & Biases Models",
+      "title": "Run Forking Is Now Generally Available in Weights & Biases Models",
       "url": "https://wf.coreweave.com/blog/run-forking-is-now-generally-available-in-weights-biases-models-builder-resource-center",
-      "publishedAt": "2026-11-25T02:27:36.000Z",
+      "publishedAt": "2026-11-25T15:21:24.000Z",
       "summary": "Training doesn’t always go according to plan. Fork a run in Weights & Biases Model to branch an experiment from any selected step while keeping the original run and its history.",
       "sourceId": "coreweave",
       "sourceName": "CoreWeave Blog",
@@ -351,10 +293,10 @@
       ]
     },
     {
-      "title": "trunk/3474e495db0ec4796eb7c8a1a8edd4447af52bac: Drop SYCL compiler support older than 2026.1 (#206254)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F3474e495db0ec4796eb7c8a1a8edd4447af52bac",
-      "publishedAt": "2026-11-25T02:12:27.000Z",
-      "summary": "Motivation Drop the compiler version check older than 2026.1, this helps clean up our code. Pull Request resolved: #206254 Approved by: https://github.com/gujinghui , https://github.com/EikanWang",
+      "title": "viable/strict/1795627239: added lowering for adaptive_avg_pool2d_backward (#201075)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795627239",
+      "publishedAt": "2026-11-25T13:05:11.000Z",
+      "summary": "Linked issue or supporting maintainer Supported by @eellison BC-breaking? No Summary (human written only) I added a lowering for adaptive_avg_pool2d_backward. I chose to go with a lowering as opposed to a decomp since the forward op followe",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -363,10 +305,70 @@
       ]
     },
     {
-      "title": "viable/strict/1795588245: [xpu][inductor] update Intel Triton commit pin (#202222)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795588245",
-      "publishedAt": "2026-11-25T01:42:52.000Z",
-      "summary": "Update intel triton for pytorch 2.16 release Pull Request resolved: #202222 Approved by: https://github.com/chuanqi129 , https://github.com/atalman Co-authored-by: Warren Deng warrdeng@meta.com",
+      "title": "An Indic Voice Agent with CUGA",
+      "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "publishedAt": "2026-11-25T10:22:09.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "viable/strict/1795614613",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795614613",
+      "publishedAt": "2026-11-25T09:38:07.000Z",
+      "summary": "Adjust tolerance in test_forward_nn_LinearCrossEntropyLoss for xpu (#…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795607437",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795607437",
+      "publishedAt": "2026-11-25T06:58:41.000Z",
+      "summary": "[CachingHostAllocator] Add thread-routed pinned host memory pools ( #2 …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795602065: [torchtitan hash update] update the pinned torchtitan hash (#206166)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795602065",
+      "publishedAt": "2026-11-25T06:10:30.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206166 Approved by: https://github.com/pytorchbot",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795598622",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795598622",
+      "publishedAt": "2026-11-25T05:13:36.000Z",
+      "summary": "added dict get missing key recompile hints and recompile_hint propaga…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795596653",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795596653",
+      "publishedAt": "2026-11-25T04:37:16.000Z",
+      "summary": "[Inductor] Key Triton template modules by code so worker precompiles …",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -376,15 +378,27 @@
       ]
     },
     {
-      "title": "viable/strict/1795584152: Save and restore fp32 precision settings exactly (#201843)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795584152",
-      "publishedAt": "2026-11-25T00:09:49.000Z",
-      "summary": "Closes ROCm/TheRock#8935 Fixes #182021 Summary Every save/restore of the fp32 precision settings read the resolved getter value and wrote it back. That pins any setting that was inheriting: cuda conv/rnn start as DEFAULT (inherit from the p",
+      "title": "viable/strict/1795595253",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795595253",
+      "publishedAt": "2026-11-25T04:22:10.000Z",
+      "summary": "[symm_mem] Support MXFP8 in the fused async-TP all-gather and reduce-…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-gpus"
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+      "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-inference"
       ]
     },
     {
@@ -412,6 +426,56 @@
       ]
     },
     {
+      "title": "Draft Calibration for Speculative Decoding: Accelerating LLM Serving by Matching Draft and Target Distributions",
+      "url": "https://arxiv.org/abs/2611.33111v1",
+      "publishedAt": "2026-11-24T18:41:59.000Z",
+      "summary": "Speculative decoding accelerates large language model (LLM) inference by employing a lightweight draft model to propose draft tokens and allowing the target model to verify the new tokens in parallel to improve inference-time compute utiliz",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-inference",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Shifter Quantization: Compact Representations for Native Integer Computation",
+      "url": "https://arxiv.org/abs/2611.33080v1",
+      "publishedAt": "2026-11-24T18:14:52.000Z",
+      "summary": "Groupwise quantization is used in LLM quantization to improve accuracy at low bit widths, but grouping weights keeps standard integer MMA from spanning the full dot product for efficient GPU inference. We develop a new quantization method, ",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-gpus",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "LEGOSpec: A Composable and Efficient Framework for Speculative Draft Design and Training",
+      "url": "https://arxiv.org/abs/2611.33004v1",
+      "publishedAt": "2026-11-24T17:29:40.000Z",
+      "summary": "Speculative decoding accelerates large language model (LLM) generation using a lightweight draft. Existing methods evaluate complete recipes under different training configurations, leaving component effects, interactions, and composition b",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "AVQ-Attention-2: Adaptive Vector-Quantized Attention with Exact Local Blocks and Linear-Cost Training",
+      "url": "https://arxiv.org/abs/2611.32989v1",
+      "publishedAt": "2026-11-24T17:18:25.000Z",
+      "summary": "Attention costs $\\mathcal{O}(N^2)$ in the number of tokens. Vector-quantized attention reduces this to $\\mathcal{O}(NM)$ by clustering the $N$ keys, attending to the $M$ codewords instead, and its adaptive form, AVQ-attention, concentrates ",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention"
+      ]
+    },
+    {
       "title": "Prepare Market Data for Forecasting with NVIDIA Megatron Core",
       "url": "https://developer.nvidia.com/blog/prepare-market-data-for-forecasting-with-nvidia-megatron-core/",
       "publishedAt": "2026-11-24T17:00:00.000Z",
@@ -436,6 +500,20 @@
       ]
     },
     {
+      "title": "LoomKV: Lossless KV Cache Compression from GPU Memory to SSD for LLM Serving",
+      "url": "https://arxiv.org/abs/2611.32954v1",
+      "publishedAt": "2026-11-24T16:54:37.000Z",
+      "summary": "Large language model (LLM) serving engines offload the key/value (KV) cache from GPU memory to host DRAM and SSD so multi-turn and agent requests can reuse prompt prefixes. Capacity then limits service at two levels: external tiers govern p",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-gpus",
+        "topic-attention",
+        "topic-inference"
+      ]
+    },
+    {
       "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
       "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
       "publishedAt": "2026-11-24T16:34:13.000Z",
@@ -448,12 +526,48 @@
       ]
     },
     {
+      "title": "Speculative Decoding for Semantic-ID-Based Generative Recommendations",
+      "url": "https://arxiv.org/abs/2611.32855v1",
+      "publishedAt": "2026-11-24T15:57:21.000Z",
+      "summary": "Generative recommender systems with Semantic IDs (SIDs) represent each item as a short sequence of $L$ discrete tokens and use a sequence model to predict the next item's tokens from a user's history. Industry-scale deployments typically us",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Dynamical conditions for tilting Neptune during planetary migration",
+      "url": "https://arxiv.org/abs/2611.32787v1",
+      "publishedAt": "2026-11-24T15:14:51.000Z",
+      "summary": "Giant planets are expected to form with near-zero obliquities, so that their current tilts must be the result of some post-formation processes. Capture into spin-orbit resonances has been shown to provide a viable mechanism for explaining t",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed"
+      ]
+    },
+    {
       "title": "Q&A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5",
       "url": "https://developer.nvidia.com/blog/qa-how-everstone-brings-where-winds-meet-to-life-with-nvidia-dlss-5/",
       "publishedAt": "2026-11-24T14:00:00.000Z",
       "summary": "Where Winds Meet moves between distant mountain landscapes, bustling streets, and quiet moments with its characters. For Everstone Studio, bringing more...",
       "sourceId": "nvidia",
       "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+      "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+      "publishedAt": "2026-11-24T13:07:53.000Z",
+      "summary": "Mass Spec Skills empowers scientists using Google Antigravity to interpret tandem mass spectra.",
+      "sourceId": "deepmind",
+      "sourceName": "Google DeepMind",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -742,30 +856,6 @@
       ]
     },
     {
-      "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
-      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
-      "publishedAt": "2026-11-18T19:54:56.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "Why your fine-tuning job takes longer than the FLOPs say",
-      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
-      "publishedAt": "2026-11-18T18:53:43.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Genie 4 is now available",
       "url": "https://deepmind.google/blog/genie-4-is-now-available/",
       "publishedAt": "2026-11-18T18:13:42.000Z",
@@ -988,18 +1078,6 @@
       "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
       "publishedAt": "2026-11-10T16:03:47.000Z",
       "summary": "",
-      "sourceId": "deepmind",
-      "sourceName": "Google DeepMind",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-      "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
-      "publishedAt": "2026-11-10T12:02:28.000Z",
-      "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
       "sourceId": "deepmind",
       "sourceName": "Google DeepMind",
       "kind": "lab",
