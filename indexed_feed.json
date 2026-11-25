@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-11-24T22:14:20.744Z",
-  "totalItems": 126,
+  "lastSyncedAt": "2026-11-25T06:55:49.911Z",
+  "totalItems": 119,
   "sources": [
     {
       "id": "deepmind",
@@ -206,8 +206,9 @@
       "name": "arXiv ML Systems",
       "kind": "paper",
       "url": "https://export.arxiv.org/api/query?search_query=all:(FlashAttention+OR+vLLM+OR+SGLang+OR+%22KV+cache%22+OR+%22speculative+decoding%22+OR+%22distributed+training%22+OR+Triton+OR+Blackwell+OR+DiLoCo+OR+%22kernel+generation%22)&sortBy=submittedDate&sortOrder=descending&max_results=15",
-      "status": "ok",
-      "count": 7
+      "status": "error",
+      "error": "This operation was aborted",
+      "count": 0
     }
   ],
   "emergingParadigms": [
@@ -218,22 +219,16 @@
       "signalCount": 5,
       "items": [
         {
-          "title": "trunk/85528aae36637259d401a67ffabb06856060bde3: [dynamo] Route object.__new__ through the tp_new choke point (#205721)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F85528aae36637259d401a67ffabb06856060bde3",
+          "title": "trunk/4599532dbf9474b7a5393bdad803aa22da89c513: [dynamo] Refresh PrecompileContext's stale docs (#206494)",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4599532dbf9474b7a5393bdad803aa22da89c513",
           "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-24T19:06:18.000Z"
+          "publishedAt": "2026-11-25T04:10:12.000Z"
         },
         {
-          "title": "viable/strict/1795555211: [dynamo] Call path_prefix() once in DiskDynamoStore.clear (#206410)",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795555211",
+          "title": "trunk/372017fe998fe909ae36dee713ef0401d789f689",
+          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F372017fe998fe909ae36dee713ef0401d789f689",
           "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-24T16:44:39.000Z"
-        },
-        {
-          "title": "trunk/129258ed33144f62638b728a13800c617d29d3da",
-          "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F129258ed33144f62638b728a13800c617d29d3da",
-          "sourceName": "PyTorch Releases",
-          "publishedAt": "2026-11-24T16:44:39.000Z"
+          "publishedAt": "2026-11-25T04:10:11.000Z"
         },
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
@@ -246,6 +241,12 @@
           "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
           "sourceName": "NVIDIA Tech Blog",
           "publishedAt": "2026-11-19T20:28:13.000Z"
+        },
+        {
+          "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
+          "url": "https://semianalysis.com/2025/09/16/xais-colossus-2-first-gigawatt-datacenter/",
+          "sourceName": "SemiAnalysis",
+          "publishedAt": "2025-09-16T17:38:01.000Z"
         }
       ]
     },
@@ -287,15 +288,103 @@
   ],
   "items": [
     {
-      "title": "trunk/36347f283048284893e3b6323518c2d9f4f02c99",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F36347f283048284893e3b6323518c2d9f4f02c99",
-      "publishedAt": "2026-11-24T22:08:12.000Z",
-      "summary": "[pytorch][bugfix] Avoid an undefined int64 cast when printing a large…",
+      "title": "trunk/4599532dbf9474b7a5393bdad803aa22da89c513: [dynamo] Refresh PrecompileContext's stale docs (#206494)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F4599532dbf9474b7a5393bdad803aa22da89c513",
+      "publishedAt": "2026-11-25T04:10:12.000Z",
+      "summary": "BC-breaking? No Summary (human written only) Agent details Authored with an AI assistant (Claude Code). Part of a five-PR stack of behavior-preserving cleanups to Dynamo's precompile package ( torch/_dynamo/package.py , torch/_dynamo/precom",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg",
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "trunk/372017fe998fe909ae36dee713ef0401d789f689",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F372017fe998fe909ae36dee713ef0401d789f689",
+      "publishedAt": "2026-11-25T04:10:11.000Z",
+      "summary": "[dynamo] Hash CompilePackage.source_id_from_fn through _hash_source (…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "viable/strict/1795589513",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795589513",
+      "publishedAt": "2026-11-25T02:44:49.000Z",
+      "summary": "[Inductor] Emit real-extent block_ptr loads for split reductions via …",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
         "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/694391bcca4c288dc533e97d01cf372bd42d8f8f",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F694391bcca4c288dc533e97d01cf372bd42d8f8f",
+      "publishedAt": "2026-11-25T02:44:49.000Z",
+      "summary": "[Inductor] Emit real-extent block_ptr loads for split reductions via …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Run forking is now generally available in Weights & Biases Models",
+      "url": "https://wf.coreweave.com/blog/run-forking-is-now-generally-available-in-weights-biases-models-builder-resource-center",
+      "publishedAt": "2026-11-25T02:27:36.000Z",
+      "summary": "Training doesn’t always go according to plan. Fork a run in Weights & Biases Model to branch an experiment from any selected step while keeping the original run and its history.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/3474e495db0ec4796eb7c8a1a8edd4447af52bac: Drop SYCL compiler support older than 2026.1 (#206254)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F3474e495db0ec4796eb7c8a1a8edd4447af52bac",
+      "publishedAt": "2026-11-25T02:12:27.000Z",
+      "summary": "Motivation Drop the compiler version check older than 2026.1, this helps clean up our code. Pull Request resolved: #206254 Approved by: https://github.com/gujinghui , https://github.com/EikanWang",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795588245: [xpu][inductor] update Intel Triton commit pin (#202222)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795588245",
+      "publishedAt": "2026-11-25T01:42:52.000Z",
+      "summary": "Update intel triton for pytorch 2.16 release Pull Request resolved: #202222 Approved by: https://github.com/chuanqi129 , https://github.com/atalman Co-authored-by: Warren Deng warrdeng@meta.com",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels",
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795584152: Save and restore fp32 precision settings exactly (#201843)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795584152",
+      "publishedAt": "2026-11-25T00:09:49.000Z",
+      "summary": "Closes ROCm/TheRock#8935 Fixes #182021 Summary Every save/restore of the fp32 precision settings read the resolved getter value and wrote it back. That pins any setting that was inheriting: cuda conv/rnn start as DEFAULT (inherit from the p",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-gpus"
       ]
     },
     {
@@ -308,31 +397,6 @@
       "kind": "lab",
       "topics": [
         "topic-orchestration"
-      ]
-    },
-    {
-      "title": "trunk/57225ed6db174eeb0f973f7fd8211bfec6a6bf45",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F57225ed6db174eeb0f973f7fd8211bfec6a6bf45",
-      "publishedAt": "2026-11-24T19:30:43.000Z",
-      "summary": "Omit skipped tests in instantiate_device_type_tests when `PYTORCH_T…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/85528aae36637259d401a67ffabb06856060bde3: [dynamo] Route object.__new__ through the tp_new choke point (#205721)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F85528aae36637259d401a67ffabb06856060bde3",
-      "publishedAt": "2026-11-24T19:06:18.000Z",
-      "summary": "A class whose new slot owner is object skipped the argument checks of object. new , so C(42) on a class without init or new did not raise. Adding object to _new_slot_owners_with_choke_points makes it use the existing tp_new_impl for object,",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-disagg"
       ]
     },
     {
@@ -372,33 +436,6 @@
       ]
     },
     {
-      "title": "viable/strict/1795555211: [dynamo] Call path_prefix() once in DiskDynamoStore.clear (#206410)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795555211",
-      "publishedAt": "2026-11-24T16:44:39.000Z",
-      "summary": "BC-breaking? No Summary (human written only) Agent details Authored with an AI assistant (Claude Code). Part of a five-PR stack of behavior-preserving cleanups to Dynamo's precompile package ( torch/_dynamo/package.py , torch/_dynamo/precom",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-disagg",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "trunk/129258ed33144f62638b728a13800c617d29d3da",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F129258ed33144f62638b728a13800c617d29d3da",
-      "publishedAt": "2026-11-24T16:44:39.000Z",
-      "summary": "[dynamo] Flatten the missing-backend branch in PrecompileCacheEntry.f…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-disagg"
-      ]
-    },
-    {
       "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
       "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
       "publishedAt": "2026-11-24T16:34:13.000Z",
@@ -411,18 +448,6 @@
       ]
     },
     {
-      "title": "viable/strict/1795553445: Enable more test_ops on XPU (#201841)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795553445",
-      "publishedAt": "2026-11-24T16:30:07.000Z",
-      "summary": "Linked issue or supporting maintainer Fixes intel/torch-xpu-ops#5848 Part of #185590 BC-breaking? No Summary (human written only) Result CPU: Pre-change CPU: Post-change XPU: Pre-change XPU: Post-change Test cases 3,559 3,559 3,622 3,622 Pa",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Q&A: How Everstone Brings Where Winds Meet to Life with NVIDIA DLSS 5",
       "url": "https://developer.nvidia.com/blog/qa-how-everstone-brings-where-winds-meet-to-life-with-nvidia-dlss-5/",
       "publishedAt": "2026-11-24T14:00:00.000Z",
@@ -430,18 +455,6 @@
       "sourceId": "nvidia",
       "sourceName": "NVIDIA Tech Blog",
       "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795540860: [Stable ABI] Add cpublas shims (#204470)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795540860",
-      "publishedAt": "2026-11-24T13:02:02.000Z",
-      "summary": "Add PyTorch 2.16 stable ABI access to four at::native::cpublas APIs needed by CPU extensions: brgemm (all 8 overloads) brgemm_release gemm_no_downcast_stub could_pack These APIs are exposed in a new addition to the torch::stable namespace, ",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
       "topics": [
         "topic-frameworks"
       ]
@@ -509,6 +522,18 @@
       ]
     },
     {
+      "title": "Clay helps sales teams win with Codex and ChatGPT",
+      "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+      "publishedAt": "2026-11-24T00:00:00.000Z",
+      "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
+      "sourceId": "openai",
+      "sourceName": "OpenAI News & Research",
+      "kind": "lab",
+      "topics": [
+        "topic-rl"
+      ]
+    },
+    {
       "title": "OpenAI and Cisco introduce Shirudo",
       "url": "https://openai.com/index/introducing-shirudo",
       "publishedAt": "2026-11-23T21:20:00.000Z",
@@ -530,44 +555,6 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
-      ]
-    },
-    {
-      "title": "On-Policy Codec Distillation for Efficient All-in-One Video Generation",
-      "url": "https://arxiv.org/abs/2611.31184v1",
-      "publishedAt": "2026-11-23T18:38:20.000Z",
-      "summary": "Modern visual generative models operate on tokens, and every visual asset they receive, whether an identity, a scribble, a depth map, or a motion video, is tokenized and appended to the input token sequence. Consequently, conditioning quick",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Look Back, Draft Ahead: Corrective Prefix Attention for Parallel Speculative Decoding",
-      "url": "https://arxiv.org/abs/2611.31112v1",
-      "publishedAt": "2026-11-23T17:52:33.000Z",
-      "summary": "Parallel speculative decoders propose an entire token block at once, yet one early inconsistency can cause the target to reject its remaining suffix. We introduce Corrective Prefix Attention (CPA), which combines prefix-aware selection with",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "LiveLoRA: Exact KV Cache Migration Across LoRA Updates for LLM Agents",
-      "url": "https://arxiv.org/abs/2611.31105v1",
-      "publishedAt": "2026-11-23T17:43:16.000Z",
-      "summary": "Updating an LLM adapter should not require replaying the full interaction history of every active session. Yet reusing key-value (KV) cache entries computed under an earlier version mixes model versions, while full-history re-prefill become",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-disagg"
       ]
     },
     {
@@ -607,71 +594,10 @@
       ]
     },
     {
-      "title": "LimeTree: Linear-Memory Graph Neural Networks over Tree-Graphs for Resource-Efficient Language Modeling and Context Extrapolation",
-      "url": "https://arxiv.org/abs/2611.30934v1",
-      "publishedAt": "2026-11-23T16:20:50.000Z",
-      "summary": "The search for computationally efficient alternatives to the Transformer has yielded numerous architectures in recent years; however, most exhibit severe weaknesses in associative recall-such as key-value (KV) retrieval-and length extrapola",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Testing Quantized KV-Cache Maintenance: Encoding Layout and Historical Restoration",
-      "url": "https://arxiv.org/abs/2611.30720v1",
-      "publishedAt": "2026-11-23T14:01:47.000Z",
-      "summary": "Repeating rows then selecting originals retains layout-dependent drift despite equal encoding counts. We measure when existing checks fail to establish preservation contracts in fixed quantized KV-cache implementations. In four-bit HQQ axis",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Speculate in the Right Order: Efficient Self-Speculative Decoding for Autoregressive Image Generation",
-      "url": "https://arxiv.org/abs/2611.30704v1",
-      "publishedAt": "2026-11-23T13:49:13.000Z",
-      "summary": "Self-speculative decoding accelerates autoregressive image generation by leveraging the same model for parallel drafting and sequential verification, without requiring an additional draft model. While existing methods primarily focus on imp",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "GC-MoE K3: A Green-Context Role Graph for Latent Mixture-of-Experts Decode",
-      "url": "https://arxiv.org/abs/2611.30542v1",
-      "publishedAt": "2026-11-23T11:49:19.000Z",
-      "summary": "Kimi K3 combines a latent routed mixture of experts with full-width shared experts. A complete feed-forward evaluation must score and select experts, project tokens into the latent space, exchange tokens across expert-parallel ranks, comput",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed",
-        "topic-disagg"
-      ]
-    },
-    {
       "title": "Connected intelligence for in-house legal",
       "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
       "publishedAt": "2026-11-23T08:00:00.000Z",
       "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "sourceId": "openai",
-      "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Richpanel helps companies automate 50% of support in 30 days",
-      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
-      "publishedAt": "2026-11-23T08:00:00.000Z",
-      "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
       "kind": "lab",
@@ -788,18 +714,6 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
-      ]
-    },
-    {
-      "title": "CoreWeave Data Center Operations: Built for AI",
-      "url": "https://wf.coreweave.com/blog/coreweave-data-center-operations-built-for-ai",
-      "publishedAt": "2026-11-19T18:51:38.000Z",
-      "summary": "Our AI-optimized data centers feature purpose-built infrastructure, including NVIDIA Quantum-2 InfiniBand networking and liquid cooling for high-density, low-latency AI workloads.",
-      "sourceId": "coreweave",
-      "sourceName": "CoreWeave Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-orchestration"
       ]
     },
     {
