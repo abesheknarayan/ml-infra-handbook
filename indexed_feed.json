@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-25T18:24:57.258Z",
+  "lastSyncedAt": "2026-11-26T02:37:48.423Z",
   "totalItems": 126,
   "sources": [
     {
@@ -215,19 +215,13 @@
       "id": "paradigm-disagg-moe",
       "name": "Wide-EP MoE & Disaggregated Serving Fabrics",
       "description": "Splitting prefill and decode across specialized GPU pools while routing fine-grained Mixture-of-Experts across rack-scale NVLink/RDMA domains.",
-      "signalCount": 4,
+      "signalCount": 3,
       "items": [
         {
           "title": "NVIDIA Vera Rubin NVL72 on CoreWeave: 10x More Tokens Per Megawatt Than Blackwell",
           "url": "https://wf.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
           "sourceName": "CoreWeave Blog",
           "publishedAt": "2026-11-19T22:51:31.000Z"
-        },
-        {
-          "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
-          "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
-          "sourceName": "NVIDIA Tech Blog",
-          "publishedAt": "2026-11-19T20:28:13.000Z"
         },
         {
           "title": "xAI&#8217;s Colossus 2 &#8211; First Gigawatt Datacenter In The World, Unique RL Methodology, Capital Raise",
@@ -240,6 +234,40 @@
           "url": "https://semianalysis.com/2025/08/20/h100-vs-gb200-nvl72-training-benchmarks/",
           "sourceName": "SemiAnalysis",
           "publishedAt": "2025-08-20T04:56:35.000Z"
+        }
+      ]
+    },
+    {
+      "id": "paradigm-sub4bit",
+      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
+      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
+      "signalCount": 2,
+      "items": [
+        {
+          "title": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
+          "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+          "sourceName": "NVIDIA Tech Blog",
+          "publishedAt": "2026-11-25T19:30:00.000Z"
+        },
+        {
+          "title": "JetDiffusion: Pushing the Speed Limits of Video Generation with NVFP4 Sparse Attention",
+          "url": "https://arxiv.org/abs/2611.33268v1",
+          "sourceName": "arXiv ML Systems",
+          "publishedAt": "2026-11-24T18:59:48.000Z"
+        }
+      ]
+    },
+    {
+      "id": "paradigm-non-ar",
+      "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
+      "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
+      "signalCount": 1,
+      "items": [
+        {
+          "title": "State Space Attention: Learning Context-Dependent Memory Retention",
+          "url": "https://arxiv.org/abs/2611.33625v1",
+          "sourceName": "arXiv ML Systems",
+          "publishedAt": "2026-11-25T01:56:07.000Z"
         }
       ]
     },
@@ -263,43 +291,127 @@
       "description": "Merging high-throughput serving engines with fleets of ephemeral microVM sandboxes for verifiable-reward reinforcement learning.",
       "signalCount": 0,
       "items": []
-    },
-    {
-      "id": "paradigm-sub4bit",
-      "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
-      "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
-      "signalCount": 0,
-      "items": []
-    },
-    {
-      "id": "paradigm-non-ar",
-      "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
-      "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
-      "signalCount": 0,
-      "items": []
     }
   ],
   "items": [
     {
-      "title": "Run Forking Is Now Generally Available in Weights & Biases Models",
-      "url": "https://wf.coreweave.com/blog/run-forking-is-now-generally-available-in-weights-biases-models-builder-resource-center",
-      "publishedAt": "2026-11-25T15:21:24.000Z",
-      "summary": "Training doesn’t always go according to plan. Fork a run in Weights & Biases Model to branch an experiment from any selected step while keeping the original run and its history.",
-      "sourceId": "coreweave",
-      "sourceName": "CoreWeave Blog",
-      "kind": "lab",
+      "title": "trunk/661614252e758b370a4014ff6274a62440297713: [profiler] Prevent Cuspy pftrace CSR offset overflow (#206570)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F661614252e758b370a4014ff6274a62440297713",
+      "publishedAt": "2026-11-26T02:29:10.000Z",
+      "summary": "CPU-event args used int32 cumulative byte offsets, which wrap above 2 GiB and can send the native encoder outside the JSON buffer. Use int64 offsets throughout the JSON, render metadata, GPU-correlation, and event-wait CSR paths. Validate s",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "trunk/8cfd54b572ec3317b8a7217c49fcbdacaeac8119",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8cfd54b572ec3317b8a7217c49fcbdacaeac8119",
+      "publishedAt": "2026-11-26T02:24:27.000Z",
+      "summary": "[Testcase Refactoring] Classify test/test_indexing.py for the test-ca…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
       "topics": [
         "topic-frameworks"
       ]
     },
     {
-      "title": "viable/strict/1795627239: added lowering for adaptive_avg_pool2d_backward (#201075)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795627239",
-      "publishedAt": "2026-11-25T13:05:11.000Z",
-      "summary": "Linked issue or supporting maintainer Supported by @eellison BC-breaking? No Summary (human written only) I added a lowering for adaptive_avg_pool2d_backward. I chose to go with a lowering as opposed to a decomp since the forward op followe",
+      "title": "trunk/e5ebe4bd84c9b1a136c25f1d9686d3968a9aad44",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Fe5ebe4bd84c9b1a136c25f1d9686d3968a9aad44",
+      "publishedAt": "2026-11-26T02:24:09.000Z",
+      "summary": "[Testcase Refactoring] Classify test/test_binary_ufuncs.py for the te…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "ciflow/xpu/205634",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F205634",
+      "publishedAt": "2026-11-26T02:11:12.000Z",
+      "summary": "resolve comment",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/314c5ac2118f75b556d7887a46732408dd4c2ce7",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F314c5ac2118f75b556d7887a46732408dd4c2ce7",
+      "publishedAt": "2026-11-26T01:57:37.000Z",
+      "summary": "[DTensor] Remove binary max.out/min.out from LINEAR_REDUCTION_OP_MAP …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/73dd92f5c018526ee05c4a8e6d1e55c2005ece3d",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F73dd92f5c018526ee05c4a8e6d1e55c2005ece3d",
+      "publishedAt": "2026-11-26T01:46:23.000Z",
+      "summary": "[inductor] Let buffers sized by unbacked symbols share memory-plannin…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "trunk/16a7815f52b98d13920bb0b134960e5b48fc19d0",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F16a7815f52b98d13920bb0b134960e5b48fc19d0",
+      "publishedAt": "2026-11-26T01:14:28.000Z",
+      "summary": "[DTensor] Generate TestSingleDimStrategies samples under a shared loc…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Your Slurm Workflow Shouldn’t Change When Your Cluster Does",
+      "url": "https://wf.coreweave.com/blog/your-slurm-workflow-shouldnt-change-when-your-cluster-does",
+      "publishedAt": "2026-11-25T21:29:04.000Z",
+      "summary": "SUNK Anywhere brings CoreWeave's unified training system to GKE. See how to deploy it, connect SkyPilot, and launch the same job on GKE or CoreWeave.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
+      "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+      "publishedAt": "2026-11-25T19:30:00.000Z",
+      "summary": "Attention can be a major bottleneck when serving world foundation models, where long sequences make inference computationally demanding. On NVIDIA Hopper and...",
+      "sourceId": "nvidia",
+      "sourceName": "NVIDIA Tech Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-gpus",
+        "topic-attention",
+        "topic-quantization"
+      ]
+    },
+    {
+      "title": "Where scientists draw the line on AI agents",
+      "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+      "publishedAt": "2026-11-25T18:52:55.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
       "topics": [
         "topic-frameworks"
       ]
@@ -317,74 +429,52 @@
       ]
     },
     {
-      "title": "viable/strict/1795614613",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795614613",
-      "publishedAt": "2026-11-25T09:38:07.000Z",
-      "summary": "Adjust tolerance in test_forward_nn_LinearCrossEntropyLoss for xpu (#…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "VAPOR: Improving Multimodal Reasoning with Sparse Visual Updates",
+      "url": "https://arxiv.org/abs/2611.33751v1",
+      "publishedAt": "2026-11-25T04:11:36.000Z",
+      "summary": "Multimodal large language models (MLLMs) have made substantial progress in visual reasoning, but extended generation over large visual contexts remains computationally expensive. During autoregressive decoding, visual attention is recompute",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
-        "topic-frameworks"
+        "topic-attention",
+        "topic-rl"
       ]
     },
     {
-      "title": "viable/strict/1795607437",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795607437",
-      "publishedAt": "2026-11-25T06:58:41.000Z",
-      "summary": "[CachingHostAllocator] Add thread-routed pinned host memory pools ( #2 …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "FlashProve-Next: Verifiable Inference for Production LLM APIs",
+      "url": "https://arxiv.org/abs/2611.33741v1",
+      "publishedAt": "2026-11-25T04:01:37.000Z",
+      "summary": "Clients of closed-weight LLM APIs cannot verify whether a provider ran the advertised model, precision, hidden prompt, and reasoning budget. Existing approaches either trust hardware or third parties, or re-prove every layer of an integer s",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
-        "topic-frameworks"
+        "topic-inference",
+        "topic-rl"
       ]
     },
     {
-      "title": "viable/strict/1795602065: [torchtitan hash update] update the pinned torchtitan hash (#206166)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795602065",
-      "publishedAt": "2026-11-25T06:10:30.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206166 Approved by: https://github.com/pytorchbot",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "State Space Attention: Learning Context-Dependent Memory Retention",
+      "url": "https://arxiv.org/abs/2611.33625v1",
+      "publishedAt": "2026-11-25T01:56:07.000Z",
+      "summary": "Standard attention's key-value cache grows linearly with context length. Bounding it raises the question of what a sequence model should retain for long-context reasoning. We argue this choice should be learned, and introduce State Space At",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
-        "topic-frameworks"
+        "topic-attention",
+        "topic-rl"
       ]
     },
     {
-      "title": "viable/strict/1795598622",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795598622",
-      "publishedAt": "2026-11-25T05:13:36.000Z",
-      "summary": "added dict get missing key recompile hints and recompile_hint propaga…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795596653",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795596653",
-      "publishedAt": "2026-11-25T04:37:16.000Z",
-      "summary": "[Inductor] Key Triton template modules by code so worker precompiles …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-kernels",
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795595253",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795595253",
-      "publishedAt": "2026-11-25T04:22:10.000Z",
-      "summary": "[symm_mem] Support MXFP8 in the fused async-TP all-gather and reduce-…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "Non-manipulability and Approachability Beyond Two-Player Games",
+      "url": "https://arxiv.org/abs/2611.33562v1",
+      "publishedAt": "2026-11-25T00:23:32.000Z",
+      "summary": "We study the problem of guaranteeing non-manipulability and low regret for $n-1$ independent learners in an $n$-player repeated general game with one optimizer. Non-manipulability is a property which guarantees that learning agents can prev",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
         "topic-frameworks"
       ]
@@ -402,15 +492,42 @@
       ]
     },
     {
-      "title": "Your Slurm Workflow Shouldn’t Change When Your Cluster Does",
-      "url": "https://wf.coreweave.com/blog/your-slurm-workflow-shouldnt-change-when-your-cluster-does",
-      "publishedAt": "2026-11-24T19:37:40.000Z",
-      "summary": "SUNK Anywhere brings CoreWeave's unified training system to GKE. See how to deploy it, connect SkyPilot, and launch the same job on GKE or CoreWeave.",
-      "sourceId": "coreweave",
-      "sourceName": "CoreWeave Blog",
-      "kind": "lab",
+      "title": "RankCast: Phase-Aware Rank Balancing in MoE Serving",
+      "url": "https://arxiv.org/abs/2611.33542v1",
+      "publishedAt": "2026-11-24T23:37:38.000Z",
+      "summary": "Modern large language model (LLM) inference increasingly adopts disaggregated architectures that separate Prefill (P) and Decode (D) phases. Meanwhile, Expert Parallelism (EP) has been widely adopted in large Mixture-of-Experts (MoE) model ",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
       "topics": [
-        "topic-orchestration"
+        "topic-distributed",
+        "topic-inference",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "Probabilistic Machine Learning for Total Kinetic Energy Distributions in Neutron-Induced Fission",
+      "url": "https://arxiv.org/abs/2611.33379v1",
+      "publishedAt": "2026-11-24T20:05:56.000Z",
+      "summary": "The incident-neutron-energy dependence of post-neutron total-kinetic-energy (TKE) distributions, particularly their width in the multichance-fission regime, provides a sensitive test of fission calculations. We investigate how the General D",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "JetDiffusion: Pushing the Speed Limits of Video Generation with NVFP4 Sparse Attention",
+      "url": "https://arxiv.org/abs/2611.33268v1",
+      "publishedAt": "2026-11-24T18:59:48.000Z",
+      "summary": "Attention over long sequences is a major computational bottleneck in video generation, which can be alleviated through sparsity and low-bit quantization. We propose JetDiffusion, a video generation system built on trainable Video Sparse Qua",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-quantization"
       ]
     },
     {
@@ -423,56 +540,6 @@
       "kind": "lab",
       "topics": [
         "topic-gpus"
-      ]
-    },
-    {
-      "title": "Draft Calibration for Speculative Decoding: Accelerating LLM Serving by Matching Draft and Target Distributions",
-      "url": "https://arxiv.org/abs/2611.33111v1",
-      "publishedAt": "2026-11-24T18:41:59.000Z",
-      "summary": "Speculative decoding accelerates large language model (LLM) inference by employing a lightweight draft model to propose draft tokens and allowing the target model to verify the new tokens in parallel to improve inference-time compute utiliz",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-inference",
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "Shifter Quantization: Compact Representations for Native Integer Computation",
-      "url": "https://arxiv.org/abs/2611.33080v1",
-      "publishedAt": "2026-11-24T18:14:52.000Z",
-      "summary": "Groupwise quantization is used in LLM quantization to improve accuracy at low bit widths, but grouping weights keeps standard integer MMA from spanning the full dot product for efficient GPU inference. We develop a new quantization method, ",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-gpus",
-        "topic-inference"
-      ]
-    },
-    {
-      "title": "LEGOSpec: A Composable and Efficient Framework for Speculative Draft Design and Training",
-      "url": "https://arxiv.org/abs/2611.33004v1",
-      "publishedAt": "2026-11-24T17:29:40.000Z",
-      "summary": "Speculative decoding accelerates large language model (LLM) generation using a lightweight draft. Existing methods evaluate complete recipes under different training configurations, leaving component effects, interactions, and composition b",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "AVQ-Attention-2: Adaptive Vector-Quantized Attention with Exact Local Blocks and Linear-Cost Training",
-      "url": "https://arxiv.org/abs/2611.32989v1",
-      "publishedAt": "2026-11-24T17:18:25.000Z",
-      "summary": "Attention costs $\\mathcal{O}(N^2)$ in the number of tokens. Vector-quantized attention reduces this to $\\mathcal{O}(NM)$ by clustering the $N$ keys, attending to the $M$ codewords instead, and its adaptive form, AVQ-attention, concentrates ",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention"
       ]
     },
     {
@@ -500,20 +567,6 @@
       ]
     },
     {
-      "title": "LoomKV: Lossless KV Cache Compression from GPU Memory to SSD for LLM Serving",
-      "url": "https://arxiv.org/abs/2611.32954v1",
-      "publishedAt": "2026-11-24T16:54:37.000Z",
-      "summary": "Large language model (LLM) serving engines offload the key/value (KV) cache from GPU memory to host DRAM and SSD so multi-turn and agent requests can reuse prompt prefixes. Capacity then limits service at two levels: external tiers govern p",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-gpus",
-        "topic-attention",
-        "topic-inference"
-      ]
-    },
-    {
       "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
       "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
       "publishedAt": "2026-11-24T16:34:13.000Z",
@@ -523,30 +576,6 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Speculative Decoding for Semantic-ID-Based Generative Recommendations",
-      "url": "https://arxiv.org/abs/2611.32855v1",
-      "publishedAt": "2026-11-24T15:57:21.000Z",
-      "summary": "Generative recommender systems with Semantic IDs (SIDs) represent each item as a short sequence of $L$ discrete tokens and use a sequence model to predict the next item's tokens from a user's history. Industry-scale deployments typically us",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "Dynamical conditions for tilting Neptune during planetary migration",
-      "url": "https://arxiv.org/abs/2611.32787v1",
-      "publishedAt": "2026-11-24T15:14:51.000Z",
-      "summary": "Giant planets are expected to form with near-zero obliquities, so that their current tilts must be the result of some post-formation processes. Capture into spin-orbit resonances has been shown to provide a viable mechanism for explaining t",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed"
       ]
     },
     {
@@ -666,18 +695,6 @@
       "summary": "Sparse linear systems are at the core of nearly every engineering and scientific simulation, from structural mechanics and computational fluid dynamics to...",
       "sourceId": "nvidia",
       "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "RoboTrack: Point tracking for real-world robotic manipulation",
-      "url": "https://huggingface.co/blog/allenai/robotrack",
-      "publishedAt": "2026-11-23T17:20:37.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -805,20 +822,6 @@
       ]
     },
     {
-      "title": "Reducing Rollout Bottlenecks in Reinforcement Learning with NVIDIA Dynamo",
-      "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
-      "publishedAt": "2026-11-19T20:28:13.000Z",
-      "summary": "Reinforcement learning (RL) uses rewards to train models to solve problems and complete tasks more successfully. Inference drives this process. Workers generate...",
-      "sourceId": "nvidia",
-      "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks",
-        "topic-inference",
-        "topic-disagg"
-      ]
-    },
-    {
       "title": "Why General-Purpose Cloud Platforms Throttle AI Innovation",
       "url": "https://wf.coreweave.com/blog/why-general-purpose-cloud-platforms-throttle-ai-innovation",
       "publishedAt": "2026-11-19T18:51:38.000Z",
@@ -828,6 +831,18 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
+      ]
+    },
+    {
+      "title": "CoreWeave Data Center Operations: Built for AI",
+      "url": "https://wf.coreweave.com/blog/coreweave-data-center-operations-built-for-ai",
+      "publishedAt": "2026-11-19T18:51:38.000Z",
+      "summary": "Our AI-optimized data centers feature purpose-built infrastructure, including NVIDIA Quantum-2 InfiniBand networking and liquid cooling for high-density, low-latency AI workloads.",
+      "sourceId": "coreweave",
+      "sourceName": "CoreWeave Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-orchestration"
       ]
     },
     {
