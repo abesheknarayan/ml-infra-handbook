@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-26T13:31:41.484Z",
+  "lastSyncedAt": "2026-11-26T22:46:59.552Z",
   "totalItems": 126,
   "sources": [
     {
@@ -282,6 +282,42 @@
   ],
   "items": [
     {
+      "title": "viable/strict/1795731644",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795731644",
+      "publishedAt": "2026-11-26T18:07:23.000Z",
+      "summary": "[xpu] Keep going after consistent failures on viable/strict runs ( #20 …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795718990: Use torch.finfo(dtype).eps as F.normalize's default eps (#204410)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795718990",
+      "publishedAt": "2026-11-26T14:18:44.000Z",
+      "summary": "Linked issue or supporting maintainer Fixes #32137 BC-breaking? Yes. When eps is not explicitly provided, the default now depends on the input dtype, so results can change for small-norm inputs: below 9.77e-4 for float16, 7.81e-3 for bfloat",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795717457: Register hash_tensor.out for XPU backend (#204393)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795717457",
+      "publishedAt": "2026-11-26T14:03:01.000Z",
+      "summary": "Add XPU to the dispatch list for hash_tensor.out so the XPU kernel implemented in torch-xpu-ops is reachable. Companion PR: intel/torch-xpu-ops#6153 Pull Request resolved: #204393 Approved by: https://github.com/Skylion007 , https://github.",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-kernels"
+      ]
+    },
+    {
       "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
       "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
       "publishedAt": "2026-11-26T11:37:17.000Z",
@@ -291,6 +327,30 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795702960",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795702960",
+      "publishedAt": "2026-11-26T10:16:05.000Z",
+      "summary": "[Testcase Refactoring] Add HardwareClassification for shutdown_timeou…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795701345",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795701345",
+      "publishedAt": "2026-11-26T09:43:55.000Z",
+      "summary": "Install nccl-extensions 0.2.0 in CI and load its versioned libnccl_ep…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-distributed"
       ]
     },
     {
@@ -318,30 +378,6 @@
       ]
     },
     {
-      "title": "viable/strict/1795686610",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795686610",
-      "publishedAt": "2026-11-26T05:43:22.000Z",
-      "summary": "[Testcase Refactoring] Add hardware classification labels to test_ful…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795684992: Update Metamates merge rule (#206697)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795684992",
-      "publishedAt": "2026-11-26T05:05:46.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Updates the Metamates merge rule with active team members. Pull Request resolved: #206697 Approved by: https://github.com/pytorchbot",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
       "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
       "publishedAt": "2026-11-26T05:05:36.000Z",
@@ -351,43 +387,6 @@
       "kind": "lab",
       "topics": [
         "topic-inference"
-      ]
-    },
-    {
-      "title": "viable/strict/1795681533: [MPS] Add torch.backends.mps.is_mpp_available() (#206525)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795681533",
-      "publishedAt": "2026-11-26T04:07:44.000Z",
-      "summary": "BC-breaking? No Summary (human written only) Helion's Metal lowering will find this flag useful to query directly from PyTorch, instead of replicating the logic internally (like in pytorch/helion#4625 ) Agent details (if applicable) Expose ",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "viable/strict/1795677747: [inductor] fuse `mul(scale)` variant of masked sdpa pattern (#202595)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795677747",
-      "publishedAt": "2026-11-26T03:16:19.000Z",
-      "summary": "Linked issue or supporting maintainer Fixes #195412 Supported by @Isalia20 Summary (human written only) There are a total of 52 models in the transformers library that use this pattern, models are listed below: afmoe, albert, aria, bart, be",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795675905: [profiler] Prevent Cuspy pftrace CSR offset overflow (#206570)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795675905",
-      "publishedAt": "2026-11-26T02:29:10.000Z",
-      "summary": "CPU-event args used int32 cumulative byte offsets, which wrap above 2 GiB and can send the native encoder outside the JSON buffer. Use int64 offsets throughout the JSON, render metadata, GPU-correlation, and event-wait CSR paths. Validate s",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-gpus"
       ]
     },
     {
