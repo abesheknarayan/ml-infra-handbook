@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-26T02:37:48.423Z",
+  "lastSyncedAt": "2026-11-26T13:31:41.484Z",
   "totalItems": 126,
   "sources": [
     {
@@ -241,33 +241,13 @@
       "id": "paradigm-sub4bit",
       "name": "Sub-Byte & Hardware Microscaling (NVFP4 / MXFP4 / 1.58-bit)",
       "description": "Block-scaled 4-bit floating point and ternary weight representations designed directly into Blackwell/Rubin-class Tensor Cores.",
-      "signalCount": 2,
+      "signalCount": 1,
       "items": [
         {
           "title": "How to Optimize NVFP4 Attention on NVIDIA RTX Blackwell Through Register Recycling",
           "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
           "sourceName": "NVIDIA Tech Blog",
           "publishedAt": "2026-11-25T19:30:00.000Z"
-        },
-        {
-          "title": "JetDiffusion: Pushing the Speed Limits of Video Generation with NVFP4 Sparse Attention",
-          "url": "https://arxiv.org/abs/2611.33268v1",
-          "sourceName": "arXiv ML Systems",
-          "publishedAt": "2026-11-24T18:59:48.000Z"
-        }
-      ]
-    },
-    {
-      "id": "paradigm-non-ar",
-      "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
-      "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
-      "signalCount": 1,
-      "items": [
-        {
-          "title": "State Space Attention: Learning Context-Dependent Memory Retention",
-          "url": "https://arxiv.org/abs/2611.33625v1",
-          "sourceName": "arXiv ML Systems",
-          "publishedAt": "2026-11-25T01:56:07.000Z"
         }
       ]
     },
@@ -291,12 +271,116 @@
       "description": "Merging high-throughput serving engines with fleets of ephemeral microVM sandboxes for verifiable-reward reinforcement learning.",
       "signalCount": 0,
       "items": []
+    },
+    {
+      "id": "paradigm-non-ar",
+      "name": "Beyond Standard Attention (MLA, Linear/Hybrid SSMs & Diffusion LLMs)",
+      "description": "New architectures co-designed for hardware efficiency: Multi-Head Latent Attention, Mamba/hybrid state-space layers, and parallel diffusion decoding.",
+      "signalCount": 0,
+      "items": []
     }
   ],
   "items": [
     {
-      "title": "trunk/661614252e758b370a4014ff6274a62440297713: [profiler] Prevent Cuspy pftrace CSR offset overflow (#206570)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F661614252e758b370a4014ff6274a62440297713",
+      "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "publishedAt": "2026-11-26T11:37:17.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795693817: [Stable ABI] Add a setup flag to the CUDA BLAS handle shim (#206529)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795693817",
+      "publishedAt": "2026-11-26T06:35:30.000Z",
+      "summary": "Fixes #200334 , In addition to the shim, this PR also adds a convenience wrapper that routes to the original shim or shim v2, depending on the target version. The caveat though is that since the original &amp; v2 are guarded by USE_CUDA def",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-gpus"
+      ]
+    },
+    {
+      "title": "viable/strict/1795688528",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795688528",
+      "publishedAt": "2026-11-26T05:58:57.000Z",
+      "summary": "[FlopCounter] Support N-D and broadcast batch dims in SDPA formulas (…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795686610",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795686610",
+      "publishedAt": "2026-11-26T05:43:22.000Z",
+      "summary": "[Testcase Refactoring] Add hardware classification labels to test_ful…",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795684992: Update Metamates merge rule (#206697)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795684992",
+      "publishedAt": "2026-11-26T05:05:46.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Updates the Metamates merge rule with active team members. Pull Request resolved: #206697 Approved by: https://github.com/pytorchbot",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "publishedAt": "2026-11-26T05:05:36.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "viable/strict/1795681533: [MPS] Add torch.backends.mps.is_mpp_available() (#206525)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795681533",
+      "publishedAt": "2026-11-26T04:07:44.000Z",
+      "summary": "BC-breaking? No Summary (human written only) Helion's Metal lowering will find this flag useful to query directly from PyTorch, instead of replicating the logic internally (like in pytorch/helion#4625 ) Agent details (if applicable) Expose ",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks",
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "viable/strict/1795677747: [inductor] fuse `mul(scale)` variant of masked sdpa pattern (#202595)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795677747",
+      "publishedAt": "2026-11-26T03:16:19.000Z",
+      "summary": "Linked issue or supporting maintainer Fixes #195412 Supported by @Isalia20 Summary (human written only) There are a total of 52 models in the transformers library that use this pattern, models are listed below: afmoe, albert, aria, bart, be",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
+      ]
+    },
+    {
+      "title": "viable/strict/1795675905: [profiler] Prevent Cuspy pftrace CSR offset overflow (#206570)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795675905",
       "publishedAt": "2026-11-26T02:29:10.000Z",
       "summary": "CPU-event args used int32 cumulative byte offsets, which wrap above 2 GiB and can send the native encoder outside the JSON buffer. Use int64 offsets throughout the JSON, render metadata, GPU-correlation, and event-wait CSR paths. Validate s",
       "sourceId": "gh-pytorch",
@@ -307,75 +391,15 @@
       ]
     },
     {
-      "title": "trunk/8cfd54b572ec3317b8a7217c49fcbdacaeac8119",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8cfd54b572ec3317b8a7217c49fcbdacaeac8119",
-      "publishedAt": "2026-11-26T02:24:27.000Z",
-      "summary": "[Testcase Refactoring] Classify test/test_indexing.py for the test-ca…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
+      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "url": "https://huggingface.co/blog/training-swarms",
+      "publishedAt": "2026-11-26T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
       "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/e5ebe4bd84c9b1a136c25f1d9686d3968a9aad44",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2Fe5ebe4bd84c9b1a136c25f1d9686d3968a9aad44",
-      "publishedAt": "2026-11-26T02:24:09.000Z",
-      "summary": "[Testcase Refactoring] Classify test/test_binary_ufuncs.py for the te…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "ciflow/xpu/205634",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F205634",
-      "publishedAt": "2026-11-26T02:11:12.000Z",
-      "summary": "resolve comment",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/314c5ac2118f75b556d7887a46732408dd4c2ce7",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F314c5ac2118f75b556d7887a46732408dd4c2ce7",
-      "publishedAt": "2026-11-26T01:57:37.000Z",
-      "summary": "[DTensor] Remove binary max.out/min.out from LINEAR_REDUCTION_OP_MAP …",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/73dd92f5c018526ee05c4a8e6d1e55c2005ece3d",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F73dd92f5c018526ee05c4a8e6d1e55c2005ece3d",
-      "publishedAt": "2026-11-26T01:46:23.000Z",
-      "summary": "[inductor] Let buffers sized by unbacked symbols share memory-plannin…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "trunk/16a7815f52b98d13920bb0b134960e5b48fc19d0",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F16a7815f52b98d13920bb0b134960e5b48fc19d0",
-      "publishedAt": "2026-11-26T01:14:28.000Z",
-      "summary": "[DTensor] Generate TestSingleDimStrategies samples under a shared loc…",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-frameworks"
+        "topic-rl"
       ]
     },
     {
@@ -405,6 +429,19 @@
       ]
     },
     {
+      "title": "LiveVAE: Causal Window Attention Makes Efficient Streaming Video VAE",
+      "url": "https://arxiv.org/abs/2611.34912v1",
+      "publishedAt": "2026-11-25T18:57:14.000Z",
+      "summary": "While video diffusion models have grown faster and increasingly streamable, the video VAE remains a primary latency bottleneck across interactive generation and editing pipelines. Existing VAEs and their acceleration methods rely mainly on ",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-orchestration"
+      ]
+    },
+    {
       "title": "Where scientists draw the line on AI agents",
       "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
       "publishedAt": "2026-11-25T18:52:55.000Z",
@@ -414,6 +451,82 @@
       "kind": "lab",
       "topics": [
         "topic-frameworks"
+      ]
+    },
+    {
+      "title": "LoopTitan: What Does Parameter Revisit Buy a Mixture-of-Experts?",
+      "url": "https://arxiv.org/abs/2611.34821v1",
+      "publishedAt": "2026-11-25T18:04:31.000Z",
+      "summary": "Looped Mixture-of-Experts (MoE) architectures revisit layer parameters across depths. This design increases effective depth without adding parameters. Recent looped MoE studies report substantial gains over the standard MoE at matched budge",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-distributed"
+      ]
+    },
+    {
+      "title": "DFly2: Turbocharging Long-Context Speculative Decoding by Sharing the Target's Sparsity",
+      "url": "https://arxiv.org/abs/2611.34776v1",
+      "publishedAt": "2026-11-25T17:37:49.000Z",
+      "summary": "To avoid the quadratic cost of dense attention over long contexts, models such as DeepSeek-V4 and Hy4 have turned natively sparse, and speculative decoding, which matters most where decoding is slowest, increasingly runs on them. Their draf",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-attention",
+        "topic-disagg"
+      ]
+    },
+    {
+      "title": "PipeAxes: Decoupling Compute and Communication Granularities for Pipeline-Parallel LLM Serving",
+      "url": "https://arxiv.org/abs/2611.34615v1",
+      "publishedAt": "2026-11-25T16:03:12.000Z",
+      "summary": "Pipeline parallelism can serve long-context language models on PCIe servers and across heterogeneous GPU clusters. Existing engines split prefill into token chunks to limit decode stalls. The chunk size also sets the GPU batch width and the",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-gpus",
+        "topic-distributed",
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "Do We Really Need an LLM for Weight-Space Programming? A Deterministic Forward-Only Paradigm and Its Capability Boundaries",
+      "url": "https://arxiv.org/abs/2611.34612v1",
+      "publishedAt": "2026-11-25T16:01:05.000Z",
+      "summary": "Recent work on Weight-Space Programming uses LLMs to edit neural weights with forward passes only, conflating LLM scripting with the underlying algebra of forward-only editing. We show that for core structured editing regimes, an LLM optimi",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "Routing and Cache Retention for Multi-Turn LLM Inference: Theory and Implementation",
+      "url": "https://arxiv.org/abs/2611.34584v1",
+      "publishedAt": "2026-11-25T15:45:44.000Z",
+      "summary": "Multi-turn AI agents execute iterative loops of large language model (LLM) inference and external tool calls, transforming cluster serving into a dynamic resource-allocation problem where routing and key-value (KV) cache retention jointly g",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-inference",
+        "topic-orchestration"
+      ]
+    },
+    {
+      "title": "FlyingStart: Learned Cross-Token Warm Starts for Fixed-Point Decoding in Recurrent-Depth Language Models",
+      "url": "https://arxiv.org/abs/2611.34492v1",
+      "publishedAt": "2026-11-25T14:51:50.000Z",
+      "summary": "Recurrent-depth language models generate each token by iterating a shared block of layers until its hidden state converges. Inference methods for these models decide when to stop the iteration, yet every token still starts from random noise",
+      "sourceId": "arxiv-mlsys",
+      "sourceName": "arXiv ML Systems",
+      "kind": "paper",
+      "topics": [
+        "topic-inference"
       ]
     },
     {
@@ -429,57 +542,6 @@
       ]
     },
     {
-      "title": "VAPOR: Improving Multimodal Reasoning with Sparse Visual Updates",
-      "url": "https://arxiv.org/abs/2611.33751v1",
-      "publishedAt": "2026-11-25T04:11:36.000Z",
-      "summary": "Multimodal large language models (MLLMs) have made substantial progress in visual reasoning, but extended generation over large visual contexts remains computationally expensive. During autoregressive decoding, visual attention is recompute",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "FlashProve-Next: Verifiable Inference for Production LLM APIs",
-      "url": "https://arxiv.org/abs/2611.33741v1",
-      "publishedAt": "2026-11-25T04:01:37.000Z",
-      "summary": "Clients of closed-weight LLM APIs cannot verify whether a provider ran the advertised model, precision, hidden prompt, and reasoning budget. Existing approaches either trust hardware or third parties, or re-prove every layer of an integer s",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-inference",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "State Space Attention: Learning Context-Dependent Memory Retention",
-      "url": "https://arxiv.org/abs/2611.33625v1",
-      "publishedAt": "2026-11-25T01:56:07.000Z",
-      "summary": "Standard attention's key-value cache grows linearly with context length. Bounding it raises the question of what a sequence model should retain for long-context reasoning. We argue this choice should be learned, and introduce State Space At",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-rl"
-      ]
-    },
-    {
-      "title": "Non-manipulability and Approachability Beyond Two-Player Games",
-      "url": "https://arxiv.org/abs/2611.33562v1",
-      "publishedAt": "2026-11-25T00:23:32.000Z",
-      "summary": "We study the problem of guaranteeing non-manipulability and low regret for $n-1$ independent learners in an $n$-player repeated general game with one optimizer. Non-manipulability is a property which guarantees that learning agents can prev",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
       "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
       "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
       "publishedAt": "2026-11-25T00:00:00.000Z",
@@ -489,45 +551,6 @@
       "kind": "lab",
       "topics": [
         "topic-inference"
-      ]
-    },
-    {
-      "title": "RankCast: Phase-Aware Rank Balancing in MoE Serving",
-      "url": "https://arxiv.org/abs/2611.33542v1",
-      "publishedAt": "2026-11-24T23:37:38.000Z",
-      "summary": "Modern large language model (LLM) inference increasingly adopts disaggregated architectures that separate Prefill (P) and Decode (D) phases. Meanwhile, Expert Parallelism (EP) has been widely adopted in large Mixture-of-Experts (MoE) model ",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-distributed",
-        "topic-inference",
-        "topic-disagg"
-      ]
-    },
-    {
-      "title": "Probabilistic Machine Learning for Total Kinetic Energy Distributions in Neutron-Induced Fission",
-      "url": "https://arxiv.org/abs/2611.33379v1",
-      "publishedAt": "2026-11-24T20:05:56.000Z",
-      "summary": "The incident-neutron-energy dependence of post-neutron total-kinetic-energy (TKE) distributions, particularly their width in the multichance-fission regime, provides a sensitive test of fission calculations. We investigate how the General D",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "JetDiffusion: Pushing the Speed Limits of Video Generation with NVFP4 Sparse Attention",
-      "url": "https://arxiv.org/abs/2611.33268v1",
-      "publishedAt": "2026-11-24T18:59:48.000Z",
-      "summary": "Attention over long sequences is a major computational bottleneck in video generation, which can be alleviated through sparsity and low-bit quantization. We propose JetDiffusion, a video generation system built on trainable Video Sparse Qua",
-      "sourceId": "arxiv-mlsys",
-      "sourceName": "arXiv ML Systems",
-      "kind": "paper",
-      "topics": [
-        "topic-attention",
-        "topic-quantization"
       ]
     },
     {
@@ -561,18 +584,6 @@
       "summary": "This month’s NVIDIA game development updates help teams bring new graphics, animation, and local AI capabilities into their engines while balancing image...",
       "sourceId": "nvidia",
       "sourceName": "NVIDIA Tech Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
-      "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
-      "publishedAt": "2026-11-24T16:34:13.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
@@ -740,30 +751,6 @@
       "title": "How to build and maintain an agentic evaluation",
       "url": "https://huggingface.co/blog/agentic-evals",
       "publishedAt": "2026-11-23T00:00:00.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
-      "url": "https://huggingface.co/blog/inkling2mini",
-      "publishedAt": "2026-11-20T00:00:00.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
-      "url": "https://huggingface.co/blog/harness-adapters-at-scale",
-      "publishedAt": "2026-11-20T00:00:00.000Z",
       "summary": "",
       "sourceId": "huggingface",
       "sourceName": "Hugging Face Blog",
