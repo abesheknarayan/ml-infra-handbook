@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-27T06:38:49.154Z",
+  "lastSyncedAt": "2026-11-27T17:49:53.930Z",
   "totalItems": 126,
   "sources": [
     {
@@ -282,10 +282,10 @@
   ],
   "items": [
     {
-      "title": "trunk/5061443a3babc2797b99e04a78212a5926eb2787: [stable] Support MTIA in DeviceType conversions (#205835)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F5061443a3babc2797b99e04a78212a5926eb2787",
-      "publishedAt": "2026-11-27T05:08:48.000Z",
-      "summary": "now that we have MTIA shim, we should add it as a valid conversion Pull Request resolved: #205835 Approved by: https://github.com/nakuliyer , https://github.com/pytorchgreenlight",
+      "title": "viable/strict/1795791005: Implement histogram meta functions. (#202037)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795791005",
+      "publishedAt": "2026-11-27T09:38:40.000Z",
+      "summary": "Linked issue or supporting maintainer Fixes: intel/torch-xpu-ops#5283 BC-breaking? No Summary (human written only) Current histogram and its' overloads implementations don't have a meta implementation, making them unavailable for fake-expor",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -294,10 +294,10 @@
       ]
     },
     {
-      "title": "trunk/967fdc56e7a84f133e808653a00b1a5d43aedb61",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F967fdc56e7a84f133e808653a00b1a5d43aedb61",
-      "publishedAt": "2026-11-27T04:34:36.000Z",
-      "summary": "Revert \"[mkldnn][23/N] Update comments that still describe ideep ( #20 …",
+      "title": "viable/strict/1795787437",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795787437",
+      "publishedAt": "2026-11-27T09:17:42.000Z",
+      "summary": "[Testcase Refactoring] 1. Add instantiate_device_type_tests to genera…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -306,10 +306,10 @@
       ]
     },
     {
-      "title": "trunk/0539fedc5b7d285176ab108b335017da33e1d05e: Update Metamates merge rule (#206838)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F0539fedc5b7d285176ab108b335017da33e1d05e",
-      "publishedAt": "2026-11-27T04:27:05.000Z",
-      "summary": "This PR is auto-generated nightly by this action . Updates the Metamates merge rule with active team members. Pull Request resolved: #206838 Approved by: https://github.com/pytorchbot",
+      "title": "viable/strict/1795785645: Register narrow_copy.out on XPU. (#202200)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795785645",
+      "publishedAt": "2026-11-27T09:17:10.000Z",
+      "summary": "Linked issue or supporting maintainer Partially fixes: intel/torch-xpu-ops#1951 BC-breaking? No Summary (human written only) Previously narrow_copy.out was not implemented on XPU. It is introduced in: intel/torch-xpu-ops#5520 which was merg",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -318,10 +318,10 @@
       ]
     },
     {
-      "title": "trunk/77c5f11fa7341da4117015cef579be70f692c594: [optim] Validate SGD dampening range (#206070)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F77c5f11fa7341da4117015cef579be70f692c594",
-      "publishedAt": "2026-11-27T04:06:37.000Z",
-      "summary": "Fixes #203631 Pull Request resolved: #206070 Approved by: https://github.com/soulitzer , https://github.com/albanD",
+      "title": "viable/strict/1795783791",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795783791",
+      "publishedAt": "2026-11-27T08:34:37.000Z",
+      "summary": "[XPU][Profiler][UT]Enable TestProfilerEventsParityDevice and TestProf…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -330,10 +330,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795761063",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795761063",
-      "publishedAt": "2026-11-27T02:12:05.000Z",
-      "summary": "[Testcase Refactoring] Tag TestFullyShardSpmdTypes with hw_classifica…",
+      "title": "viable/strict/1795782458",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795782458",
+      "publishedAt": "2026-11-27T07:32:47.000Z",
+      "summary": "[cleanup] remove __ubsan_ignore_float_divide_by_zero__ definition (…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -342,28 +342,39 @@
       ]
     },
     {
-      "title": "trunk/8006bc95d29126baf4f57d8e71b39da53fc47480",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8006bc95d29126baf4f57d8e71b39da53fc47480",
-      "publishedAt": "2026-11-27T01:38:49.000Z",
-      "summary": "[Inductor] Remove stale B2B GEMM XPU test skip and make the heuristic…",
+      "title": "viable/strict/1795780189: Retain the native group for the TokenSwitch handle lifetime (#204971)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795780189",
+      "publishedAt": "2026-11-27T07:32:17.000Z",
+      "summary": "Native handle destruction dereferences its group, but a routing handle can outlive the switch that created it. Retain the group in the handle so it stays alive through handle destruction. Add a regression that dispatches after releasing the",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-kernels",
         "topic-frameworks"
       ]
     },
     {
-      "title": "viable/strict/1795758600",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795758600",
-      "publishedAt": "2026-11-27T01:36:40.000Z",
-      "summary": "[XPU] Don't run the CP ring-attention SDPA test on a backend CP canno…",
+      "title": "viable/strict/1795778453: [triton] Enable abi3 wheels for XPU on Linux and Windows (#205857)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795778453",
+      "publishedAt": "2026-11-27T06:50:01.000Z",
+      "summary": "Follow-up to #197321 , which enabled cp312-abi3 triton wheels for Python 3.12+ on all Linux devices except xpu. xpu abi3 (Linux and Windows) : the 3.12 job sets TRITON_STABLE_ABI=ON to build a single cp312-abi3 wheel covering 3.12+, and the",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-attention"
+        "topic-kernels"
+      ]
+    },
+    {
+      "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "url": "https://huggingface.co/blog/video-trainium3",
+      "publishedAt": "2026-11-27T00:00:00.000Z",
+      "summary": "",
+      "sourceId": "huggingface",
+      "sourceName": "Hugging Face Blog",
+      "kind": "lab",
+      "topics": [
+        "topic-frameworks"
       ]
     },
     {
@@ -742,18 +753,6 @@
       "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
       "sourceId": "openai",
       "sourceName": "OpenAI News & Research",
-      "kind": "lab",
-      "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "How to build and maintain an agentic evaluation",
-      "url": "https://huggingface.co/blog/agentic-evals",
-      "publishedAt": "2026-11-23T00:00:00.000Z",
-      "summary": "",
-      "sourceId": "huggingface",
-      "sourceName": "Hugging Face Blog",
       "kind": "lab",
       "topics": [
         "topic-frameworks"
