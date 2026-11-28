@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-27T17:49:53.930Z",
+  "lastSyncedAt": "2026-11-28T01:03:55.984Z",
   "totalItems": 126,
   "sources": [
     {
@@ -282,10 +282,10 @@
   ],
   "items": [
     {
-      "title": "viable/strict/1795791005: Implement histogram meta functions. (#202037)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795791005",
-      "publishedAt": "2026-11-27T09:38:40.000Z",
-      "summary": "Linked issue or supporting maintainer Fixes: intel/torch-xpu-ops#5283 BC-breaking? No Summary (human written only) Current histogram and its' overloads implementations don't have a meta implementation, making them unavailable for fake-expor",
+      "title": "ciflow/xpu/206921: [UPDATE] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F206921",
+      "publishedAt": "2026-11-28T01:11:22.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -294,10 +294,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795787437",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795787437",
-      "publishedAt": "2026-11-27T09:17:42.000Z",
-      "summary": "[Testcase Refactoring] 1. Add instantiate_device_type_tests to genera…",
+      "title": "ciflow/trunk/206921: [UPDATE] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206921",
+      "publishedAt": "2026-11-28T01:11:22.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -306,10 +306,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795785645: Register narrow_copy.out on XPU. (#202200)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795785645",
-      "publishedAt": "2026-11-27T09:17:10.000Z",
-      "summary": "Linked issue or supporting maintainer Partially fixes: intel/torch-xpu-ops#1951 BC-breaking? No Summary (human written only) Previously narrow_copy.out was not implemented on XPU. It is introduced in: intel/torch-xpu-ops#5520 which was merg",
+      "title": "ciflow/trunk/205251: [UPDATE] Update",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205251",
+      "publishedAt": "2026-11-28T00:25:22.000Z",
+      "summary": "[ghstack-poisoned]",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -318,10 +318,22 @@
       ]
     },
     {
-      "title": "viable/strict/1795783791",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795783791",
-      "publishedAt": "2026-11-27T08:34:37.000Z",
-      "summary": "[XPU][Profiler][UT]Enable TestProfilerEventsParityDevice and TestProf…",
+      "title": "ciflow/trunk/203998",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F203998",
+      "publishedAt": "2026-11-28T00:22:23.000Z",
+      "summary": "update vllm commit hash",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-inference"
+      ]
+    },
+    {
+      "title": "ciflow/trunk/206934",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206934",
+      "publishedAt": "2026-11-28T00:22:11.000Z",
+      "summary": "update torchtitan commit hash",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -330,10 +342,10 @@
       ]
     },
     {
-      "title": "viable/strict/1795782458",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795782458",
-      "publishedAt": "2026-11-27T07:32:47.000Z",
-      "summary": "[cleanup] remove __ubsan_ignore_float_divide_by_zero__ definition (…",
+      "title": "ciflow/torchtitan/206934",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftorchtitan%2F206934",
+      "publishedAt": "2026-11-28T00:22:11.000Z",
+      "summary": "update torchtitan commit hash",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -342,27 +354,15 @@
       ]
     },
     {
-      "title": "viable/strict/1795780189: Retain the native group for the TokenSwitch handle lifetime (#204971)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795780189",
-      "publishedAt": "2026-11-27T07:32:17.000Z",
-      "summary": "Native handle destruction dereferences its group, but a routing handle can outlive the switch that created it. Retain the group in the handle so it stays alive through handle destruction. Add a regression that dispatches after releasing the",
+      "title": "ciflow/trunk/206935: [ROCm] Run jit and lazy C++ tests unfiltered and Gloo test on ROCm",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206935",
+      "publishedAt": "2026-11-28T00:20:12.000Z",
+      "summary": "The default -k \"not CUDA\" filter in test_libtorch_jit deselected 10 *_CUDA test_jit tests on ROCm, and ProcessGroupGlooTest sat under the *cuda* check, so neither ran on ROCm. Add a ROCm branch that runs test_jit and test_lazy unfiltered, a",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-frameworks"
-      ]
-    },
-    {
-      "title": "viable/strict/1795778453: [triton] Enable abi3 wheels for XPU on Linux and Windows (#205857)",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795778453",
-      "publishedAt": "2026-11-27T06:50:01.000Z",
-      "summary": "Follow-up to #197321 , which enabled cp312-abi3 triton wheels for Python 3.12+ on all Linux devices except xpu. xpu abi3 (Linux and Windows) : the 3.12 job sets TRITON_STABLE_ABI=ON to build a single cp312-abi3 wheel covering 3.12+, and the",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-kernels"
+        "topic-gpus"
       ]
     },
     {
