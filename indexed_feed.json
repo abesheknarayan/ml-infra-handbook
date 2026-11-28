@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-28T01:03:55.984Z",
+  "lastSyncedAt": "2026-11-28T09:46:36.009Z",
   "totalItems": 126,
   "sources": [
     {
@@ -282,10 +282,10 @@
   ],
   "items": [
     {
-      "title": "ciflow/xpu/206921: [UPDATE] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Fxpu%2F206921",
-      "publishedAt": "2026-11-28T01:11:22.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "trunk/9816ecc3ff8c422378d5d9d0f6201b837bd2c4dd: [stable] Add Layout conversion to/from Python objects (#205952)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F9816ecc3ff8c422378d5d9d0f6201b837bd2c4dd",
+      "publishedAt": "2026-11-28T07:36:54.000Z",
+      "summary": "Summary (human written only) We want to add more pyobject converters! (This would enable people to use stable APIs even when registering through nanobind vs being forced to go through the dispatcher.) This stack does that, the files they up",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -294,10 +294,10 @@
       ]
     },
     {
-      "title": "ciflow/trunk/206921: [UPDATE] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206921",
-      "publishedAt": "2026-11-28T01:11:22.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "viable/strict/1795854141: [torchtitan hash update] update the pinned torchtitan hash (#206934)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795854141",
+      "publishedAt": "2026-11-28T04:18:04.000Z",
+      "summary": "This PR is auto-generated nightly by this action . Update the pinned torchtitan hash. Pull Request resolved: #206934 Approved by: https://github.com/pytorchbot",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -306,10 +306,10 @@
       ]
     },
     {
-      "title": "ciflow/trunk/205251: [UPDATE] Update",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F205251",
-      "publishedAt": "2026-11-28T00:25:22.000Z",
-      "summary": "[ghstack-poisoned]",
+      "title": "viable/strict/1795852239: [docs] Clarify recommended wrap_triton usage (#152870) (#204238)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795852239",
+      "publishedAt": "2026-11-28T03:26:23.000Z",
+      "summary": "Linked issue or supporting maintainer Fixes #152870 BC-breaking? No. Summary (human written only) Problem In the current wrap_triton docs it can be unclear how wrap_triton should be used as a standalone module. Change You added clarificatio",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -318,22 +318,10 @@
       ]
     },
     {
-      "title": "ciflow/trunk/203998",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F203998",
-      "publishedAt": "2026-11-28T00:22:23.000Z",
-      "summary": "update vllm commit hash",
-      "sourceId": "gh-pytorch",
-      "sourceName": "PyTorch Releases",
-      "kind": "release",
-      "topics": [
-        "topic-inference"
-      ]
-    },
-    {
-      "title": "ciflow/trunk/206934",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206934",
-      "publishedAt": "2026-11-28T00:22:11.000Z",
-      "summary": "update torchtitan commit hash",
+      "title": "viable/strict/1795850466: [MPS][Inductor] Add `_print_FloatPow` to MetalExprPrinter (#206922)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795850466",
+      "publishedAt": "2026-11-28T03:04:14.000Z",
+      "summary": "Under dynamic shapes, expressions such as 0.95 ** x.shape[0] are lowered to ops.index_expr(FloatPow(0.95, ToFloat(s77))) . MetalExprPrinter had no _print_FloatPow , so codegen fell through to the base printer and raised NotImplementedError ",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -342,10 +330,10 @@
       ]
     },
     {
-      "title": "ciflow/torchtitan/206934",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftorchtitan%2F206934",
-      "publishedAt": "2026-11-28T00:22:11.000Z",
-      "summary": "update torchtitan commit hash",
+      "title": "viable/strict/1795848626",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1795848626",
+      "publishedAt": "2026-11-28T02:16:49.000Z",
+      "summary": "[Testcase Refactoring] 1. Add instantiate_device_type_tests to genera…",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
@@ -354,15 +342,27 @@
       ]
     },
     {
-      "title": "ciflow/trunk/206935: [ROCm] Run jit and lazy C++ tests unfiltered and Gloo test on ROCm",
-      "url": "https://github.com/pytorch/pytorch/releases/tag/ciflow%2Ftrunk%2F206935",
-      "publishedAt": "2026-11-28T00:20:12.000Z",
-      "summary": "The default -k \"not CUDA\" filter in test_libtorch_jit deselected 10 *_CUDA test_jit tests on ROCm, and ProcessGroupGlooTest sat under the *cuda* check, so neither ran on ROCm. Add a ROCm branch that runs test_jit and test_lazy unfiltered, a",
+      "title": "trunk/964dd18460ae49dff9e942d6ec9ba4e3323c40fd: Add normal docs to clamp_min and clamp_max (#206846)",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F964dd18460ae49dff9e942d6ec9ba4e3323c40fd",
+      "publishedAt": "2026-11-28T02:14:55.000Z",
+      "summary": "Add normal docs to clamp_min and clamp_max Agent details AI-assisted implementation and validation with Metamate; reviewed by the PR author. The coverage allowlist is unchanged: its clamp_min and clamp_max entries belong to torch.onnx.symbo",
       "sourceId": "gh-pytorch",
       "sourceName": "PyTorch Releases",
       "kind": "release",
       "topics": [
-        "topic-gpus"
+        "topic-rl"
+      ]
+    },
+    {
+      "title": "trunk/8262a9bfd0e6359ec73533be494949920117dc6e",
+      "url": "https://github.com/pytorch/pytorch/releases/tag/trunk%2F8262a9bfd0e6359ec73533be494949920117dc6e",
+      "publishedAt": "2026-11-28T01:41:15.000Z",
+      "summary": "Revert \"Add PrivateUse1 hook to customize DLPack device metadata ( #20 …",
+      "sourceId": "gh-pytorch",
+      "sourceName": "PyTorch Releases",
+      "kind": "release",
+      "topics": [
+        "topic-frameworks"
       ]
     },
     {
